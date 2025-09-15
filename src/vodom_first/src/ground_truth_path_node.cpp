@@ -8,6 +8,7 @@
 
 class GroundTruthPathNode : public rclcpp::Node {
 public:
+//Solo para checar que el commit se haya hecho bien
     GroundTruthPathNode()
     : Node("ground_truth_path_node"),
     poses_file_(declare_parameter<std::string>("poses_file", "src/vodom_first/KITTI_sequence_2/poses.txt")),
