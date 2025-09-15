@@ -1,0 +1,36 @@
+[0.008s] Invoking command in '/home/jorgelop/vo_ws/build/vodom_first': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jorgelop/vo_ws/build/vodom_first -- -j16 -l16
+[0.042s] [35m[1mConsolidate compiler generated dependencies of target visual_odo_Uli[0m
+[0.053s] [ 75%] Built target vodom_first_node
+[0.053s] [ 75%] Built target minimal_path_publisher
+[0.053s] [ 75%] Built target listener_node
+[0.053s] [ 75%] Built target ground_truth_path_node
+[0.053s] [ 83%] Built target visual_odometry_node
+[0.056s] [ 91%] [32mBuilding CXX object CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.o[0m
+[4.534s] [100%] [32m[1mLinking CXX executable visual_odo_Uli[0m
+[4.886s] [100%] Built target visual_odo_Uli
+[4.897s] Invoked command in '/home/jorgelop/vo_ws/build/vodom_first' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jorgelop/vo_ws/build/vodom_first -- -j16 -l16
+[4.906s] Invoking command in '/home/jorgelop/vo_ws/build/vodom_first': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jorgelop/vo_ws/build/vodom_first
+[4.912s] -- Install configuration: ""
+[4.912s] -- Execute custom install script
+[4.913s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/vodom_first_node
+[4.913s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/listener_node
+[4.913s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/visual_odometry_node
+[4.913s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/visual_odo_Uli
+[4.913s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/ground_truth_path_node
+[4.913s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/minimal_path_publisher
+[4.913s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/ament_index/resource_index/package_run_dependencies/vodom_first
+[4.914s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/ament_index/resource_index/parent_prefix_path/vodom_first
+[4.914s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/ament_prefix_path.sh
+[4.914s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/ament_prefix_path.dsv
+[4.914s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/path.sh
+[4.914s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/path.dsv
+[4.914s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.bash
+[4.914s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.sh
+[4.914s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.zsh
+[4.914s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.dsv
+[4.914s] -- Symlinking: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/package.dsv
+[4.922s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/ament_index/resource_index/packages/vodom_first
+[4.922s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/cmake/vodom_firstConfig.cmake
+[4.922s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/cmake/vodom_firstConfig-version.cmake
+[4.922s] -- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/package.xml
+[4.924s] Invoked command in '/home/jorgelop/vo_ws/build/vodom_first' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jorgelop/vo_ws/build/vodom_first

@@ -1,0 +1,32 @@
+[35m[1mConsolidate compiler generated dependencies of target visual_odo_Uli[0m
+[ 66%] Built target ground_truth_path_node
+[ 66%] Built target minimal_path_publisher
+[ 66%] Built target vodom_first_node
+[ 66%] Built target visual_odometry_node
+[ 83%] Built target listener_node
+[ 91%] [32mBuilding CXX object CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.o[0m
+[100%] [32m[1mLinking CXX executable visual_odo_Uli[0m
+[100%] Built target visual_odo_Uli
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/vodom_first_node
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/listener_node
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/visual_odometry_node
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/visual_odo_Uli
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/ground_truth_path_node
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/minimal_path_publisher
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/ament_index/resource_index/package_run_dependencies/vodom_first
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/ament_index/resource_index/parent_prefix_path/vodom_first
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/path.sh
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/path.dsv
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.bash
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.sh
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.zsh
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.dsv
+-- Symlinking: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/package.dsv
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/ament_index/resource_index/packages/vodom_first
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/cmake/vodom_firstConfig.cmake
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/cmake/vodom_firstConfig-version.cmake
+-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/package.xml

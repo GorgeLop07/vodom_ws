@@ -1,0 +1,11 @@
+[35m[1mConsolidate compiler generated dependencies of target listener_node[0m
+[35m[1mConsolidate compiler generated dependencies of target vodom_first_node[0m
+[35m[1mConsolidate compiler generated dependencies of target ground_truth_path_node[0m
+[35m[1mConsolidate compiler generated dependencies of target visual_odometry_node[0m
+[35m[1mConsolidate compiler generated dependencies of target minimal_path_publisher[0m
+[  8%] [32mBuilding CXX object CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.o[0m
+[ 91%] Built target vodom_first_node
+[ 91%] Built target listener_node
+[ 91%] Built target ground_truth_path_node
+[ 91%] Built target minimal_path_publisher
+[ 91%] Built target visual_odometry_node

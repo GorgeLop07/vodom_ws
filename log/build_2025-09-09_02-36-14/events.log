@@ -1,0 +1,138 @@
+[0.000000] (-) TimerEvent: {}
+[0.000136] (vodom_first) JobQueued: {'identifier': 'vodom_first', 'dependencies': OrderedDict()}
+[0.000167] (vodom_first) JobStarted: {'identifier': 'vodom_first'}
+[0.006700] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'cmake'}
+[0.007406] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'build'}
+[0.007918] (vodom_first) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jorgelop/vo_ws/build/vodom_first', '--', '-j16', '-l16'], 'cwd': '/home/jorgelop/vo_ws/build/vodom_first', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jorgelop'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jorgelop'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/jorgelop/vo_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1137'), ('SYSTEMD_EXEC_PID', '1537'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '8891'), ('COLCON_PREFIX_PATH', '/home/jorgelop/vo_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jorgelop'), ('JOURNAL_STREAM', '8:11667'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jorgelop'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/jorgelop/anaconda3/condabin:/opt/ros/humble/bin:/home/jorgelop/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/xtensa-esp-elf/bin/'), ('SESSION_MANAGER', 'local/jorgelop07:@/tmp/.ICE-unix/1510,unix/jorgelop07:/tmp/.ICE-unix/1510'), ('INVOCATION_ID', '16997ac390f34a74968ec0cb7f8b4e8f'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/jorgelop/vo_ws/install/vodom_first:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/jorgelop/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:b7d54f14-37d0-46cf-af92-fcc4c2e88ab1'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jorgelop/vo_ws/build/vodom_first'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/jorgelop/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jorgelop/vo_ws/install/vodom_first:/opt/ros/humble')]), 'shell': False}
+[0.069338] (vodom_first) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099356] (-) TimerEvent: {}
+[0.164812] (vodom_first) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.177904] (vodom_first) StdoutLine: {'line': b'-- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.199447] (-) TimerEvent: {}
+[0.209544] (vodom_first) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.212299] (vodom_first) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.218146] (vodom_first) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.226760] (vodom_first) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.237783] (vodom_first) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.267112] (vodom_first) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.268693] (vodom_first) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.299546] (-) TimerEvent: {}
+[0.367641] (vodom_first) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.399648] (-) TimerEvent: {}
+[0.415282] (vodom_first) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.450737] (vodom_first) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.499768] (-) TimerEvent: {}
+[0.507498] (vodom_first) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.507747] (vodom_first) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.507823] (vodom_first) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.508255] (vodom_first) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[0.509303] (vodom_first) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.509835] (vodom_first) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[0.512395] (vodom_first) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.512486] (vodom_first) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.512926] (vodom_first) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.514395] (vodom_first) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.540997] (vodom_first) StdoutLine: {'line': b'-- Generating done\n'}
+[0.549089] (vodom_first) StdoutLine: {'line': b'-- Build files have been written to: /home/jorgelop/vo_ws/build/vodom_first\n'}
+[0.573196] (vodom_first) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vodom_first_node\x1b[0m\n'}
+[0.573384] (vodom_first) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target minimal_path_publisher\x1b[0m\n'}
+[0.573449] (vodom_first) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target visual_odometry_node\x1b[0m\n'}
+[0.573509] (vodom_first) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target listener_node\x1b[0m\n'}
+[0.573633] (vodom_first) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target ground_truth_path_node\x1b[0m\n'}
+[0.580253] (vodom_first) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding CXX object CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.o\x1b[0m\n'}
+[0.598247] (vodom_first) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/listener_node.dir/src/listener_node.cpp.o\x1b[0m\n'}
+[0.598463] (vodom_first) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/vodom_first_node.dir/src/vodom_first_node.cpp.o\x1b[0m\n'}
+[0.599848] (-) TimerEvent: {}
+[0.600435] (vodom_first) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/minimal_path_publisher.dir/src/minimal_path_publisher.cpp.o\x1b[0m\n'}
+[0.600609] (vodom_first) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/visual_odometry_node.dir/src/visual_odometry_node.cpp.o\x1b[0m\n'}
+[0.600822] (vodom_first) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.o\x1b[0m\n'}
+[0.606540] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/vo_ws/src/vodom_first/src/visual_odo_Uli.cpp:1:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kros/ros.h: No such file or directory\n'}
+[0.606727] (vodom_first) StderrLine: {'line': b'    1 | #include \x1b[01;31m\x1b[K<ros/ros.h>\x1b[m\x1b[K\n'}
+[0.606791] (vodom_first) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.606844] (vodom_first) StderrLine: {'line': b'compilation terminated.\n'}
+[0.607631] (vodom_first) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/visual_odo_Uli.dir/build.make:76: CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.o] Error 1\n'}
+[0.607828] (vodom_first) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:225: CMakeFiles/visual_odo_Uli.dir/all] Error 2\n'}
+[0.607879] (vodom_first) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[0.699981] (-) TimerEvent: {}
+[0.800272] (-) TimerEvent: {}
+[0.900603] (-) TimerEvent: {}
+[1.000910] (-) TimerEvent: {}
+[1.101236] (-) TimerEvent: {}
+[1.201575] (-) TimerEvent: {}
+[1.301893] (-) TimerEvent: {}
+[1.402194] (-) TimerEvent: {}
+[1.502485] (-) TimerEvent: {}
+[1.602779] (-) TimerEvent: {}
+[1.703083] (-) TimerEvent: {}
+[1.803391] (-) TimerEvent: {}
+[1.903677] (-) TimerEvent: {}
+[2.003984] (-) TimerEvent: {}
+[2.104296] (-) TimerEvent: {}
+[2.204621] (-) TimerEvent: {}
+[2.304922] (-) TimerEvent: {}
+[2.405222] (-) TimerEvent: {}
+[2.505517] (-) TimerEvent: {}
+[2.605841] (-) TimerEvent: {}
+[2.706153] (-) TimerEvent: {}
+[2.806466] (-) TimerEvent: {}
+[2.906801] (-) TimerEvent: {}
+[3.007155] (-) TimerEvent: {}
+[3.107502] (-) TimerEvent: {}
+[3.207863] (-) TimerEvent: {}
+[3.308232] (-) TimerEvent: {}
+[3.408573] (-) TimerEvent: {}
+[3.508923] (-) TimerEvent: {}
+[3.609266] (-) TimerEvent: {}
+[3.709616] (-) TimerEvent: {}
+[3.809924] (-) TimerEvent: {}
+[3.910204] (-) TimerEvent: {}
+[4.010499] (-) TimerEvent: {}
+[4.110808] (-) TimerEvent: {}
+[4.211096] (-) TimerEvent: {}
+[4.311395] (-) TimerEvent: {}
+[4.411670] (-) TimerEvent: {}
+[4.435817] (vodom_first) StdoutLine: {'line': b'[ 58%] \x1b[32m\x1b[1mLinking CXX executable vodom_first_node\x1b[0m\n'}
+[4.483167] (vodom_first) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable minimal_path_publisher\x1b[0m\n'}
+[4.511809] (-) TimerEvent: {}
+[4.517291] (vodom_first) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable ground_truth_path_node\x1b[0m\n'}
+[4.611945] (-) TimerEvent: {}
+[4.649030] (vodom_first) StdoutLine: {'line': b'[ 75%] Built target vodom_first_node\n'}
+[4.669125] (vodom_first) StdoutLine: {'line': b'[ 75%] Built target minimal_path_publisher\n'}
+[4.698100] (vodom_first) StdoutLine: {'line': b'[ 75%] Built target ground_truth_path_node\n'}
+[4.712059] (-) TimerEvent: {}
+[4.812383] (-) TimerEvent: {}
+[4.913106] (-) TimerEvent: {}
+[5.013429] (-) TimerEvent: {}
+[5.113664] (-) TimerEvent: {}
+[5.213926] (-) TimerEvent: {}
+[5.314209] (-) TimerEvent: {}
+[5.414489] (-) TimerEvent: {}
+[5.514770] (-) TimerEvent: {}
+[5.615049] (-) TimerEvent: {}
+[5.715325] (-) TimerEvent: {}
+[5.815620] (-) TimerEvent: {}
+[5.915905] (-) TimerEvent: {}
+[6.016184] (-) TimerEvent: {}
+[6.039064] (vodom_first) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable visual_odometry_node\x1b[0m\n'}
+[6.116312] (-) TimerEvent: {}
+[6.216587] (-) TimerEvent: {}
+[6.316865] (-) TimerEvent: {}
+[6.417154] (-) TimerEvent: {}
+[6.499408] (vodom_first) StdoutLine: {'line': b'[ 83%] Built target visual_odometry_node\n'}
+[6.517264] (-) TimerEvent: {}
+[6.617529] (-) TimerEvent: {}
+[6.717870] (-) TimerEvent: {}
+[6.818154] (-) TimerEvent: {}
+[6.918519] (-) TimerEvent: {}
+[7.019007] (-) TimerEvent: {}
+[7.119287] (-) TimerEvent: {}
+[7.219575] (-) TimerEvent: {}
+[7.311239] (vodom_first) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking CXX executable listener_node\x1b[0m\n'}
+[7.319640] (-) TimerEvent: {}
+[7.419883] (-) TimerEvent: {}
+[7.520150] (-) TimerEvent: {}
+[7.549514] (vodom_first) StdoutLine: {'line': b'[ 91%] Built target listener_node\n'}
+[7.550442] (vodom_first) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.552384] (vodom_first) CommandEnded: {'returncode': 2}
+[7.565477] (vodom_first) JobEnded: {'identifier': 'vodom_first', 'rc': 2}
+[7.575989] (-) EventReactorShutdown: {}

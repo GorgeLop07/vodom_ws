@@ -1,0 +1,125 @@
+[0.000000] (-) TimerEvent: {}
+[0.000399] (vodom_first) JobQueued: {'identifier': 'vodom_first', 'dependencies': OrderedDict()}
+[0.000507] (vodom_first) JobStarted: {'identifier': 'vodom_first'}
+[0.008753] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'cmake'}
+[0.009454] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'build'}
+[0.010002] (vodom_first) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jorgelop/vo_ws/build/vodom_first', '--', '-j16', '-l16'], 'cwd': '/home/jorgelop/vo_ws/build/vodom_first', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('USER', 'jorgelop'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jorgelop'), ('OLDPWD', '/home/jorgelop'), ('LESS', '-R'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ZSH', '/home/jorgelop/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GTK_MODULES', 'gail:atk-bridge'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1189'), ('SYSTEMD_EXEC_PID', '1622'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('P9K_TTY', 'old'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '33668'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/jorgelop/vo_ws/install'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jorgelop'), ('JOURNAL_STREAM', '8:332'), ('_P9K_SSH_TTY', '/dev/pts/1'), ('_', '/usr/bin/colcon'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('USERNAME', 'jorgelop'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/jorgelop/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jorgelop07:@/tmp/.ICE-unix/1595,unix/jorgelop07:/tmp/.ICE-unix/1595'), ('INVOCATION_ID', 'eb1f2ce8bf0249f687df38d45c682299'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('AMENT_PREFIX_PATH', '/home/jorgelop/vo_ws/install/vodom_first:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:84b53288-df98-41f9-aaad-0727e644cb8e'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('P9K_SSH', '0'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jorgelop/vo_ws/build/vodom_first'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('_P9K_TTY', '/dev/pts/1'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jorgelop/vo_ws/install/vodom_first:/opt/ros/humble')]), 'shell': False}
+[0.073027] (vodom_first) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target visual_odo_Uli\x1b[0m\n'}
+[0.093019] (vodom_first) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/minimal_path_publisher.dir/src/minimal_path_publisher.cpp.o\x1b[0m\n'}
+[0.093250] (vodom_first) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/listener_node.dir/src/listener_node.cpp.o\x1b[0m\n'}
+[0.093357] (vodom_first) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.o\x1b[0m\n'}
+[0.093427] (vodom_first) StdoutLine: {'line': b'[ 41%] Built target vodom_first_node\n'}
+[0.093487] (vodom_first) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.o\x1b[0m\n'}
+[0.093545] (vodom_first) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/visual_odometry_node.dir/src/visual_odometry_node.cpp.o\x1b[0m\n'}
+[0.099809] (-) TimerEvent: {}
+[0.200042] (-) TimerEvent: {}
+[0.300342] (-) TimerEvent: {}
+[0.400607] (-) TimerEvent: {}
+[0.500938] (-) TimerEvent: {}
+[0.601390] (-) TimerEvent: {}
+[0.701765] (-) TimerEvent: {}
+[0.802137] (-) TimerEvent: {}
+[0.902508] (-) TimerEvent: {}
+[1.002860] (-) TimerEvent: {}
+[1.103234] (-) TimerEvent: {}
+[1.203584] (-) TimerEvent: {}
+[1.303908] (-) TimerEvent: {}
+[1.404220] (-) TimerEvent: {}
+[1.504557] (-) TimerEvent: {}
+[1.604872] (-) TimerEvent: {}
+[1.705189] (-) TimerEvent: {}
+[1.805484] (-) TimerEvent: {}
+[1.905789] (-) TimerEvent: {}
+[2.006107] (-) TimerEvent: {}
+[2.106424] (-) TimerEvent: {}
+[2.206727] (-) TimerEvent: {}
+[2.307045] (-) TimerEvent: {}
+[2.407377] (-) TimerEvent: {}
+[2.507684] (-) TimerEvent: {}
+[2.608003] (-) TimerEvent: {}
+[2.708337] (-) TimerEvent: {}
+[2.808641] (-) TimerEvent: {}
+[2.908941] (-) TimerEvent: {}
+[3.009218] (-) TimerEvent: {}
+[3.109506] (-) TimerEvent: {}
+[3.209809] (-) TimerEvent: {}
+[3.310112] (-) TimerEvent: {}
+[3.410417] (-) TimerEvent: {}
+[3.510708] (-) TimerEvent: {}
+[3.611015] (-) TimerEvent: {}
+[3.711337] (-) TimerEvent: {}
+[3.811650] (-) TimerEvent: {}
+[3.911933] (-) TimerEvent: {}
+[4.012219] (-) TimerEvent: {}
+[4.112515] (-) TimerEvent: {}
+[4.118414] (vodom_first) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable minimal_path_publisher\x1b[0m\n'}
+[4.155764] (vodom_first) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable ground_truth_path_node\x1b[0m\n'}
+[4.212615] (-) TimerEvent: {}
+[4.312941] (-) TimerEvent: {}
+[4.350737] (vodom_first) StdoutLine: {'line': b'[ 75%] Built target ground_truth_path_node\n'}
+[4.355843] (vodom_first) StdoutLine: {'line': b'[ 75%] Built target minimal_path_publisher\n'}
+[4.413055] (-) TimerEvent: {}
+[4.513409] (-) TimerEvent: {}
+[4.613774] (-) TimerEvent: {}
+[4.714135] (-) TimerEvent: {}
+[4.814517] (-) TimerEvent: {}
+[4.914869] (-) TimerEvent: {}
+[5.015145] (-) TimerEvent: {}
+[5.115437] (-) TimerEvent: {}
+[5.215714] (-) TimerEvent: {}
+[5.316008] (-) TimerEvent: {}
+[5.416348] (-) TimerEvent: {}
+[5.516614] (-) TimerEvent: {}
+[5.616897] (-) TimerEvent: {}
+[5.717199] (-) TimerEvent: {}
+[5.755905] (vodom_first) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable visual_odometry_node\x1b[0m\n'}
+[5.809495] (vodom_first) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking CXX executable visual_odo_Uli\x1b[0m\n'}
+[5.817286] (-) TimerEvent: {}
+[5.917585] (-) TimerEvent: {}
+[6.017884] (-) TimerEvent: {}
+[6.118146] (-) TimerEvent: {}
+[6.218454] (-) TimerEvent: {}
+[6.252440] (vodom_first) StdoutLine: {'line': b'[ 91%] Built target visual_odo_Uli\n'}
+[6.253689] (vodom_first) StdoutLine: {'line': b'[ 91%] Built target visual_odometry_node\n'}
+[6.318538] (-) TimerEvent: {}
+[6.418799] (-) TimerEvent: {}
+[6.519050] (-) TimerEvent: {}
+[6.619310] (-) TimerEvent: {}
+[6.719549] (-) TimerEvent: {}
+[6.819812] (-) TimerEvent: {}
+[6.920083] (-) TimerEvent: {}
+[7.020382] (-) TimerEvent: {}
+[7.074996] (vodom_first) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable listener_node\x1b[0m\n'}
+[7.120475] (-) TimerEvent: {}
+[7.220735] (-) TimerEvent: {}
+[7.321009] (-) TimerEvent: {}
+[7.330067] (vodom_first) StdoutLine: {'line': b'[100%] Built target listener_node\n'}
+[7.339842] (vodom_first) CommandEnded: {'returncode': 0}
+[7.340562] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'install'}
+[7.348131] (vodom_first) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jorgelop/vo_ws/build/vodom_first'], 'cwd': '/home/jorgelop/vo_ws/build/vodom_first', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('USER', 'jorgelop'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jorgelop'), ('OLDPWD', '/home/jorgelop'), ('LESS', '-R'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ZSH', '/home/jorgelop/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GTK_MODULES', 'gail:atk-bridge'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1189'), ('SYSTEMD_EXEC_PID', '1622'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('P9K_TTY', 'old'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '33668'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/jorgelop/vo_ws/install'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jorgelop'), ('JOURNAL_STREAM', '8:332'), ('_P9K_SSH_TTY', '/dev/pts/1'), ('_', '/usr/bin/colcon'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('USERNAME', 'jorgelop'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/jorgelop/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jorgelop07:@/tmp/.ICE-unix/1595,unix/jorgelop07:/tmp/.ICE-unix/1595'), ('INVOCATION_ID', 'eb1f2ce8bf0249f687df38d45c682299'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('AMENT_PREFIX_PATH', '/home/jorgelop/vo_ws/install/vodom_first:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:84b53288-df98-41f9-aaad-0727e644cb8e'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('P9K_SSH', '0'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jorgelop/vo_ws/build/vodom_first'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('_P9K_TTY', '/dev/pts/1'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jorgelop/vo_ws/install/vodom_first:/opt/ros/humble')]), 'shell': False}
+[7.354909] (vodom_first) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[7.355930] (vodom_first) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[7.356359] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/vodom_first_node\n'}
+[7.356503] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/listener_node\n'}
+[7.356634] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/visual_odometry_node\n'}
+[7.356760] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/visual_odo_Uli\n'}
+[7.356886] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/ground_truth_path_node\n'}
+[7.357013] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/lib/vodom_first/minimal_path_publisher\n'}
+[7.357166] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/ament_index/resource_index/package_run_dependencies/vodom_first\n'}
+[7.357297] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/ament_index/resource_index/parent_prefix_path/vodom_first\n'}
+[7.357415] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/ament_prefix_path.sh\n'}
+[7.357519] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/ament_prefix_path.dsv\n'}
+[7.357628] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/path.sh\n'}
+[7.357729] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/environment/path.dsv\n'}
+[7.357828] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.bash\n'}
+[7.357927] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.sh\n'}
+[7.358023] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.zsh\n'}
+[7.358119] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/local_setup.dsv\n'}
+[7.358242] (vodom_first) StdoutLine: {'line': b'-- Symlinking: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/package.dsv\n'}
+[7.365672] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/ament_index/resource_index/packages/vodom_first\n'}
+[7.365902] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/cmake/vodom_firstConfig.cmake\n'}
+[7.366041] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/cmake/vodom_firstConfig-version.cmake\n'}
+[7.366218] (vodom_first) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jorgelop/vo_ws/install/vodom_first/share/vodom_first/package.xml\n'}
+[7.367937] (vodom_first) CommandEnded: {'returncode': 0}
+[7.383719] (vodom_first) JobEnded: {'identifier': 'vodom_first', 'rc': 0}
+[7.384230] (-) EventReactorShutdown: {}

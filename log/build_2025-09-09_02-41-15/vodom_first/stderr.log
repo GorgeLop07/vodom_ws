@@ -1,0 +1,37 @@
+[01m[K/home/jorgelop/vo_ws/src/vodom_first/src/visual_odo_Uli.cpp:[m[K In constructor ‘[01m[KVisualOdometryUli::VisualOdometryUli(const string&)[m[K’:
+[01m[K/home/jorgelop/vo_ws/src/vodom_first/src/visual_odo_Uli.cpp:27:32:[m[K [01;31m[Kerror: [m[K‘[01m[KParams[m[K’ is not a member of ‘[01m[Kcv::FlannBasedMatcher[m[K’
+   27 |         cv::FlannBasedMatcher::[01;31m[KParams[m[K params;
+      |                                [01;31m[K^~~~~~[m[K
+[01m[K/home/jorgelop/vo_ws/src/vodom_first/src/visual_odo_Uli.cpp:28:78:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kcv::Ptr<cv::FlannBasedMatcher>[m[K’ and ‘[01m[Kcv::FlannBasedMatcher[m[K’)
+   28 |         flann = cv::FlannBasedMatcher(new cv::flann::LshIndexParams(6, 12, 1)[01;31m[K)[m[K;
+      |                                                                              [01;31m[K^[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core/cvstd.hpp:81[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/base.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core.hpp:53[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/opencv.hpp:52[m[K,
+                 from [01m[K/home/jorgelop/vo_ws/src/vodom_first/src/visual_odo_Uli.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp:122:38:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Y> cv::Ptr<T>& cv::Ptr<T>::operator=(const cv::Ptr<Y>&) [with Y = Y; T = cv::FlannBasedMatcher][m[K’
+  122 |     template<typename Y> inline Ptr& [01;36m[Koperator[m[K=(const Ptr<Y>& o) { std::shared_ptr<T>::operator =(o); return *this; }
+      |                                      [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp:122:38:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jorgelop/vo_ws/src/vodom_first/src/visual_odo_Uli.cpp:28:78:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::FlannBasedMatcher[m[K’ is not derived from ‘[01m[Kconst cv::Ptr<_Tp>[m[K’
+   28 |         flann = cv::FlannBasedMatcher(new cv::flann::LshIndexParams(6, 12, 1)[01;36m[K)[m[K;
+      |                                                                              [01;36m[K^[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core/cvstd.hpp:81[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/base.hpp:58[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core.hpp:53[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/opencv.hpp:52[m[K,
+                 from [01m[K/home/jorgelop/vo_ws/src/vodom_first/src/visual_odo_Uli.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp:121:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Ptr<T>& cv::Ptr<T>::operator=(const cv::Ptr<T>&) [with T = cv::FlannBasedMatcher][m[K’
+  121 |     Ptr& [01;36m[Koperator[m[K=(const Ptr& o) { std::shared_ptr<T>::operator =(o); return *this; }
+      |          [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp:121:31:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kcv::FlannBasedMatcher[m[K’ to ‘[01m[Kconst cv::Ptr<cv::FlannBasedMatcher>&[m[K’
+  121 |     Ptr& operator=([01;36m[Kconst Ptr& o[m[K) { std::shared_ptr<T>::operator =(o); return *this; }
+      |                    [01;36m[K~~~~~~~~~~~^[m[K
+[01m[K/home/jorgelop/vo_ws/src/vodom_first/src/visual_odo_Uli.cpp:[m[K In member function ‘[01m[Kcv::Mat VisualOdometryUli::getPose(const std::vector<cv::Point_<float> >&, const std::vector<cv::Point_<float> >&)[m[K’:
+[01m[K/home/jorgelop/vo_ws/src/vodom_first/src/visual_odo_Uli.cpp:144:30:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  144 |         for (size_t i = 0; [01;35m[Ki < mask.rows[m[K; ++i) {
+      |                            [01;35m[K~~^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/visual_odo_Uli.dir/build.make:76: CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:225: CMakeFiles/visual_odo_Uli.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
