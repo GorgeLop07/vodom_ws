@@ -58,7 +58,7 @@ private:
         // Feature detection and matching
         std::vector<cv::KeyPoint> kp1, kp2;
         cv::Mat desc1, desc2;
-        auto orb = cv::ORB::create();
+        auto orb = cv::ORB::create(5000);
         orb->detectAndCompute(prev_img_, cv::noArray(), kp1, desc1);
         orb->detectAndCompute(img, cv::noArray(), kp2, desc2);
         std::vector<cv::DMatch> matches;

@@ -24,7 +24,7 @@ public:
         loadPoses(data_dir + "/poses.txt");
         loadImages(data_dir + "/image_l"); //Cambiar a l en caso de primer dataset
         orb = cv::ORB::create(8000);//Intente subir el numero de features de 5000 a 8000 a ver que pasa XD 
-    flann = cv::Ptr<cv::FlannBasedMatcher>(new cv::FlannBasedMatcher(new cv::flann::LshIndexParams(6, 12, 1)));
+        flann = cv::Ptr<cv::FlannBasedMatcher>(new cv::FlannBasedMatcher(new cv::flann::LshIndexParams(6, 12, 1)));
         path_pub_ = this->create_publisher<nav_msgs::msg::Path>("vo_path_uliXD", 10);
         process_and_publish();
     }

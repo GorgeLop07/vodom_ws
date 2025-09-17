@@ -1,1 +1,1 @@
-/home/jorgelop/vo_ws/build/vodom_first/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/vodom_first
+rclcpp;std_msgs;nav_msgs;geometry_msgs;opencv4;ament_lint_auto;ament_lint_common

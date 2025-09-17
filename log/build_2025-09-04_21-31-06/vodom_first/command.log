@@ -1,6 +1,0 @@
-Invoking command in '/home/jorgelop/vo_ws/build/vodom_first': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/jorgelop/vo_ws/src/vodom_first -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jorgelop/vo_ws/install/vodom_first
-Invoked command in '/home/jorgelop/vo_ws/build/vodom_first' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/jorgelop/vo_ws/src/vodom_first -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jorgelop/vo_ws/install/vodom_first
-Invoking command in '/home/jorgelop/vo_ws/build/vodom_first': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jorgelop/vo_ws/build/vodom_first -- -j16 -l16
-Invoked command in '/home/jorgelop/vo_ws/build/vodom_first' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jorgelop/vo_ws/build/vodom_first -- -j16 -l16
-Invoking command in '/home/jorgelop/vo_ws/build/vodom_first': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jorgelop/vo_ws/build/vodom_first
-Invoked command in '/home/jorgelop/vo_ws/build/vodom_first' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jorgelop/vo_ws/build/vodom_first

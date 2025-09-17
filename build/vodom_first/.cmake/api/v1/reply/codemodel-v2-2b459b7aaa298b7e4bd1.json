@@ -1,0 +1,124 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-ba773b356847840b0645.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "vodom_first",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ground_truth_path_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ground_truth_path_node-f49b0f5168c9747c450a.json",
+					"name" : "ground_truth_path_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "listener_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-listener_node-0612298c54536836031e.json",
+					"name" : "listener_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "minimal_path_publisher::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-minimal_path_publisher-e1ff564132e0da5b5596.json",
+					"name" : "minimal_path_publisher",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-986311db2d9d89395025.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "visual_odo_Uli::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-visual_odo_Uli-c020ea0cbe0a17b9a1ed.json",
+					"name" : "visual_odo_Uli",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "visual_odometry_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-visual_odometry_node-528d0caa1e82b8bc3463.json",
+					"name" : "visual_odometry_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vodom_first_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vodom_first_node-1555596d1a54f4bdf3fe.json",
+					"name" : "vodom_first_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vodom_first_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vodom_first_uninstall-e4cae53dbb44f539b92f.json",
+					"name" : "vodom_first_uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first",
+		"source" : "/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
