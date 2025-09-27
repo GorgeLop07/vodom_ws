@@ -22,7 +22,7 @@ public:
     : Node("visual_odo_Uli") {
         loadCalib(data_dir + "/calib.txt");
         loadPoses(data_dir + "/poses.txt");
-        loadImages(data_dir + "/image_l"); //Cambiar a l en caso de primer dataset
+        loadImages(data_dir + "/image_0"); //Cambiar a l en caso de primer dataset
         orb = cv::ORB::create(8000);//Intente subir el numero de features de 5000 a 8000 a ver que pasa XD 
         flann = cv::Ptr<cv::FlannBasedMatcher>(new cv::FlannBasedMatcher(new cv::flann::LshIndexParams(6, 12, 1)));
         path_pub_ = this->create_publisher<nav_msgs::msg::Path>("vo_path_uliXD", 10);
@@ -162,7 +162,7 @@ private:
         cv::recoverPose(E, q1f, q2f, K, R, t);
         cv::Mat T = cv::Mat::eye(4, 4, CV_64F);
         R.copyTo(T(cv::Rect(0, 0, 3, 3)));
-        t = t * 1.0; // No scale estimation
+        t = t * 1.0; // No scale estimatiosn
         for (int i = 0; i < 3; ++i) T.at<double>(i, 3) = t.at<double>(i);
         return T;
     }
@@ -174,7 +174,7 @@ private:
 
 int main(int argc, char** argv) {
     rclcpp::init(argc, argv);
-    std::string data_dir = "src/vodom_first/KITTI_sequence_2";
+    std::string data_dir = "src/vodom_first/Kitti_Sequence_Larga";
     auto node = std::make_shared<VisualOdometryUli>(data_dir);
     rclcpp::spin(node);
     rclcpp::shutdown();

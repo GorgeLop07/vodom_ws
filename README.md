@@ -61,3 +61,11 @@ ros2 run vodom_first visual_odo_Uli
 > ```bash
 > ros2 run vodom_first ground_truth_path_node --ros-args -p poses_file:=src/vodom_first/KITTI_sequence_2/poses.txt
 > ```
+
+
+
+## TODO
+1 - Experimentar con Depth Estimation Visual Odometry
+2 - Experimentar con un filtro de kalman extendido o con algun tipo de optimizacion de grafos
+3 - Sacar RosBags para hacer pruebas con eso 
+4 - xd ayuda
