@@ -229,34 +229,10 @@
 			"destination" : "lib/vodom_first",
 			"paths" : 
 			[
-				"vodom_first_node"
-			],
-			"targetId" : "vodom_first_node::@6890427a1f51a3e7e1df",
-			"targetIndex" : 6,
-			"type" : "target"
-		},
-		{
-			"backtrace" : 1,
-			"component" : "Unspecified",
-			"destination" : "lib/vodom_first",
-			"paths" : 
-			[
-				"listener_node"
-			],
-			"targetId" : "listener_node::@6890427a1f51a3e7e1df",
-			"targetIndex" : 1,
-			"type" : "target"
-		},
-		{
-			"backtrace" : 1,
-			"component" : "Unspecified",
-			"destination" : "lib/vodom_first",
-			"paths" : 
-			[
 				"visual_odometry_node"
 			],
 			"targetId" : "visual_odometry_node::@6890427a1f51a3e7e1df",
-			"targetIndex" : 5,
+			"targetIndex" : 3,
 			"type" : "target"
 		},
 		{
@@ -268,7 +244,7 @@
 				"visual_odo_Uli"
 			],
 			"targetId" : "visual_odo_Uli::@6890427a1f51a3e7e1df",
-			"targetIndex" : 4,
+			"targetIndex" : 2,
 			"type" : "target"
 		},
 		{
@@ -281,18 +257,6 @@
 			],
 			"targetId" : "ground_truth_path_node::@6890427a1f51a3e7e1df",
 			"targetIndex" : 0,
-			"type" : "target"
-		},
-		{
-			"backtrace" : 1,
-			"component" : "Unspecified",
-			"destination" : "lib/vodom_first",
-			"paths" : 
-			[
-				"minimal_path_publisher"
-			],
-			"targetId" : "minimal_path_publisher::@6890427a1f51a3e7e1df",
-			"targetIndex" : 2,
 			"type" : "target"
 		},
 		{
