@@ -1,0 +1,4 @@
+[01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/ground_truth_path_node.cpp:[m[K In member function ‘[01m[Kvoid GroundTruthPathNode::rotate_and_project_to_2d(std::vector<std::vector<double, std::allocator<double> > >&)[m[K’:
+[01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/ground_truth_path_node.cpp:46:20:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kz[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   46 |             double [01;35m[Kz[m[K = pose_values[11];
+      |                    [01;35m[K^[m[K

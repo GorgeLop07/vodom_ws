@@ -1,0 +1,4 @@
+[ 75%] [32mBuilding CXX object CMakeFiles/ground_truth_2d_node.dir/src/ground_truth_2d_node.cpp.o[0m
+[ 75%] Built target visual_odometry_node
+[ 75%] Built target ground_truth_path_node
+[ 87%] Built target visual_odo_Uli

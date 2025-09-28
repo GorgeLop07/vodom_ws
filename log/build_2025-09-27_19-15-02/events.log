@@ -1,0 +1,165 @@
+[0.000000] (-) TimerEvent: {}
+[0.000325] (vodom_first) JobQueued: {'identifier': 'vodom_first', 'dependencies': OrderedDict()}
+[0.000371] (vodom_first) JobStarted: {'identifier': 'vodom_first'}
+[0.007136] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'cmake'}
+[0.007656] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'build'}
+[0.008303] (vodom_first) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first', '--', '-j16', '-l16'], 'cwd': '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('PYTHON_BASIC_REPL', '1'), ('USER', 'jorgelop'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/jorgelop/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'x11'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GIT_ASKPASS', '/snap/code/208/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jorgelop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('CHROME_DESKTOP', 'code.desktop'), ('OLDPWD', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws'), ('LESS', '-R'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/208/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('TERM_PROGRAM_VERSION', '1.104.2'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/jorgelop/snap/code/common/.cache/immodules/immodules.cache'), ('GIO_LAUNCHED_DESKTOP_FILE', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('ZSH', '/home/jorgelop/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/208/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1249'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/208/usr/share/code/code'), ('SYSTEMD_EXEC_PID', '1624'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/jorgelop/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy'), ('P9K_TTY', 'old'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '5923'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jorgelop'), ('JOURNAL_STREAM', '8:612'), ('_P9K_SSH_TTY', '/dev/pts/2'), ('_', '/usr/bin/colcon'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USER_ZDOTDIR', '/home/jorgelop'), ('ROS_VERSION', '2'), ('USERNAME', 'jorgelop'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('_CE_CONDA', ''), ('WINDOWPATH', '2'), ('PATH', '/home/jorgelop/anaconda3/condabin:/opt/ros/humble/bin:/home/jorgelop/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jorgelop/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts:/home/jorgelop/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/opt/xtensa-esp-elf/bin/'), ('SESSION_MANAGER', 'local/jorgelop07:@/tmp/.ICE-unix/1597,unix/jorgelop07:/tmp/.ICE-unix/1597'), ('GTK_EXE_PREFIX', '/snap/code/208/usr'), ('INVOCATION_ID', '11bc41912c5e49a7bc5b5ceb35ce303d'), ('XDG_MENU_PREFIX', 'gnome-'), ('BAMF_DESKTOP_FILE_HINT', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LOCPATH', '/snap/code/208/usr/lib/locale'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/jorgelop/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-71f95ca660b574b1.txt'), ('PYTHONSTARTUP', '/home/jorgelop/.config/Code/User/workspaceStorage/186f5417d27ebb97aa4ac79b1b606bb5/ms-python.python/pythonrc.py'), ('VSCODE_INJECTION', '1'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/jorgelop/snap/code/208/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('TERM_PROGRAM', 'vscode'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-4808f4aed6.sock'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/jorgelop/snap/code/208/.local/share/glib-2.0/schemas'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('AMENT_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/jorgelop/anaconda3/bin/python'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('P9K_SSH', '0'), ('QT_IM_MODULE', 'ibus'), ('GIT_PAGER', 'cat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('VSCODE_NONCE', '941f07bb-0d84-46f0-b2da-edecb9d25cbd'), ('PWD', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/jorgelop/snap/code/208/.local/share:/home/jorgelop/snap/code/208:/snap/code/208/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('ZDOTDIR', '/home/jorgelop'), ('_P9K_TTY', '/dev/pts/2'), ('CONDA_EXE', '/home/jorgelop/anaconda3/bin/conda'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first:/opt/ros/humble')]), 'shell': False}
+[0.050413] (vodom_first) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target ground_truth_path_node\x1b[0m\n'}
+[0.050638] (vodom_first) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target visual_odo_Uli\x1b[0m\n'}
+[0.064051] (vodom_first) StdoutLine: {'line': b'[ 33%] Built target visual_odometry_node\n'}
+[0.066926] (vodom_first) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.o\x1b[0m\n'}
+[0.072452] (vodom_first) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.o\x1b[0m\n'}
+[0.074296] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/ground_truth_path_node.cpp:1:72:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kmissing terminating > character\n'}
+[0.074410] (vodom_first) StderrLine: {'line': b'    1 | #include <rclcpp/r      roll_degrees_(0.0),   // Rotation around X axis\n'}
+[0.074470] (vodom_first) StderrLine: {'line': b'      |                                                                        \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[0.074686] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/ground_truth_path_node.cpp:1:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Krclcpp/r roll_degrees_(0.0),: No such file or directory\n'}
+[0.074752] (vodom_first) StderrLine: {'line': b'    1 | #include \x1b[01;31m\x1b[K<\x1b[m\x1b[Krclcpp/r      roll_degrees_(0.0),   // Rotation around X axis\n'}
+[0.074808] (vodom_first) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[0.074884] (vodom_first) StderrLine: {'line': b'compilation terminated.\n'}
+[0.075521] (vodom_first) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/ground_truth_path_node.dir/build.make:76: CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.o] Error 1\n'}
+[0.075767] (vodom_first) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/ground_truth_path_node.dir/all] Error 2\n'}
+[0.075815] (vodom_first) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[0.099539] (-) TimerEvent: {}
+[0.199776] (-) TimerEvent: {}
+[0.300120] (-) TimerEvent: {}
+[0.400425] (-) TimerEvent: {}
+[0.500704] (-) TimerEvent: {}
+[0.600970] (-) TimerEvent: {}
+[0.701233] (-) TimerEvent: {}
+[0.801500] (-) TimerEvent: {}
+[0.901756] (-) TimerEvent: {}
+[1.002016] (-) TimerEvent: {}
+[1.102304] (-) TimerEvent: {}
+[1.202583] (-) TimerEvent: {}
+[1.302847] (-) TimerEvent: {}
+[1.403122] (-) TimerEvent: {}
+[1.503382] (-) TimerEvent: {}
+[1.603666] (-) TimerEvent: {}
+[1.703936] (-) TimerEvent: {}
+[1.804201] (-) TimerEvent: {}
+[1.904465] (-) TimerEvent: {}
+[2.004745] (-) TimerEvent: {}
+[2.105075] (-) TimerEvent: {}
+[2.205363] (-) TimerEvent: {}
+[2.305667] (-) TimerEvent: {}
+[2.405941] (-) TimerEvent: {}
+[2.506240] (-) TimerEvent: {}
+[2.606503] (-) TimerEvent: {}
+[2.706771] (-) TimerEvent: {}
+[2.807052] (-) TimerEvent: {}
+[2.907363] (-) TimerEvent: {}
+[3.007679] (-) TimerEvent: {}
+[3.108014] (-) TimerEvent: {}
+[3.208335] (-) TimerEvent: {}
+[3.308623] (-) TimerEvent: {}
+[3.408879] (-) TimerEvent: {}
+[3.509163] (-) TimerEvent: {}
+[3.609423] (-) TimerEvent: {}
+[3.709672] (-) TimerEvent: {}
+[3.809931] (-) TimerEvent: {}
+[3.910209] (-) TimerEvent: {}
+[4.010489] (-) TimerEvent: {}
+[4.110767] (-) TimerEvent: {}
+[4.211045] (-) TimerEvent: {}
+[4.311305] (-) TimerEvent: {}
+[4.411577] (-) TimerEvent: {}
+[4.511836] (-) TimerEvent: {}
+[4.612099] (-) TimerEvent: {}
+[4.712400] (-) TimerEvent: {}
+[4.812660] (-) TimerEvent: {}
+[4.912912] (-) TimerEvent: {}
+[5.013210] (-) TimerEvent: {}
+[5.113509] (-) TimerEvent: {}
+[5.213793] (-) TimerEvent: {}
+[5.314066] (-) TimerEvent: {}
+[5.414344] (-) TimerEvent: {}
+[5.514612] (-) TimerEvent: {}
+[5.614871] (-) TimerEvent: {}
+[5.715145] (-) TimerEvent: {}
+[5.815419] (-) TimerEvent: {}
+[5.915682] (-) TimerEvent: {}
+[6.015945] (-) TimerEvent: {}
+[6.116200] (-) TimerEvent: {}
+[6.216475] (-) TimerEvent: {}
+[6.316755] (-) TimerEvent: {}
+[6.417053] (-) TimerEvent: {}
+[6.517365] (-) TimerEvent: {}
+[6.617629] (-) TimerEvent: {}
+[6.717908] (-) TimerEvent: {}
+[6.818177] (-) TimerEvent: {}
+[6.918423] (-) TimerEvent: {}
+[7.018668] (-) TimerEvent: {}
+[7.118926] (-) TimerEvent: {}
+[7.219226] (-) TimerEvent: {}
+[7.319509] (-) TimerEvent: {}
+[7.419767] (-) TimerEvent: {}
+[7.520035] (-) TimerEvent: {}
+[7.620309] (-) TimerEvent: {}
+[7.720574] (-) TimerEvent: {}
+[7.820848] (-) TimerEvent: {}
+[7.921175] (-) TimerEvent: {}
+[8.021495] (-) TimerEvent: {}
+[8.121772] (-) TimerEvent: {}
+[8.222037] (-) TimerEvent: {}
+[8.322290] (-) TimerEvent: {}
+[8.422541] (-) TimerEvent: {}
+[8.522804] (-) TimerEvent: {}
+[8.623057] (-) TimerEvent: {}
+[8.723321] (-) TimerEvent: {}
+[8.823576] (-) TimerEvent: {}
+[8.923824] (-) TimerEvent: {}
+[9.024082] (-) TimerEvent: {}
+[9.124337] (-) TimerEvent: {}
+[9.224613] (-) TimerEvent: {}
+[9.324888] (-) TimerEvent: {}
+[9.425189] (-) TimerEvent: {}
+[9.525445] (-) TimerEvent: {}
+[9.625720] (-) TimerEvent: {}
+[9.725998] (-) TimerEvent: {}
+[9.826281] (-) TimerEvent: {}
+[9.926539] (-) TimerEvent: {}
+[10.026791] (-) TimerEvent: {}
+[10.127053] (-) TimerEvent: {}
+[10.227300] (-) TimerEvent: {}
+[10.327552] (-) TimerEvent: {}
+[10.427804] (-) TimerEvent: {}
+[10.528063] (-) TimerEvent: {}
+[10.628331] (-) TimerEvent: {}
+[10.728599] (-) TimerEvent: {}
+[10.828849] (-) TimerEvent: {}
+[10.929100] (-) TimerEvent: {}
+[11.029356] (-) TimerEvent: {}
+[11.129611] (-) TimerEvent: {}
+[11.229855] (-) TimerEvent: {}
+[11.330081] (-) TimerEvent: {}
+[11.430361] (-) TimerEvent: {}
+[11.530633] (-) TimerEvent: {}
+[11.630894] (-) TimerEvent: {}
+[11.731167] (-) TimerEvent: {}
+[11.831433] (-) TimerEvent: {}
+[11.931698] (-) TimerEvent: {}
+[12.031965] (-) TimerEvent: {}
+[12.132263] (-) TimerEvent: {}
+[12.232541] (-) TimerEvent: {}
+[12.332788] (-) TimerEvent: {}
+[12.433060] (-) TimerEvent: {}
+[12.533337] (-) TimerEvent: {}
+[12.633646] (-) TimerEvent: {}
+[12.733940] (-) TimerEvent: {}
+[12.834238] (-) TimerEvent: {}
+[12.934531] (-) TimerEvent: {}
+[13.034788] (-) TimerEvent: {}
+[13.135097] (-) TimerEvent: {}
+[13.157985] (vodom_first) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable visual_odo_Uli\x1b[0m\n'}
+[13.235198] (-) TimerEvent: {}
+[13.335473] (-) TimerEvent: {}
+[13.435743] (-) TimerEvent: {}
+[13.536021] (-) TimerEvent: {}
+[13.636303] (-) TimerEvent: {}
+[13.736588] (-) TimerEvent: {}
+[13.836852] (-) TimerEvent: {}
+[13.907285] (vodom_first) StdoutLine: {'line': b'[ 83%] Built target visual_odo_Uli\n'}
+[13.908398] (vodom_first) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[13.910332] (vodom_first) CommandEnded: {'returncode': 2}
+[13.918596] (vodom_first) JobEnded: {'identifier': 'vodom_first', 'rc': 2}
+[13.929182] (-) EventReactorShutdown: {}

@@ -198,32 +198,6 @@ vodom_first_uninstall/fast:
 .PHONY : vodom_first_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named vodom_first_node
-
-# Build rule for target.
-vodom_first_node: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vodom_first_node
-.PHONY : vodom_first_node
-
-# fast build rule for target.
-vodom_first_node/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodom_first_node.dir/build.make CMakeFiles/vodom_first_node.dir/build
-.PHONY : vodom_first_node/fast
-
-#=============================================================================
-# Target rules for targets named listener_node
-
-# Build rule for target.
-listener_node: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 listener_node
-.PHONY : listener_node
-
-# fast build rule for target.
-listener_node/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_node.dir/build.make CMakeFiles/listener_node.dir/build
-.PHONY : listener_node/fast
-
-#=============================================================================
 # Target rules for targets named visual_odometry_node
 
 # Build rule for target.
@@ -262,19 +236,6 @@ ground_truth_path_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/build
 .PHONY : ground_truth_path_node/fast
 
-#=============================================================================
-# Target rules for targets named minimal_path_publisher
-
-# Build rule for target.
-minimal_path_publisher: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 minimal_path_publisher
-.PHONY : minimal_path_publisher
-
-# fast build rule for target.
-minimal_path_publisher/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minimal_path_publisher.dir/build.make CMakeFiles/minimal_path_publisher.dir/build
-.PHONY : minimal_path_publisher/fast
-
 src/ground_truth_path_node.o: src/ground_truth_path_node.cpp.o
 .PHONY : src/ground_truth_path_node.o
 
@@ -298,54 +259,6 @@ src/ground_truth_path_node.s: src/ground_truth_path_node.cpp.s
 src/ground_truth_path_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.s
 .PHONY : src/ground_truth_path_node.cpp.s
-
-src/listener_node.o: src/listener_node.cpp.o
-.PHONY : src/listener_node.o
-
-# target to build an object file
-src/listener_node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_node.dir/build.make CMakeFiles/listener_node.dir/src/listener_node.cpp.o
-.PHONY : src/listener_node.cpp.o
-
-src/listener_node.i: src/listener_node.cpp.i
-.PHONY : src/listener_node.i
-
-# target to preprocess a source file
-src/listener_node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_node.dir/build.make CMakeFiles/listener_node.dir/src/listener_node.cpp.i
-.PHONY : src/listener_node.cpp.i
-
-src/listener_node.s: src/listener_node.cpp.s
-.PHONY : src/listener_node.s
-
-# target to generate assembly for a file
-src/listener_node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_node.dir/build.make CMakeFiles/listener_node.dir/src/listener_node.cpp.s
-.PHONY : src/listener_node.cpp.s
-
-src/minimal_path_publisher.o: src/minimal_path_publisher.cpp.o
-.PHONY : src/minimal_path_publisher.o
-
-# target to build an object file
-src/minimal_path_publisher.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minimal_path_publisher.dir/build.make CMakeFiles/minimal_path_publisher.dir/src/minimal_path_publisher.cpp.o
-.PHONY : src/minimal_path_publisher.cpp.o
-
-src/minimal_path_publisher.i: src/minimal_path_publisher.cpp.i
-.PHONY : src/minimal_path_publisher.i
-
-# target to preprocess a source file
-src/minimal_path_publisher.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minimal_path_publisher.dir/build.make CMakeFiles/minimal_path_publisher.dir/src/minimal_path_publisher.cpp.i
-.PHONY : src/minimal_path_publisher.cpp.i
-
-src/minimal_path_publisher.s: src/minimal_path_publisher.cpp.s
-.PHONY : src/minimal_path_publisher.s
-
-# target to generate assembly for a file
-src/minimal_path_publisher.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minimal_path_publisher.dir/build.make CMakeFiles/minimal_path_publisher.dir/src/minimal_path_publisher.cpp.s
-.PHONY : src/minimal_path_publisher.cpp.s
 
 src/visual_odo_Uli.o: src/visual_odo_Uli.cpp.o
 .PHONY : src/visual_odo_Uli.o
@@ -395,30 +308,6 @@ src/visual_odometry_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odometry_node.dir/build.make CMakeFiles/visual_odometry_node.dir/src/visual_odometry_node.cpp.s
 .PHONY : src/visual_odometry_node.cpp.s
 
-src/vodom_first_node.o: src/vodom_first_node.cpp.o
-.PHONY : src/vodom_first_node.o
-
-# target to build an object file
-src/vodom_first_node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodom_first_node.dir/build.make CMakeFiles/vodom_first_node.dir/src/vodom_first_node.cpp.o
-.PHONY : src/vodom_first_node.cpp.o
-
-src/vodom_first_node.i: src/vodom_first_node.cpp.i
-.PHONY : src/vodom_first_node.i
-
-# target to preprocess a source file
-src/vodom_first_node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodom_first_node.dir/build.make CMakeFiles/vodom_first_node.dir/src/vodom_first_node.cpp.i
-.PHONY : src/vodom_first_node.cpp.i
-
-src/vodom_first_node.s: src/vodom_first_node.cpp.s
-.PHONY : src/vodom_first_node.s
-
-# target to generate assembly for a file
-src/vodom_first_node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodom_first_node.dir/build.make CMakeFiles/vodom_first_node.dir/src/vodom_first_node.cpp.s
-.PHONY : src/vodom_first_node.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -435,29 +324,17 @@ help:
 	@echo "... uninstall"
 	@echo "... vodom_first_uninstall"
 	@echo "... ground_truth_path_node"
-	@echo "... listener_node"
-	@echo "... minimal_path_publisher"
 	@echo "... visual_odo_Uli"
 	@echo "... visual_odometry_node"
-	@echo "... vodom_first_node"
 	@echo "... src/ground_truth_path_node.o"
 	@echo "... src/ground_truth_path_node.i"
 	@echo "... src/ground_truth_path_node.s"
-	@echo "... src/listener_node.o"
-	@echo "... src/listener_node.i"
-	@echo "... src/listener_node.s"
-	@echo "... src/minimal_path_publisher.o"
-	@echo "... src/minimal_path_publisher.i"
-	@echo "... src/minimal_path_publisher.s"
 	@echo "... src/visual_odo_Uli.o"
 	@echo "... src/visual_odo_Uli.i"
 	@echo "... src/visual_odo_Uli.s"
 	@echo "... src/visual_odometry_node.o"
 	@echo "... src/visual_odometry_node.i"
 	@echo "... src/visual_odometry_node.s"
-	@echo "... src/vodom_first_node.o"
-	@echo "... src/vodom_first_node.i"
-	@echo "... src/vodom_first_node.s"
 .PHONY : help
 
 
