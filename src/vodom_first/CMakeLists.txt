@@ -16,43 +16,26 @@ find_package(geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
-find_package(Eigen3 REQUIRED)
 
 
 
-# add_executable(vodom_first_node src/vodom_first_node.cpp)
-# add_executable(listener_node src/listener_node.cpp)
-add_executable(visual_odometry_node src/visual_odometry_node.cpp)
-add_executable(visual_odo_Uli src/visual_odo_Uli.cpp)
+# Executables we actually use
+add_executable(visual_odo_simple src/visual_odo_simple.cpp)
 add_executable(ground_truth_path_node src/ground_truth_path_node.cpp)
-# add_executable(minimal_path_publisher src/minimal_path_publisher.cpp)
 
-# ament_target_dependencies(vodom_first_node rclcpp std_msgs)
-# ament_target_dependencies(listener_node rclcpp std_msgs)
-ament_target_dependencies(visual_odometry_node rclcpp std_msgs nav_msgs geometry_msgs)
-ament_target_dependencies(visual_odo_Uli rclcpp std_msgs nav_msgs geometry_msgs tf2 tf2_geometry_msgs Eigen3)
+# Dependencies for our nodes
+ament_target_dependencies(visual_odo_simple rclcpp std_msgs nav_msgs geometry_msgs tf2 tf2_geometry_msgs)
 ament_target_dependencies(ground_truth_path_node rclcpp std_msgs nav_msgs geometry_msgs)
-# ament_target_dependencies(minimal_path_publisher rclcpp std_msgs nav_msgs geometry_msgs)
 
-target_link_libraries(visual_odometry_node ${OpenCV_LIBS})
-target_link_libraries(visual_odo_Uli ${OpenCV_LIBS})
+target_link_libraries(visual_odo_simple ${OpenCV_LIBS})
 
 install(TARGETS 
-  # vodom_first_node
-  # listener_node
-  visual_odometry_node
-  visual_odo_Uli
+  visual_odo_simple
   ground_truth_path_node
-  # minimal_path_publisher
   DESTINATION lib/${PROJECT_NAME}
 )
 
-# Install Python scripts
-install(PROGRAMS
-  scripts/plot_2d_trajectory.py
-  scripts/tkinter_visualizer_2d.py
-  DESTINATION lib/${PROJECT_NAME}
-)
+
 
 # Install launch files
 install(DIRECTORY

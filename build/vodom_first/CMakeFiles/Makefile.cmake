@@ -883,7 +883,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
   "CMakeFiles/vodom_first_uninstall.dir/DependInfo.cmake"
-  "CMakeFiles/visual_odometry_node.dir/DependInfo.cmake"
-  "CMakeFiles/visual_odo_Uli.dir/DependInfo.cmake"
+  "CMakeFiles/visual_odo_simple.dir/DependInfo.cmake"
   "CMakeFiles/ground_truth_path_node.dir/DependInfo.cmake"
   )

@@ -3,6 +3,7 @@
 #include <geometry_msgs/msg/pose_stamped.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 #include <geometry_msgs/msg/pose2_d.hpp>
+#include <geometry_msgs/msg/pose_with_covariance_stamped.hpp>
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <opencv2/opencv.hpp>
@@ -33,21 +34,17 @@ public:
         orb = cv::ORB::create(8000);//Intente subir el numero de features de 5000 a 8000 a ver que pasa XD 
         flann = cv::Ptr<cv::FlannBasedMatcher>(new cv::FlannBasedMatcher(new cv::flann::LshIndexParams(6, 12, 1)));
         
-        // Publishers for VO pure (red in RViz)
-        vo_path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/vo_path_2d", 10);
-        vo_odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/vo_odom_2d", 10);
+        // Publishers for Visual Odometry
+        vo_odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/odometry/visual", 10);
+        vo_path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/vo_path", 10);
         
-        // Publishers for EKF fused (blue in RViz)
-        ekf_path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/ekf_path_2d", 10);
-        ekf_odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/ekf_odom_2d", 10);
+        // Publisher for GPS simulation (for robot_localization)
+        gps_pub_ = this->create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("/gps/pose", 10);
         
         // Legacy publishers (keep for compatibility)
         path_pub_ = this->create_publisher<nav_msgs::msg::Path>("vo_path_uliXD", 10);
         odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("vo_odom_2d", 10);
         pose2d_pub_ = this->create_publisher<geometry_msgs::msg::Pose2D>("vo_pose_2d", 10);
-        
-        // EKF Fusion: Subscribe to ground truth (simulating GPS)
-        gt_sub_ = this->create_subscription<geometry_msgs::msg::Pose2D>(
             "/gt_pose_2d", 10,
             std::bind(&VisualOdometryUli::ground_truth_callback, this, std::placeholders::_1)
         );
@@ -88,13 +85,12 @@ private:
     std::vector<cv::Mat> images;
     cv::Ptr<cv::ORB> orb;
     cv::Ptr<cv::FlannBasedMatcher> flann;
-    // VO Pure publishers (red in RViz)
+    // Visual Odometry publishers
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr vo_path_pub_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr vo_odom_pub_;
     
-    // EKF Fused publishers (blue in RViz)
-    rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr ekf_path_pub_;
-    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr ekf_odom_pub_;
+    // GPS simulation publisher (for robot_localization EKF)
+    rclcpp::Publisher<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr gps_pub_;
     
     // Legacy publishers (keep for compatibility)
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub_;
@@ -106,17 +102,14 @@ private:
     // 2D pose tracking - VO PURE (for red path)
     double current_x_, current_y_, current_yaw_;
     
-    // EKF pose tracking (for blue path)
-    double ekf_x_, ekf_y_, ekf_yaw_;
-    
     size_t current_frame_;
-    // Separate path messages for VO and EKF
-    nav_msgs::msg::Path vo_path_msg_;    // Red path (VO pure)
-    nav_msgs::msg::Path ekf_path_msg_;   // Blue path (EKF fused)
+    
+    // Path messages
+    nav_msgs::msg::Path vo_path_msg_;    // VO path 
     nav_msgs::msg::Path path_msg_;       // Legacy path
     
-    // EKF State: [x, y, yaw, vx, vy, vyaw]
-    Eigen::VectorXd state_;           // State vector (6x1)
+    // GPS simulation timer
+    rclcpp::TimerBase::SharedPtr gps_timer_;
     Eigen::MatrixXd covariance_;      // Covariance matrix (6x6)
     Eigen::MatrixXd process_noise_;   // Process noise Q (6x6)
     Eigen::MatrixXd vo_noise_;        // VO measurement noise (3x3)
@@ -202,27 +195,29 @@ private:
         q.setRPY(0, 0, current_yaw_);
         pose_stamped.pose.orientation = tf2::toMsg(q);
         
-        // Publish VO Pure Path (RED)
+        // Publish Visual Odometry Path 
         vo_path_msg_.poses.push_back(pose_stamped);
         vo_path_msg_.header.stamp = now;
         vo_path_pub_->publish(vo_path_msg_);
         
-        // Create EKF pose
-        geometry_msgs::msg::PoseStamped ekf_pose_stamped;
-        ekf_pose_stamped.header.frame_id = "map";
-        ekf_pose_stamped.header.stamp = now;
-        ekf_pose_stamped.pose.position.x = ekf_x_;  // Use EKF variables
-        ekf_pose_stamped.pose.position.y = ekf_y_;  // Use EKF variables
-        ekf_pose_stamped.pose.position.z = 0.0;
+        // Publish Visual Odometry with proper covariance
+        nav_msgs::msg::Odometry vo_odom_msg;
+        vo_odom_msg.header.frame_id = "map";
+        vo_odom_msg.header.stamp = now;
+        vo_odom_msg.child_frame_id = "base_link";
         
-        tf2::Quaternion ekf_q;
-        ekf_q.setRPY(0, 0, ekf_yaw_);  // Use EKF yaw
-        ekf_pose_stamped.pose.orientation = tf2::toMsg(ekf_q);
+        // Pose
+        vo_odom_msg.pose.pose.position.x = current_x_;
+        vo_odom_msg.pose.pose.position.y = current_y_;
+        vo_odom_msg.pose.pose.position.z = 0.0;
+        vo_odom_msg.pose.pose.orientation = tf2::toMsg(q);
         
-        // Publish EKF Path (BLUE)
-        ekf_path_msg_.poses.push_back(ekf_pose_stamped);
-        ekf_path_msg_.header.stamp = now;
-        ekf_path_pub_->publish(ekf_path_msg_);
+        // Covariance matrix (6x6) - higher uncertainty for VO
+        vo_odom_msg.pose.covariance[0] = 0.1;   // x
+        vo_odom_msg.pose.covariance[7] = 0.1;   // y  
+        vo_odom_msg.pose.covariance[35] = 0.1;  // yaw
+        
+        vo_odom_pub_->publish(vo_odom_msg);
         
         // Legacy: Add to path and publish
         path_msg_.poses.push_back(pose_stamped);
@@ -234,7 +229,7 @@ private:
         pose2d_msg.x = current_x_;
         pose2d_msg.y = current_y_;
         pose2d_msg.theta = current_yaw_;
-        pose2d_pub_->publish(pose2d_msg);
+        pose2d_pub_->publish(pose2d_msg_);
         
         // Publish odometry
         nav_msgs::msg::Odometry odom_msg;
