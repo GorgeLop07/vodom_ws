@@ -1,6 +1,0 @@
-[31mCMake Error at cmake_install.cmake:166 (file):
-  file INSTALL cannot find
-  "/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/scripts/plot_2d_trajectory.py":
-  No such file or directory.
-
-[0m

@@ -65,7 +65,8 @@ ros2 run vodom_first visual_odo_Uli
 
 
 ## TODO
-1 - Experimentar con Depth Estimation Visual Odometry
-2 - Experimentar con un filtro de kalman extendido o con algun tipo de optimizacion de grafos
-3 - Sacar RosBags para hacer pruebas con eso 
-4 - xd ayuda
+1 - Experimentar con Depth Estimation Visual Odometry (Fer)
+2 - Hacer archivo Calib.txt bien con el archivo de fer (Yo) 
+3 - Experimentar con un filtro de kalman extendido o con algun tipo de optimizacion de grafos 
+4 - Nodo que cambie la imagen de camera/raw a una imagen que el nodo que tengo de VODOM pueda leer (Gael)
+5 - Filtrar el ROSBAG

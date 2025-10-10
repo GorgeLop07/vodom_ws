@@ -1,7 +1,0 @@
-[01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:[m[K In member function ‘[01m[Kvoid VisualOdometrySimple::process_frame()[m[K’:
-[01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:200:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass __gnu_cxx::__normal_iterator<cv::DMatch*, std::vector<cv::DMatch> >[m[K’ has no member named ‘[01m[Kdistance[m[K’
-  200 |                 }).[01;31m[Kdistance[m[K;
-      |                    [01;31m[K^~~~~~~~[m[K
-gmake[2]: *** [CMakeFiles/visual_odo_simple.dir/build.make:76: CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/visual_odo_simple.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2
