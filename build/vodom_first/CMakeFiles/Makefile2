@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_So
 
 # The main recursive "all" target.
 all: CMakeFiles/visual_odo_simple.dir/all
+all: CMakeFiles/visual_odo_Uli.dir/all
 all: CMakeFiles/ground_truth_path_node.dir/all
 .PHONY : all
 
@@ -75,6 +76,7 @@ preinstall:
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/vodom_first_uninstall.dir/clean
 clean: CMakeFiles/visual_odo_simple.dir/clean
+clean: CMakeFiles/visual_odo_Uli.dir/clean
 clean: CMakeFiles/ground_truth_path_node.dir/clean
 .PHONY : clean
 
@@ -137,7 +139,7 @@ CMakeFiles/vodom_first_uninstall.dir/clean:
 CMakeFiles/visual_odo_simple.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_simple.dir/build.make CMakeFiles/visual_odo_simple.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_simple.dir/build.make CMakeFiles/visual_odo_simple.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles --progress-num=3,4 "Built target visual_odo_simple"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles --progress-num=5,6 "Built target visual_odo_simple"
 .PHONY : CMakeFiles/visual_odo_simple.dir/all
 
 # Build rule for subdir invocation for target.
@@ -155,6 +157,32 @@ visual_odo_simple: CMakeFiles/visual_odo_simple.dir/rule
 CMakeFiles/visual_odo_simple.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_simple.dir/build.make CMakeFiles/visual_odo_simple.dir/clean
 .PHONY : CMakeFiles/visual_odo_simple.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/visual_odo_Uli.dir
+
+# All Build rule for target.
+CMakeFiles/visual_odo_Uli.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_Uli.dir/build.make CMakeFiles/visual_odo_Uli.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_Uli.dir/build.make CMakeFiles/visual_odo_Uli.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles --progress-num=3,4 "Built target visual_odo_Uli"
+.PHONY : CMakeFiles/visual_odo_Uli.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/visual_odo_Uli.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/visual_odo_Uli.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles 0
+.PHONY : CMakeFiles/visual_odo_Uli.dir/rule
+
+# Convenience name for target.
+visual_odo_Uli: CMakeFiles/visual_odo_Uli.dir/rule
+.PHONY : visual_odo_Uli
+
+# clean rule for target.
+CMakeFiles/visual_odo_Uli.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_Uli.dir/build.make CMakeFiles/visual_odo_Uli.dir/clean
+.PHONY : CMakeFiles/visual_odo_Uli.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/ground_truth_path_node.dir

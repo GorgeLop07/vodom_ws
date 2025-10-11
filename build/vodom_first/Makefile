@@ -211,6 +211,19 @@ visual_odo_simple/fast:
 .PHONY : visual_odo_simple/fast
 
 #=============================================================================
+# Target rules for targets named visual_odo_Uli
+
+# Build rule for target.
+visual_odo_Uli: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 visual_odo_Uli
+.PHONY : visual_odo_Uli
+
+# fast build rule for target.
+visual_odo_Uli/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_Uli.dir/build.make CMakeFiles/visual_odo_Uli.dir/build
+.PHONY : visual_odo_Uli/fast
+
+#=============================================================================
 # Target rules for targets named ground_truth_path_node
 
 # Build rule for target.
@@ -246,6 +259,30 @@ src/ground_truth_path_node.s: src/ground_truth_path_node.cpp.s
 src/ground_truth_path_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.s
 .PHONY : src/ground_truth_path_node.cpp.s
+
+src/visual_odo_Uli.o: src/visual_odo_Uli.cpp.o
+.PHONY : src/visual_odo_Uli.o
+
+# target to build an object file
+src/visual_odo_Uli.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_Uli.dir/build.make CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.o
+.PHONY : src/visual_odo_Uli.cpp.o
+
+src/visual_odo_Uli.i: src/visual_odo_Uli.cpp.i
+.PHONY : src/visual_odo_Uli.i
+
+# target to preprocess a source file
+src/visual_odo_Uli.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_Uli.dir/build.make CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.i
+.PHONY : src/visual_odo_Uli.cpp.i
+
+src/visual_odo_Uli.s: src/visual_odo_Uli.cpp.s
+.PHONY : src/visual_odo_Uli.s
+
+# target to generate assembly for a file
+src/visual_odo_Uli.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_Uli.dir/build.make CMakeFiles/visual_odo_Uli.dir/src/visual_odo_Uli.cpp.s
+.PHONY : src/visual_odo_Uli.cpp.s
 
 src/visual_odo_simple.o: src/visual_odo_simple.cpp.o
 .PHONY : src/visual_odo_simple.o
@@ -287,10 +324,14 @@ help:
 	@echo "... uninstall"
 	@echo "... vodom_first_uninstall"
 	@echo "... ground_truth_path_node"
+	@echo "... visual_odo_Uli"
 	@echo "... visual_odo_simple"
 	@echo "... src/ground_truth_path_node.o"
 	@echo "... src/ground_truth_path_node.i"
 	@echo "... src/ground_truth_path_node.s"
+	@echo "... src/visual_odo_Uli.o"
+	@echo "... src/visual_odo_Uli.i"
+	@echo "... src/visual_odo_Uli.s"
 	@echo "... src/visual_odo_simple.o"
 	@echo "... src/visual_odo_simple.i"
 	@echo "... src/visual_odo_simple.s"

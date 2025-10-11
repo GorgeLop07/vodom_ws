@@ -9,10 +9,11 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-
 find_package(std_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(cv_bridge REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -21,16 +22,20 @@ find_package(OpenCV REQUIRED)
 
 # Executables we actually use
 add_executable(visual_odo_simple src/visual_odo_simple.cpp)
+add_executable(visual_odo_Uli src/visual_odo_Uli.cpp)
 add_executable(ground_truth_path_node src/ground_truth_path_node.cpp)
 
 # Dependencies for our nodes
 ament_target_dependencies(visual_odo_simple rclcpp std_msgs nav_msgs geometry_msgs tf2 tf2_geometry_msgs)
+ament_target_dependencies(visual_odo_Uli rclcpp std_msgs nav_msgs geometry_msgs sensor_msgs cv_bridge tf2 tf2_geometry_msgs)
 ament_target_dependencies(ground_truth_path_node rclcpp std_msgs nav_msgs geometry_msgs)
 
 target_link_libraries(visual_odo_simple ${OpenCV_LIBS})
+target_link_libraries(visual_odo_Uli ${OpenCV_LIBS})
 
 install(TARGETS 
   visual_odo_simple
+  visual_odo_Uli
   ground_truth_path_node
   DESTINATION lib/${PROJECT_NAME}
 )

@@ -1,551 +1,369 @@
 #include <rclcpp/rclcpp.hpp>
 #include <nav_msgs/msg/path.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
-#include <nav_msgs/msg/odometry.hpp>
-#include <geometry_msgs/msg/pose2_d.hpp>
-#include <geometry_msgs/msg/pose_with_covariance_stamped.hpp>
+#include <sensor_msgs/msg/image.hpp>
+#include <cv_bridge/cv_bridge.h>
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/features2d.hpp>
 #include <opencv2/calib3d.hpp>
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
-#include <algorithm>
-#include <filesystem>
 #include <cmath>
-#include <eigen3/Eigen/Dense>
-#include <chrono>
 
-namespace fs = std::filesystem;
-
-class VisualOdometryUli : public rclcpp::Node {
+class PureVisualOdometry : public rclcpp::Node {
 public:
-    VisualOdometryUli(const std::string& data_dir)
-    : Node("visual_odo_Uli") {
-        loadCalib(data_dir + "/calib.txt");
-        loadPoses(data_dir + "/poses.txt");
-        loadImages(data_dir + "/image_0"); //Cambiar a l en caso de primer dataset
-        orb = cv::ORB::create(8000);//Intente subir el numero de features de 5000 a 8000 a ver que pasa XD 
-        flann = cv::Ptr<cv::FlannBasedMatcher>(new cv::FlannBasedMatcher(new cv::flann::LshIndexParams(6, 12, 1)));
+    PureVisualOdometry() : Node("pure_visual_odometry") {
+        // Load camera calibration
+        if (!loadCameraCalibration()) {
+            RCLCPP_ERROR(this->get_logger(), "Failed to load camera calibration");
+            return;
+        }
         
-        // Publishers for Visual Odometry
-        vo_odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/odometry/visual", 10);
-        vo_path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/vo_path", 10);
+        // Initialize ORB feature detector and BFMatcher (more robust for ORB)
+        orb_ = cv::ORB::create(8000);
+        bf_matcher_ = cv::BFMatcher::create(cv::NORM_HAMMING, false); // crossCheck=false for knnMatch
         
-        // Publisher for GPS simulation (for robot_localization)
-        gps_pub_ = this->create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("/gps/pose", 10);
+        // Publisher for visual odometry path
+        path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/vo_path", 10);
         
-        // Legacy publishers (keep for compatibility)
-        path_pub_ = this->create_publisher<nav_msgs::msg::Path>("vo_path_uliXD", 10);
-        odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("vo_odom_2d", 10);
-        pose2d_pub_ = this->create_publisher<geometry_msgs::msg::Pose2D>("vo_pose_2d", 10);
-            "/gt_pose_2d", 10,
-            std::bind(&VisualOdometryUli::ground_truth_callback, this, std::placeholders::_1)
+        // Subscriber for camera images
+        image_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
+            "/camera/image_raw", 10,
+            std::bind(&PureVisualOdometry::imageCallback, this, std::placeholders::_1)
         );
         
-        // Initialize EKF
-        init_ekf();
+        // Initialize path message
+        path_msg_.header.frame_id = "map";
         
-        // Initialize VO pure pose (red path)
+        // Initialize pose variables
         current_x_ = 0.0;
         current_y_ = 0.0;
         current_yaw_ = 0.0;
         
-        // Initialize EKF pose (blue path)  
-        ekf_x_ = 0.0;
-        ekf_y_ = 0.0;
-        ekf_yaw_ = 0.0;
+        // Flags
+        first_frame_ = true;
+        scale_factor_ = 0.05; // Even smaller scale factor for smoother motion
         
-        current_frame_ = 0;
-        
-        // Create timer for processing frames
-        timer_ = this->create_wall_timer(
-            std::chrono::milliseconds(100), // 10 Hz
-            std::bind(&VisualOdometryUli::process_frame, this)
-        );
-        
-        // Initialize path message
-        // Initialize path messages
-        vo_path_msg_.header.frame_id = "map";
-        ekf_path_msg_.header.frame_id = "map"; 
-        path_msg_.header.frame_id = "map";  // Legacy
-        
-        RCLCPP_INFO(this->get_logger(), "Visual Odometry 2D node initialized with %zu images", images.size());
+        RCLCPP_INFO(this->get_logger(), "Pure Visual Odometry Node initialized (ORB + BFMatcher)");
+        RCLCPP_INFO(this->get_logger(), "Camera parameters - fx: %.3f, fy: %.3f, cx: %.3f, cy: %.3f", 
+                   camera_matrix_.at<double>(0,0), camera_matrix_.at<double>(1,1),
+                   camera_matrix_.at<double>(0,2), camera_matrix_.at<double>(1,2));
     }
 
 private:
-    cv::Mat K, P;
-    std::vector<cv::Mat> gt_poses;
-    std::vector<cv::Mat> images;
-    cv::Ptr<cv::ORB> orb;
-    cv::Ptr<cv::FlannBasedMatcher> flann;
-    // Visual Odometry publishers
-    rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr vo_path_pub_;
-    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr vo_odom_pub_;
-    
-    // GPS simulation publisher (for robot_localization EKF)
-    rclcpp::Publisher<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr gps_pub_;
-    
-    // Legacy publishers (keep for compatibility)
+    // ROS2 components
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub_;
-    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;
-    rclcpp::Publisher<geometry_msgs::msg::Pose2D>::SharedPtr pose2d_pub_;
-    rclcpp::Subscription<geometry_msgs::msg::Pose2D>::SharedPtr gt_sub_;
-    rclcpp::TimerBase::SharedPtr timer_;
+    rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr image_sub_;
     
-    // 2D pose tracking - VO PURE (for red path)
+    // OpenCV components
+    cv::Ptr<cv::ORB> orb_;
+    cv::Ptr<cv::BFMatcher> bf_matcher_;
+    cv::Mat camera_matrix_;
+    cv::Mat distortion_coeffs_;
+    cv::Mat prev_image_;
+    
+    // State variables
+    nav_msgs::msg::Path path_msg_;
     double current_x_, current_y_, current_yaw_;
+    bool first_frame_;
+    double scale_factor_;
     
-    size_t current_frame_;
+    // Smoothing variables
+    std::vector<double> recent_dx_, recent_dy_, recent_dyaw_;
+    static constexpr size_t SMOOTHING_WINDOW = 3;
     
-    // Path messages
-    nav_msgs::msg::Path vo_path_msg_;    // VO path 
-    nav_msgs::msg::Path path_msg_;       // Legacy path
+    bool loadCameraCalibration() {
+        // Load calibration from config file using absolute path
+        std::string calib_file = "/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/config/camera_calib.txt";
+        std::ifstream file(calib_file);
+        
+        if (!file.is_open()) {
+            RCLCPP_ERROR(this->get_logger(), "Cannot open calibration file: %s", calib_file.c_str());
+            return false;
+        }
+        
+        std::vector<double> params;
+        std::string line;
+        std::getline(file, line);
+        
+        // Skip comment lines
+        while (!line.empty() && line[0] == '#') {
+            std::getline(file, line);
+        }
+        
+        std::istringstream iss(line);
+        double val;
+        while (iss >> val) {
+            params.push_back(val);
+        }
+        
+        if (params.size() != 12) {
+            RCLCPP_ERROR(this->get_logger(), "Calibration file must have 12 parameters, found %zu", params.size());
+            return false;
+        }
+        
+        // Extract camera matrix from calibration matrix (first 3x3)
+        camera_matrix_ = cv::Mat::zeros(3, 3, CV_64F);
+        camera_matrix_.at<double>(0, 0) = params[0]; // fx
+        camera_matrix_.at<double>(0, 1) = params[1]; // 0
+        camera_matrix_.at<double>(0, 2) = params[2]; // cx
+        camera_matrix_.at<double>(1, 0) = params[4]; // 0
+        camera_matrix_.at<double>(1, 1) = params[5]; // fy
+        camera_matrix_.at<double>(1, 2) = params[6]; // cy
+        camera_matrix_.at<double>(2, 0) = params[8]; // 0
+        camera_matrix_.at<double>(2, 1) = params[9]; // 0
+        camera_matrix_.at<double>(2, 2) = params[10]; // 1
+        
+        // Initialize distortion coefficients as zero (assuming calibrated images)
+        distortion_coeffs_ = cv::Mat::zeros(5, 1, CV_64F);
+        
+        return true;
+    }
     
-    // GPS simulation timer
-    rclcpp::TimerBase::SharedPtr gps_timer_;
-    Eigen::MatrixXd covariance_;      // Covariance matrix (6x6)
-    Eigen::MatrixXd process_noise_;   // Process noise Q (6x6)
-    Eigen::MatrixXd vo_noise_;        // VO measurement noise (3x3)
-    Eigen::MatrixXd gps_noise_;       // GPS measurement noise (3x3)
+    void imageCallback(const sensor_msgs::msg::Image::SharedPtr msg) {
+        try {
+            // Convert ROS image to OpenCV
+            cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+            cv::Mat current_image;
+            
+            // Convert to grayscale for ORB processing
+            cv::cvtColor(cv_ptr->image, current_image, cv::COLOR_BGR2GRAY);
+            
+            if (first_frame_) {
+                // Store first frame
+                prev_image_ = current_image.clone();
+                first_frame_ = false;
+                RCLCPP_INFO(this->get_logger(), "First frame received, starting visual odometry");
+                return;
+            }
+            
+            // Process visual odometry
+            processVisualOdometry(current_image);
+            
+            // Update previous frame
+            prev_image_ = current_image.clone();
+            
+        } catch (cv_bridge::Exception& e) {
+            RCLCPP_ERROR(this->get_logger(), "cv_bridge exception: %s", e.what());
+        }
+    }
     
-    std::chrono::steady_clock::time_point last_time_;
-    bool ekf_initialized_;
-    double gps_correction_interval_;  // Seconds between GPS corrections
-    double last_gps_time_;
-
-    void process_frame() {
-        // Check if we've processed all frames
-        if (current_frame_ >= images.size()) {
-            RCLCPP_INFO(this->get_logger(), "All frames processed. Visual odometry complete.");
-            timer_->cancel();
+    void processVisualOdometry(const cv::Mat& current_image) {
+        // Detect and match features
+        std::vector<cv::Point2f> prev_points, curr_points;
+        if (!detectAndMatchFeatures(prev_image_, current_image, prev_points, curr_points)) {
+            RCLCPP_DEBUG(this->get_logger(), "Feature matching failed");
             return;
         }
         
-        if (current_frame_ == 0) {
-            // Initialize VO and EKF from ground truth or keep zeros
-            if (!gt_poses.empty()) {
-                current_x_ = gt_poses[0].at<double>(0, 3);
-                current_y_ = gt_poses[0].at<double>(1, 3);
-                current_yaw_ = 0.0;
-                
-                // Initialize EKF with same starting point
-                ekf_x_ = current_x_;
-                ekf_y_ = current_y_;
-                ekf_yaw_ = current_yaw_;
-            }
-            RCLCPP_INFO(this->get_logger(), "Processing frame %zu/%zu", current_frame_ + 1, images.size());
-        } else {
-            // Calculate time step for EKF
-            auto current_time = std::chrono::steady_clock::now();
-            double dt = std::chrono::duration<double>(current_time - last_time_).count();
-            last_time_ = current_time;
-            
-            std::vector<cv::Point2f> q1, q2;
-            getMatches(current_frame_, q1, q2);
-            auto [dx, dy, dyaw] = getPose2D(q1, q2);
-            
-            // EKF FUSION: Predict + Update with VO
-            if (ekf_initialized_) {
-                predict_step(dt);              // Predict state forward
-                update_with_vo(dx, dy, dyaw);  // Update with VO measurement
-            } else {
-                // Fallback to simple integration if EKF not ready
-                current_x_ += dx * cos(current_yaw_) - dy * sin(current_yaw_);
-                current_y_ += dx * sin(current_yaw_) + dy * cos(current_yaw_);
-                current_yaw_ += dyaw;
-                
-                while (current_yaw_ > M_PI) current_yaw_ -= 2.0 * M_PI;
-                while (current_yaw_ < -M_PI) current_yaw_ += 2.0 * M_PI;
-            }
-            
-            if (current_frame_ % 10 == 0) {
-                RCLCPP_INFO(this->get_logger(), "Frame %zu/%zu - EKF Pose: (%.2f, %.2f, %.2f°) | VO: (%.3f, %.3f, %.3f°)", 
-                           current_frame_ + 1, images.size(), 
-                           current_x_, current_y_, current_yaw_ * 180.0 / M_PI,
-                           dx, dy, dyaw * 180.0 / M_PI);
+        if (prev_points.size() < 15) { // Increased minimum matches for better stability
+            RCLCPP_DEBUG(this->get_logger(), "Insufficient feature matches: %zu", prev_points.size());
+            return;
+        }
+        
+        // Estimate motion using essential matrix
+        cv::Mat motion = estimateMotion(prev_points, curr_points);
+        if (motion.empty()) {
+            RCLCPP_DEBUG(this->get_logger(), "Motion estimation failed");
+            return;
+        }
+        
+        // Extract 2D pose change
+        auto [dx, dy, dyaw] = extractPose2D(motion);
+        
+        // Filter out unrealistic movements and apply smoothing
+        if (std::abs(dx) > 0.5 || std::abs(dy) > 0.5 || std::abs(dyaw) > 0.2) { // More strict limits
+            RCLCPP_DEBUG(this->get_logger(), "Unrealistic motion detected, skipping: dx=%.3f, dy=%.3f, dyaw=%.3f", dx, dy, dyaw);
+            return;
+        }
+        
+        // Apply temporal smoothing
+        auto [smooth_dx, smooth_dy, smooth_dyaw] = applySmoothing(dx, dy, dyaw);
+        
+        // Update current pose
+        updatePose(smooth_dx, smooth_dy, smooth_dyaw);
+        
+        // Publish path
+        publishPath();
+        
+        RCLCPP_INFO(this->get_logger(), "VO Update - Features: %zu, Raw: (%.3f,%.3f,%.1f°) Smooth: (%.3f,%.3f,%.1f°)", 
+                    prev_points.size(), dx, dy, dyaw*57.3, smooth_dx, smooth_dy, smooth_dyaw*57.3);
+    }
+    
+    bool detectAndMatchFeatures(const cv::Mat& img1, const cv::Mat& img2, 
+                               std::vector<cv::Point2f>& points1, std::vector<cv::Point2f>& points2) {
+        // Detect ORB features
+        std::vector<cv::KeyPoint> kp1, kp2;
+        cv::Mat desc1, desc2;
+        
+        orb_->detectAndCompute(img1, cv::noArray(), kp1, desc1);
+        orb_->detectAndCompute(img2, cv::noArray(), kp2, desc2);
+        
+        if (desc1.empty() || desc2.empty()) {
+            return false;
+        }
+        
+        // Match features using BFMatcher with k=2 for ratio test
+        std::vector<std::vector<cv::DMatch>> knn_matches;
+        bf_matcher_->knnMatch(desc1, desc2, knn_matches, 2);
+        
+        // Apply Lowe's ratio test (more robust than distance threshold)
+        const float ratio_thresh = 0.75f; // Slightly more lenient
+        for (const auto& match : knn_matches) {
+            if (match.size() == 2 && match[0].distance < ratio_thresh * match[1].distance) {
+                points1.push_back(kp1[match[0].queryIdx].pt);
+                points2.push_back(kp2[match[0].trainIdx].pt);
             }
         }
         
-        // Create and publish pose messages
-        publish_current_pose();
-        
-        current_frame_++;
+        return points1.size() >= 15; // Ensure minimum matches
     }
-
-    void publish_current_pose() {
+    
+    std::tuple<double, double, double> applySmoothing(double dx, double dy, double dyaw) {
+        // Add current measurements to history
+        recent_dx_.push_back(dx);
+        recent_dy_.push_back(dy);
+        recent_dyaw_.push_back(dyaw);
+        
+        // Limit window size
+        if (recent_dx_.size() > SMOOTHING_WINDOW) {
+            recent_dx_.erase(recent_dx_.begin());
+            recent_dy_.erase(recent_dy_.begin());
+            recent_dyaw_.erase(recent_dyaw_.begin());
+        }
+        
+        // Calculate smoothed values (median filter for rotation, average for translation)
+        double smooth_dx = 0.0, smooth_dy = 0.0;
+        for (double val : recent_dx_) smooth_dx += val;
+        for (double val : recent_dy_) smooth_dy += val;
+        smooth_dx /= recent_dx_.size();
+        smooth_dy /= recent_dy_.size();
+        
+        // Use median for rotation (more robust against outliers)
+        std::vector<double> yaw_copy = recent_dyaw_;
+        std::sort(yaw_copy.begin(), yaw_copy.end());
+        double smooth_dyaw = yaw_copy[yaw_copy.size() / 2];
+        
+        // Additional damping for rotation (reduce crazy spins)
+        smooth_dyaw *= 0.5; // Reduce rotation by 50%
+        
+        return {smooth_dx, smooth_dy, smooth_dyaw};
+    }
+    
+    cv::Mat estimateMotion(const std::vector<cv::Point2f>& points1, const std::vector<cv::Point2f>& points2) {
+        // Find essential matrix using RANSAC with relaxed parameters
+        cv::Mat mask;
+        cv::Mat E = cv::findEssentialMat(points1, points2, camera_matrix_, 
+                                        cv::RANSAC, 0.99, 2.0, mask); // More lenient threshold
+        
+        if (E.empty()) {
+            return cv::Mat();
+        }
+        
+        // Filter inliers
+        std::vector<cv::Point2f> inlier_points1, inlier_points2;
+        for (int i = 0; i < mask.rows; ++i) {
+            if (mask.at<uchar>(i)) {
+                inlier_points1.push_back(points1[i]);
+                inlier_points2.push_back(points2[i]);
+            }
+        }
+        
+        if (inlier_points1.size() < 10) { // Reduced minimum for more flexibility
+            return cv::Mat();
+        }
+        
+        // Recover pose from essential matrix
+        cv::Mat R, t;
+        int inliers = cv::recoverPose(E, inlier_points1, inlier_points2, camera_matrix_, R, t);
+        
+        if (inliers < 10) { // Reduced minimum for more flexibility
+            return cv::Mat();
+        }
+        
+        // Create transformation matrix
+        cv::Mat T = cv::Mat::eye(4, 4, CV_64F);
+        R.copyTo(T(cv::Rect(0, 0, 3, 3)));
+        t.copyTo(T(cv::Rect(3, 0, 1, 3)));
+        
+        return T;
+    }
+    
+    std::tuple<double, double, double> extractPose2D(const cv::Mat& transformation) {
+        if (transformation.empty()) {
+            return {0.0, 0.0, 0.0};
+        }
+        
+        // Extract translation (scaled for ground vehicle)
+        double dx = transformation.at<double>(0, 3) * scale_factor_;
+        double dz = transformation.at<double>(2, 3) * scale_factor_;
+        
+        // Extract rotation matrix
+        cv::Mat R = transformation(cv::Rect(0, 0, 3, 3));
+        
+        // Multiple methods to extract yaw and use the most conservative
+        double dyaw1 = atan2(R.at<double>(2, 0), R.at<double>(0, 0)); // Original method
+        double dyaw2 = atan2(R.at<double>(1, 0), R.at<double>(1, 1)); // Alternative method
+        
+        // Use the smaller rotation (more conservative)
+        double dyaw = (std::abs(dyaw1) < std::abs(dyaw2)) ? dyaw1 : dyaw2;
+        
+        // Clamp rotation to reasonable limits
+        dyaw = std::max(-0.1, std::min(0.1, dyaw)); // Max ±5.7 degrees per frame
+        
+        // For ground vehicles, we typically use:
+        // - X-axis: right/left motion
+        // - Z-axis: forward/backward motion  
+        // - Y-axis rotation: yaw
+        return {dx, dz, dyaw};
+    }
+    
+    void updatePose(double dx, double dy, double dyaw) {
+        // Transform relative motion to global coordinates
+        double global_dx = dx * cos(current_yaw_) - dy * sin(current_yaw_);
+        double global_dy = dx * sin(current_yaw_) + dy * cos(current_yaw_);
+        
+        // Update pose
+        current_x_ += global_dx;
+        current_y_ += global_dy;
+        current_yaw_ += dyaw;
+        
+        // Normalize yaw angle
+        while (current_yaw_ > M_PI) current_yaw_ -= 2.0 * M_PI;
+        while (current_yaw_ < -M_PI) current_yaw_ += 2.0 * M_PI;
+    }
+    
+    void publishPath() {
         auto now = this->now();
         
-        // Create pose stamped for path
+        // Create pose stamped
         geometry_msgs::msg::PoseStamped pose_stamped;
         pose_stamped.header.stamp = now;
         pose_stamped.header.frame_id = "map";
         pose_stamped.pose.position.x = current_x_;
         pose_stamped.pose.position.y = current_y_;
-        pose_stamped.pose.position.z = 0.0; // Always zero for 2D
+        pose_stamped.pose.position.z = 0.0;
         
         // Convert yaw to quaternion
         tf2::Quaternion q;
         q.setRPY(0, 0, current_yaw_);
         pose_stamped.pose.orientation = tf2::toMsg(q);
         
-        // Publish Visual Odometry Path 
-        vo_path_msg_.poses.push_back(pose_stamped);
-        vo_path_msg_.header.stamp = now;
-        vo_path_pub_->publish(vo_path_msg_);
-        
-        // Publish Visual Odometry with proper covariance
-        nav_msgs::msg::Odometry vo_odom_msg;
-        vo_odom_msg.header.frame_id = "map";
-        vo_odom_msg.header.stamp = now;
-        vo_odom_msg.child_frame_id = "base_link";
-        
-        // Pose
-        vo_odom_msg.pose.pose.position.x = current_x_;
-        vo_odom_msg.pose.pose.position.y = current_y_;
-        vo_odom_msg.pose.pose.position.z = 0.0;
-        vo_odom_msg.pose.pose.orientation = tf2::toMsg(q);
-        
-        // Covariance matrix (6x6) - higher uncertainty for VO
-        vo_odom_msg.pose.covariance[0] = 0.1;   // x
-        vo_odom_msg.pose.covariance[7] = 0.1;   // y  
-        vo_odom_msg.pose.covariance[35] = 0.1;  // yaw
-        
-        vo_odom_pub_->publish(vo_odom_msg);
-        
-        // Legacy: Add to path and publish
+        // Add to path and publish
         path_msg_.poses.push_back(pose_stamped);
         path_msg_.header.stamp = now;
         path_pub_->publish(path_msg_);
-        
-        // Publish 2D pose
-        geometry_msgs::msg::Pose2D pose2d_msg;
-        pose2d_msg.x = current_x_;
-        pose2d_msg.y = current_y_;
-        pose2d_msg.theta = current_yaw_;
-        pose2d_pub_->publish(pose2d_msg_);
-        
-        // Publish odometry
-        nav_msgs::msg::Odometry odom_msg;
-        odom_msg.header.stamp = now;
-        odom_msg.header.frame_id = "map";
-        odom_msg.child_frame_id = "base_link";
-        odom_msg.pose.pose = pose_stamped.pose;
-        odom_pub_->publish(odom_msg);
-    }
-
-    void loadCalib(const std::string& filepath) {
-        std::ifstream f(filepath);
-        std::string line;
-        std::getline(f, line);
-        std::vector<double> params;
-        std::istringstream iss(line);
-        double val;
-        while (iss >> val) params.push_back(val);
-        if (params.size() != 12) {
-            RCLCPP_ERROR(this->get_logger(), "Calib file does not have 12 elements, found %zu", params.size());
-            throw std::runtime_error("Calib file format error");
-        }
-        cv::Mat P_ = cv::Mat(params).reshape(1, 3);
-        P = cv::Mat(3, 4, CV_64F);
-        for (int i = 0; i < 3; ++i)
-            for (int j = 0; j < 4; ++j)
-                P.at<double>(i, j) = P_.at<double>(i, j);
-        K = P(cv::Rect(0, 0, 3, 3)).clone();
-    }
-
-    void loadPoses(const std::string& filepath) {
-        std::ifstream f(filepath);
-        std::string line;
-        while (std::getline(f, line)) {
-            std::istringstream iss(line);
-            std::vector<double> vals;
-            double v;
-            while (iss >> v) vals.push_back(v);
-            if (vals.size() != 12) {
-                RCLCPP_WARN(this->get_logger(), "Pose line does not have 12 elements, found %zu. Skipping.", vals.size());
-                continue;
-            }
-            cv::Mat T = cv::Mat(vals).reshape(1, 3);
-            cv::Mat pose = cv::Mat::eye(4, 4, CV_64F);
-            for (int i = 0; i < 3; ++i)
-                for (int j = 0; j < 4; ++j)
-                    pose.at<double>(i, j) = T.at<double>(i, j);
-            gt_poses.push_back(pose);
-        }
-    }
-
-    void loadImages(const std::string& dirpath) {
-        std::vector<std::string> files;
-        for (const auto& entry : fs::directory_iterator(dirpath)) {
-            if (entry.path().extension() == ".png" || entry.path().extension() == ".jpg") {
-                files.push_back(entry.path().string());
-            }
-        }
-        std::sort(files.begin(), files.end());
-        for (const auto& file : files) {
-            cv::Mat img = cv::imread(file, cv::IMREAD_GRAYSCALE);
-            if (!img.empty()) images.push_back(img);
-        }
-    }
-
-    void getMatches(int i, std::vector<cv::Point2f>& q1, std::vector<cv::Point2f>& q2) {
-        std::vector<cv::KeyPoint> kp1, kp2;
-        cv::Mat des1, des2;
-        orb->detectAndCompute(images[i - 1], cv::noArray(), kp1, des1);
-        orb->detectAndCompute(images[i], cv::noArray(), kp2, des2);
-        if (des1.empty() || des2.empty()) return;
-        std::vector<std::vector<cv::DMatch>> matches;
-        flann->knnMatch(des1, des2, matches, 2);
-        for (auto& m : matches) {
-            if (m.size() == 2 && m[0].distance < 0.7 * m[1].distance) {
-                q1.push_back(kp1[m[0].queryIdx].pt);
-                q2.push_back(kp2[m[0].trainIdx].pt);
-            }
-        }
-    }
-
-    // Original 3D pose estimation (kept for reference)
-    cv::Mat getPose(const std::vector<cv::Point2f>& q1, const std::vector<cv::Point2f>& q2) {
-        if (q1.size() < 8 || q2.size() < 8) return cv::Mat::eye(4, 4, CV_64F);
-        cv::Mat mask;
-        cv::Mat E = cv::findEssentialMat(q1, q2, K, cv::RANSAC, 0.999, 0.5, mask);
-        if (E.empty()) return cv::Mat::eye(4, 4, CV_64F);
-        std::vector<cv::Point2f> q1f, q2f;
-        if (!mask.empty() && mask.rows == (int)q1.size()) {
-            for (int i = 0; i < mask.rows; ++i) {
-                if (mask.at<uchar>(i)) {
-                    q1f.push_back(q1[i]);
-                    q2f.push_back(q2[i]);
-                }
-            }
-        } else {
-            q1f = q1;
-            q2f = q2;
-        }
-        cv::Mat R, t;
-        cv::recoverPose(E, q1f, q2f, K, R, t);
-        cv::Mat T = cv::Mat::eye(4, 4, CV_64F);
-        R.copyTo(T(cv::Rect(0, 0, 3, 3)));
-        t = t * 1.0;
-        for (int i = 0; i < 3; ++i) T.at<double>(i, 3) = t.at<double>(i);
-        return T;
-    }
-
-    // New 2D pose estimation for ground vehicles
-    std::tuple<double, double, double> getPose2D(const std::vector<cv::Point2f>& q1, const std::vector<cv::Point2f>& q2) {
-        if (q1.size() < 8 || q2.size() < 8) return {0.0, 0.0, 0.0};
-        
-        // Use essential matrix approach but extract only 2D motion
-        cv::Mat mask;
-        cv::Mat E = cv::findEssentialMat(q1, q2, K, cv::RANSAC, 0.999, 0.5, mask);
-        if (E.empty()) return {0.0, 0.0, 0.0};
-        
-        std::vector<cv::Point2f> q1f, q2f;
-        if (!mask.empty() && mask.rows == (int)q1.size()) {
-            for (int i = 0; i < mask.rows; ++i) {
-                if (mask.at<uchar>(i)) {
-                    q1f.push_back(q1[i]);
-                    q2f.push_back(q2[i]);
-                }
-            }
-        } else {
-            q1f = q1;
-            q2f = q2;
-        }
-        
-        cv::Mat R, t;
-        cv::recoverPose(E, q1f, q2f, K, R, t);
-        
-        // Extract 2D motion from 3D transformation
-        double dx = t.at<double>(0) * 1.0; // Scale factor - you might need to tune this
-        double dy = t.at<double>(2) * 1.0; // Using Z as forward motion for vehicle
-        
-        // Extract yaw rotation from rotation matrix
-        // For small rotations around Y axis (typical for ground vehicles)
-        double dyaw = atan2(R.at<double>(2, 0), R.at<double>(0, 0));
-        
-        return {dx, dy, dyaw};
-    }
-
-    bool isIdentity(const cv::Mat& mat) {
-        return cv::countNonZero(cv::abs(mat - cv::Mat::eye(4, 4, CV_64F)) > 1e-6) == 0;
-    }
-    
-    // ========== EKF IMPLEMENTATION ==========
-    
-    void init_ekf() {
-        // State: [x, y, yaw, vx, vy, vyaw]
-        state_ = Eigen::VectorXd::Zero(6);
-        
-        // Initial covariance (high uncertainty)
-        covariance_ = Eigen::MatrixXd::Identity(6, 6) * 10.0;
-        covariance_(0,0) = 1.0;    // x position uncertainty
-        covariance_(1,1) = 1.0;    // y position uncertainty  
-        covariance_(2,2) = 0.1;    // yaw uncertainty
-        covariance_(3,3) = 5.0;    // vx uncertainty
-        covariance_(4,4) = 5.0;    // vy uncertainty
-        covariance_(5,5) = 1.0;    // vyaw uncertainty
-        
-        // Process noise Q
-        process_noise_ = Eigen::MatrixXd::Identity(6, 6);
-        process_noise_ *= 0.1;     // Base process noise
-        process_noise_(0,0) = 0.01; // x process noise
-        process_noise_(1,1) = 0.01; // y process noise  
-        process_noise_(2,2) = 0.005; // yaw process noise
-        process_noise_(3,3) = 0.5;  // vx process noise
-        process_noise_(4,4) = 0.5;  // vy process noise
-        process_noise_(5,5) = 0.1;  // vyaw process noise
-        
-        // VO measurement noise R (for [dx, dy, dyaw] measurements)
-        vo_noise_ = Eigen::MatrixXd::Identity(3, 3);
-        vo_noise_(0,0) = 0.5;  // dx noise (VO has high uncertainty)
-        vo_noise_(1,1) = 0.5;  // dy noise
-        vo_noise_(2,2) = 0.1;  // dyaw noise
-        
-        // GPS measurement noise R (for [x, y, yaw] absolute measurements)  
-        gps_noise_ = Eigen::MatrixXd::Identity(3, 3);
-        gps_noise_(0,0) = 0.1;  // x noise (GPS more accurate)
-        gps_noise_(1,1) = 0.1;  // y noise
-        gps_noise_(2,2) = 0.05; // yaw noise
-        
-        ekf_initialized_ = true;
-        gps_correction_interval_ = 2.0; // GPS correction every 2 seconds
-        last_gps_time_ = 0.0;
-        last_time_ = std::chrono::steady_clock::now();
-        
-        RCLCPP_INFO(this->get_logger(), "EKF initialized for VO-GPS fusion");
-    }
-    
-    void predict_step(double dt) {
-        if (!ekf_initialized_) return;
-        
-        // State transition model: x_k = F * x_{k-1}
-        // [x, y, yaw, vx, vy, vyaw] with constant velocity model
-        Eigen::MatrixXd F = Eigen::MatrixXd::Identity(6, 6);
-        F(0, 3) = dt;  // x += vx * dt
-        F(1, 4) = dt;  // y += vy * dt  
-        F(2, 5) = dt;  // yaw += vyaw * dt
-        
-        // Predict state
-        Eigen::VectorXd predicted_state = F * state_;
-        
-        // Predict covariance: P = F * P * F^T + Q
-        covariance_ = F * covariance_ * F.transpose() + process_noise_ * dt;
-        
-        // Update state
-        state_ = predicted_state;
-        
-        // Normalize yaw angle to [-π, π]
-        while (state_(2) > M_PI) state_(2) -= 2.0 * M_PI;
-        while (state_(2) < -M_PI) state_(2) += 2.0 * M_PI;
-    }
-    
-    void update_with_vo(double dx, double dy, double dyaw) {
-        if (!ekf_initialized_) return;
-        
-        // Measurement model for VO: z = H * x + v
-        // We measure velocity-based changes, so H maps state to velocity
-        Eigen::MatrixXd H = Eigen::MatrixXd::Zero(3, 6);
-        H(0, 3) = 1.0;  // measure vx
-        H(1, 4) = 1.0;  // measure vy  
-        H(2, 5) = 1.0;  // measure vyaw
-        
-        // Expected measurement
-        Eigen::VectorXd z_pred = H * state_;
-        
-        // Actual measurement (convert relative motion to velocities)
-        Eigen::VectorXd z(3);
-        z << dx * 10.0, dy * 10.0, dyaw * 10.0; // Scale factor for velocity estimation
-        
-        // Innovation
-        Eigen::VectorXd y = z - z_pred;
-        
-        // Innovation covariance
-        Eigen::MatrixXd S = H * covariance_ * H.transpose() + vo_noise_;
-        
-        // Kalman gain
-        Eigen::MatrixXd K = covariance_ * H.transpose() * S.inverse();
-        
-        // Update state and covariance
-        state_ = state_ + K * y;
-        covariance_ = (Eigen::MatrixXd::Identity(6, 6) - K * H) * covariance_;
-        
-        // Update EKF pose (do NOT overwrite current_x_, current_y_, current_yaw_!)
-        ekf_x_ = state_(0);
-        ekf_y_ = state_(1); 
-        ekf_yaw_ = state_(2);
-    }
-    
-    void update_with_gps(double gps_x, double gps_y, double gps_yaw) {
-        if (!ekf_initialized_) return;
-        
-        // Measurement model for GPS: direct position measurement
-        Eigen::MatrixXd H = Eigen::MatrixXd::Zero(3, 6);
-        H(0, 0) = 1.0;  // measure x
-        H(1, 1) = 1.0;  // measure y
-        H(2, 2) = 1.0;  // measure yaw
-        
-        // Expected measurement  
-        Eigen::VectorXd z_pred = H * state_;
-        
-        // Actual measurement
-        Eigen::VectorXd z(3);
-        z << gps_x, gps_y, gps_yaw;
-        
-        // Innovation
-        Eigen::VectorXd y = z - z_pred;
-        
-        // Normalize yaw innovation
-        while (y(2) > M_PI) y(2) -= 2.0 * M_PI;
-        while (y(2) < -M_PI) y(2) += 2.0 * M_PI;
-        
-        // Innovation covariance
-        Eigen::MatrixXd S = H * covariance_ * H.transpose() + gps_noise_;
-        
-        // Kalman gain
-        Eigen::MatrixXd K = covariance_ * H.transpose() * S.inverse();
-        
-        // Update state and covariance
-        state_ = state_ + K * y;
-        covariance_ = (Eigen::MatrixXd::Identity(6, 6) - K * H) * covariance_;
-        
-        // Update EKF pose (do NOT overwrite VO variables!)
-        ekf_x_ = state_(0);
-        ekf_y_ = state_(1);
-        ekf_yaw_ = state_(2);
-        
-        // Normalize EKF yaw
-        while (ekf_yaw_ > M_PI) ekf_yaw_ -= 2.0 * M_PI;
-        while (ekf_yaw_ < -M_PI) ekf_yaw_ += 2.0 * M_PI;
-        while (current_yaw_ < -M_PI) current_yaw_ += 2.0 * M_PI;
-        
-        RCLCPP_INFO(this->get_logger(), "GPS correction applied: (%.2f, %.2f, %.2f°)", 
-                   gps_x, gps_y, gps_yaw * 180.0 / M_PI);
-    }
-    
-    void ground_truth_callback(const geometry_msgs::msg::Pose2D::SharedPtr msg) {
-        auto current_time = std::chrono::steady_clock::now();
-        double time_since_start = std::chrono::duration<double>(current_time - last_time_).count();
-        
-        // Apply GPS correction periodically (simulating real GPS)
-        if (time_since_start - last_gps_time_ >= gps_correction_interval_) {
-            update_with_gps(msg->x, msg->y, msg->theta);
-            last_gps_time_ = time_since_start;
-        }
     }
 };
 
 int main(int argc, char** argv) {
     rclcpp::init(argc, argv);
-    std::string data_dir = "src/vodom_first/Kitti_Sequence_Larga";
-    auto node = std::make_shared<VisualOdometryUli>(data_dir);
+    auto node = std::make_shared<PureVisualOdometry>();
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
