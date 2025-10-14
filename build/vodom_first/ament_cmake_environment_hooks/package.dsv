@@ -1,0 +1,4 @@
+source;share/vodom_first/local_setup.bash
+source;share/vodom_first/local_setup.dsv
+source;share/vodom_first/local_setup.sh
+source;share/vodom_first/local_setup.zsh

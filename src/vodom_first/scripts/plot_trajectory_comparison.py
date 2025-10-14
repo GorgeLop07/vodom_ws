@@ -256,8 +256,8 @@ def plot_trajectories(traj_est, traj_gt, ate_results, rpe_results, output_file='
 
 def main():
     parser = argparse.ArgumentParser(description='Comparar trayectorias VO vs Ground Truth')
-    parser.add_argument('--vo', default='/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/vo_trajectory.txt', help='Archivo de trayectoria VO')
-    parser.add_argument('--gt', default='/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/gt_trajectory.txt', help='Archivo de ground truth')
+    parser.add_argument('--vo', default='/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/trayectories/vo_trajectory.txt', help='Archivo de trayectoria VO')
+    parser.add_argument('--gt', default='/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/trayectories/gt_trajectory.txt', help='Archivo de ground truth')
     parser.add_argument('--output', default='trajectory_comparison.png', help='Archivo de salida')
     args = parser.parse_args()
     

@@ -11,7 +11,7 @@ public:
     PathRecorder() : Node("path_recorder")
     {
         // Declare parameters for topic names (CONFIGURABLE)
-        this->declare_parameter<std::string>("vo_topic", "/vo_path");
+        this->declare_parameter<std::string>("vo_topic", "/vo_path_uliXD");
         this->declare_parameter<std::string>("gt_topic", "/gt_path");
         this->declare_parameter<std::string>("vo_output_file", "src/vodom_first/trayectories/vo_trajectory.txt");
         this->declare_parameter<std::string>("gt_output_file", "src/vodom_first/trayectories/gt_trajectory.txt");

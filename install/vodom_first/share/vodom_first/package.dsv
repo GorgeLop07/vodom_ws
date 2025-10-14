@@ -1,0 +1,8 @@
+source;share/vodom_first/hook/cmake_prefix_path.ps1
+source;share/vodom_first/hook/cmake_prefix_path.dsv
+source;share/vodom_first/hook/cmake_prefix_path.sh
+source;share/vodom_first/local_setup.bash
+source;share/vodom_first/local_setup.dsv
+source;share/vodom_first/local_setup.ps1
+source;share/vodom_first/local_setup.sh
+source;share/vodom_first/local_setup.zsh
