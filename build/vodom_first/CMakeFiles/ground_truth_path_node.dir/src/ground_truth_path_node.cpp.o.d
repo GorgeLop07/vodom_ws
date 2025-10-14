@@ -638,6 +638,11 @@ CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.o: \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__type_support.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose2_d.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose2_d__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose2_d__builder.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose2_d__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose2_d__type_support.hpp \
  /usr/include/c++/11/fstream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
