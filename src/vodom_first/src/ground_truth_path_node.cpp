@@ -11,7 +11,7 @@ public:
 //Solo para checar que el commit se haya hecho bien
     GroundTruthPathNode()
     : Node("ground_truth_path_node"),
-    poses_file_(declare_parameter<std::string>("poses_file", "src/vodom_first/Kitti_Sequence_Larga/poses.txt")),
+    poses_file_(declare_parameter<std::string>("poses_file", "src/vodom_first/include/Kitti_Sequence_Larga/poses.txt")),
       frame_id_(declare_parameter<std::string>("frame_id", "map"))  
     {
         path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/gt_path", 10);

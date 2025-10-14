@@ -174,7 +174,7 @@ private:
 
 int main(int argc, char** argv) {
     rclcpp::init(argc, argv);
-    std::string data_dir = "src/vodom_first/Kitti_Sequence_Larga";
+    std::string data_dir = "src/vodom_first/include/Kitti_Sequence_Larga";
     auto node = std::make_shared<VisualOdometryUli>(data_dir);
     rclcpp::spin(node);
     rclcpp::shutdown();

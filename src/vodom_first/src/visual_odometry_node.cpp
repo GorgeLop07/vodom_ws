@@ -13,7 +13,7 @@ class VisualOdometryNode : public rclcpp::Node {
 public: 
     VisualOdometryNode()
     : Node("visual_odometry_node"),
-    image_folder_(declare_parameter<std::string>("image_folder", "src/vodom_first/Kitti_Sequence_Larga/image_0")),
+    image_folder_(declare_parameter<std::string>("image_folder", "src/vodom_first/include/Kitti_Sequence_Larga/image_0")),
       frame_id_(declare_parameter<std::string>("frame_id", "map"))
     {
         path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/vo_path", 10);
