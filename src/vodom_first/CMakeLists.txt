@@ -26,7 +26,7 @@ add_executable(visual_odo_Uli src/visual_odo_Uli.cpp)
 add_executable(ground_truth_path_node src/ground_truth_path_node.cpp)
 
 # Dependencies for our nodes
-ament_target_dependencies(visual_odo_simple rclcpp std_msgs nav_msgs geometry_msgs tf2 tf2_geometry_msgs)
+ament_target_dependencies(visual_odo_simple rclcpp std_msgs nav_msgs geometry_msgs sensor_msgs cv_bridge tf2 tf2_geometry_msgs)
 ament_target_dependencies(visual_odo_Uli rclcpp std_msgs nav_msgs geometry_msgs sensor_msgs cv_bridge tf2 tf2_geometry_msgs)
 ament_target_dependencies(ground_truth_path_node rclcpp std_msgs nav_msgs geometry_msgs)
 

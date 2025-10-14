@@ -98,6 +98,7 @@ visual_odo_simple: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_introspec
 visual_odo_simple: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_introspection_cpp.so
 visual_odo_simple: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so
 visual_odo_simple: /opt/ros/humble/lib/libnav_msgs__rosidl_generator_py.so
+visual_odo_simple: /opt/ros/humble/lib/libcv_bridge.so
 visual_odo_simple: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.5.4d
 visual_odo_simple: /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.5.4d
 visual_odo_simple: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.5.4d
@@ -135,6 +136,14 @@ visual_odo_simple: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.5.4d
 visual_odo_simple: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.5.4d
 visual_odo_simple: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_c.so
 visual_odo_simple: /opt/ros/humble/lib/libnav_msgs__rosidl_generator_c.so
+visual_odo_simple: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c.so
+visual_odo_simple: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_cpp.so
+visual_odo_simple: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
+visual_odo_simple: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
+visual_odo_simple: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_py.so
+visual_odo_simple: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_c.so
+visual_odo_simple: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_c.so
+visual_odo_simple: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_cpp.so
 visual_odo_simple: /usr/lib/x86_64-linux-gnu/liborocos-kdl.so
 visual_odo_simple: /opt/ros/humble/lib/libtf2_ros.so
 visual_odo_simple: /opt/ros/humble/lib/libtf2.so

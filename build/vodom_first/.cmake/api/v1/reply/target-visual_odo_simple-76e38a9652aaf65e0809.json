@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "visual_odo_Uli"
+			"path" : "visual_odo_simple"
 		}
 	],
 	"backtrace" : 1,
@@ -36,13 +36,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 36,
+				"line" : 43,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 30,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
@@ -54,7 +54,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 34,
+				"line" : 40,
 				"parent" : 0
 			},
 			{
@@ -315,7 +315,7 @@
 			]
 		}
 	],
-	"id" : "visual_odo_Uli::@6890427a1f51a3e7e1df",
+	"id" : "visual_odo_simple::@6890427a1f51a3e7e1df",
 	"install" : 
 	{
 		"destinations" : 
@@ -1122,8 +1122,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "visual_odo_Uli",
-	"nameOnDisk" : "visual_odo_Uli",
+	"name" : "visual_odo_simple",
+	"nameOnDisk" : "visual_odo_simple",
 	"paths" : 
 	{
 		"build" : ".",
@@ -1144,7 +1144,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/visual_odo_Uli.cpp",
+			"path" : "src/visual_odo_simple.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

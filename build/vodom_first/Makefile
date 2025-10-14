@@ -236,6 +236,93 @@ ground_truth_path_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/build
 .PHONY : ground_truth_path_node/fast
 
+#=============================================================================
+# Target rules for targets named gps_path_publisher
+
+# Build rule for target.
+gps_path_publisher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gps_path_publisher
+.PHONY : gps_path_publisher
+
+# fast build rule for target.
+gps_path_publisher/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gps_path_publisher.dir/build.make CMakeFiles/gps_path_publisher.dir/build
+.PHONY : gps_path_publisher/fast
+
+#=============================================================================
+# Target rules for targets named imu_path_publisher
+
+# Build rule for target.
+imu_path_publisher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 imu_path_publisher
+.PHONY : imu_path_publisher
+
+# fast build rule for target.
+imu_path_publisher/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_path_publisher.dir/build.make CMakeFiles/imu_path_publisher.dir/build
+.PHONY : imu_path_publisher/fast
+
+#=============================================================================
+# Target rules for targets named fused_localization_node
+
+# Build rule for target.
+fused_localization_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fused_localization_node
+.PHONY : fused_localization_node
+
+# fast build rule for target.
+fused_localization_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fused_localization_node.dir/build.make CMakeFiles/fused_localization_node.dir/build
+.PHONY : fused_localization_node/fast
+
+src/fused_localization_node.o: src/fused_localization_node.cpp.o
+.PHONY : src/fused_localization_node.o
+
+# target to build an object file
+src/fused_localization_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fused_localization_node.dir/build.make CMakeFiles/fused_localization_node.dir/src/fused_localization_node.cpp.o
+.PHONY : src/fused_localization_node.cpp.o
+
+src/fused_localization_node.i: src/fused_localization_node.cpp.i
+.PHONY : src/fused_localization_node.i
+
+# target to preprocess a source file
+src/fused_localization_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fused_localization_node.dir/build.make CMakeFiles/fused_localization_node.dir/src/fused_localization_node.cpp.i
+.PHONY : src/fused_localization_node.cpp.i
+
+src/fused_localization_node.s: src/fused_localization_node.cpp.s
+.PHONY : src/fused_localization_node.s
+
+# target to generate assembly for a file
+src/fused_localization_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fused_localization_node.dir/build.make CMakeFiles/fused_localization_node.dir/src/fused_localization_node.cpp.s
+.PHONY : src/fused_localization_node.cpp.s
+
+src/gps_path_publisher.o: src/gps_path_publisher.cpp.o
+.PHONY : src/gps_path_publisher.o
+
+# target to build an object file
+src/gps_path_publisher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gps_path_publisher.dir/build.make CMakeFiles/gps_path_publisher.dir/src/gps_path_publisher.cpp.o
+.PHONY : src/gps_path_publisher.cpp.o
+
+src/gps_path_publisher.i: src/gps_path_publisher.cpp.i
+.PHONY : src/gps_path_publisher.i
+
+# target to preprocess a source file
+src/gps_path_publisher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gps_path_publisher.dir/build.make CMakeFiles/gps_path_publisher.dir/src/gps_path_publisher.cpp.i
+.PHONY : src/gps_path_publisher.cpp.i
+
+src/gps_path_publisher.s: src/gps_path_publisher.cpp.s
+.PHONY : src/gps_path_publisher.s
+
+# target to generate assembly for a file
+src/gps_path_publisher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gps_path_publisher.dir/build.make CMakeFiles/gps_path_publisher.dir/src/gps_path_publisher.cpp.s
+.PHONY : src/gps_path_publisher.cpp.s
+
 src/ground_truth_path_node.o: src/ground_truth_path_node.cpp.o
 .PHONY : src/ground_truth_path_node.o
 
@@ -259,6 +346,30 @@ src/ground_truth_path_node.s: src/ground_truth_path_node.cpp.s
 src/ground_truth_path_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.s
 .PHONY : src/ground_truth_path_node.cpp.s
+
+src/imu_path_publisher.o: src/imu_path_publisher.cpp.o
+.PHONY : src/imu_path_publisher.o
+
+# target to build an object file
+src/imu_path_publisher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_path_publisher.dir/build.make CMakeFiles/imu_path_publisher.dir/src/imu_path_publisher.cpp.o
+.PHONY : src/imu_path_publisher.cpp.o
+
+src/imu_path_publisher.i: src/imu_path_publisher.cpp.i
+.PHONY : src/imu_path_publisher.i
+
+# target to preprocess a source file
+src/imu_path_publisher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_path_publisher.dir/build.make CMakeFiles/imu_path_publisher.dir/src/imu_path_publisher.cpp.i
+.PHONY : src/imu_path_publisher.cpp.i
+
+src/imu_path_publisher.s: src/imu_path_publisher.cpp.s
+.PHONY : src/imu_path_publisher.s
+
+# target to generate assembly for a file
+src/imu_path_publisher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_path_publisher.dir/build.make CMakeFiles/imu_path_publisher.dir/src/imu_path_publisher.cpp.s
+.PHONY : src/imu_path_publisher.cpp.s
 
 src/visual_odo_Uli.o: src/visual_odo_Uli.cpp.o
 .PHONY : src/visual_odo_Uli.o
@@ -323,12 +434,24 @@ help:
 	@echo "... test"
 	@echo "... uninstall"
 	@echo "... vodom_first_uninstall"
+	@echo "... fused_localization_node"
+	@echo "... gps_path_publisher"
 	@echo "... ground_truth_path_node"
+	@echo "... imu_path_publisher"
 	@echo "... visual_odo_Uli"
 	@echo "... visual_odo_simple"
+	@echo "... src/fused_localization_node.o"
+	@echo "... src/fused_localization_node.i"
+	@echo "... src/fused_localization_node.s"
+	@echo "... src/gps_path_publisher.o"
+	@echo "... src/gps_path_publisher.i"
+	@echo "... src/gps_path_publisher.s"
 	@echo "... src/ground_truth_path_node.o"
 	@echo "... src/ground_truth_path_node.i"
 	@echo "... src/ground_truth_path_node.s"
+	@echo "... src/imu_path_publisher.o"
+	@echo "... src/imu_path_publisher.i"
+	@echo "... src/imu_path_publisher.s"
 	@echo "... src/visual_odo_Uli.o"
 	@echo "... src/visual_odo_Uli.i"
 	@echo "... src/visual_odo_Uli.s"

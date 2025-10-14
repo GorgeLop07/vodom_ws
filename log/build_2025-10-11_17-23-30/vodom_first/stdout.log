@@ -1,0 +1,4 @@
+[35m[1mConsolidate compiler generated dependencies of target visual_odo_Uli[0m
+[ 33%] Built target ground_truth_path_node
+[ 50%] [32mBuilding CXX object CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o[0m
+[ 83%] Built target visual_odo_Uli

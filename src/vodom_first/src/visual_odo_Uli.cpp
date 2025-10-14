@@ -47,12 +47,16 @@ public:
         
         // Flags
         first_frame_ = true;
-        scale_factor_ = 0.05; // Even smaller scale factor for smoother motion
+        scale_factor_ = 0.1; // Reasonable scale factor
         
         RCLCPP_INFO(this->get_logger(), "Pure Visual Odometry Node initialized (ORB + BFMatcher)");
         RCLCPP_INFO(this->get_logger(), "Camera parameters - fx: %.3f, fy: %.3f, cx: %.3f, cy: %.3f", 
                    camera_matrix_.at<double>(0,0), camera_matrix_.at<double>(1,1),
                    camera_matrix_.at<double>(0,2), camera_matrix_.at<double>(1,2));
+        RCLCPP_INFO(this->get_logger(), "Distortion coefficients: [%.6f, %.6f, %.6f, %.6f, %.6f]",
+                   distortion_coeffs_.at<double>(0), distortion_coeffs_.at<double>(1),
+                   distortion_coeffs_.at<double>(2), distortion_coeffs_.at<double>(3),
+                   distortion_coeffs_.at<double>(4));
     }
 
 private:
@@ -73,13 +77,9 @@ private:
     bool first_frame_;
     double scale_factor_;
     
-    // Smoothing variables
-    std::vector<double> recent_dx_, recent_dy_, recent_dyaw_;
-    static constexpr size_t SMOOTHING_WINDOW = 3;
-    
     bool loadCameraCalibration() {
         // Load calibration from config file using absolute path
-        std::string calib_file = "/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/config/camera_calib.txt";
+        std::string calib_file = "/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/config/calib(1).txt";
         std::ifstream file(calib_file);
         
         if (!file.is_open()) {
@@ -87,40 +87,55 @@ private:
             return false;
         }
         
-        std::vector<double> params;
-        std::string line;
-        std::getline(file, line);
-        
-        // Skip comment lines
-        while (!line.empty() && line[0] == '#') {
-            std::getline(file, line);
-        }
-        
-        std::istringstream iss(line);
-        double val;
-        while (iss >> val) {
-            params.push_back(val);
-        }
-        
-        if (params.size() != 12) {
-            RCLCPP_ERROR(this->get_logger(), "Calibration file must have 12 parameters, found %zu", params.size());
-            return false;
-        }
-        
-        // Extract camera matrix from calibration matrix (first 3x3)
+        // Initialize matrices
         camera_matrix_ = cv::Mat::zeros(3, 3, CV_64F);
-        camera_matrix_.at<double>(0, 0) = params[0]; // fx
-        camera_matrix_.at<double>(0, 1) = params[1]; // 0
-        camera_matrix_.at<double>(0, 2) = params[2]; // cx
-        camera_matrix_.at<double>(1, 0) = params[4]; // 0
-        camera_matrix_.at<double>(1, 1) = params[5]; // fy
-        camera_matrix_.at<double>(1, 2) = params[6]; // cy
-        camera_matrix_.at<double>(2, 0) = params[8]; // 0
-        camera_matrix_.at<double>(2, 1) = params[9]; // 0
-        camera_matrix_.at<double>(2, 2) = params[10]; // 1
-        
-        // Initialize distortion coefficients as zero (assuming calibrated images)
         distortion_coeffs_ = cv::Mat::zeros(5, 1, CV_64F);
+        
+        std::string line;
+        bool reading_intrinsics = false;
+        bool reading_distortion = false;
+        int matrix_row = 0;
+        
+        while (std::getline(file, line)) {
+            if (line.find("Matriz Intrinseca") != std::string::npos) {
+                reading_intrinsics = true;
+                reading_distortion = false;
+                matrix_row = 0;
+                continue;
+            }
+            if (line.find("Coeficientes de Distorsion") != std::string::npos) {
+                reading_intrinsics = false;
+                reading_distortion = true;
+                continue;
+            }
+            if (line.find("Extrinseca") != std::string::npos) {
+                break; // Stop reading when we reach extrinsics
+            }
+            
+            // Read intrinsic matrix (3x3)
+            if (reading_intrinsics && !line.empty() && matrix_row < 3) {
+                std::istringstream iss(line);
+                double val;
+                int col = 0;
+                while (iss >> val && col < 3) {
+                    camera_matrix_.at<double>(matrix_row, col) = val;
+                    col++;
+                }
+                matrix_row++;
+            }
+            
+            // Read distortion coefficients (5 values)
+            if (reading_distortion && !line.empty()) {
+                std::istringstream iss(line);
+                double val;
+                int idx = 0;
+                while (iss >> val && idx < 5) {
+                    distortion_coeffs_.at<double>(idx, 0) = val;
+                    idx++;
+                }
+                reading_distortion = false; // Only read first line of distortion
+            }
+        }
         
         return true;
     }
@@ -131,8 +146,12 @@ private:
             cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
             cv::Mat current_image;
             
+            // Apply undistortion to correct lens distortion
+            cv::Mat undistorted_image;
+            cv::undistort(cv_ptr->image, undistorted_image, camera_matrix_, distortion_coeffs_);
+            
             // Convert to grayscale for ORB processing
-            cv::cvtColor(cv_ptr->image, current_image, cv::COLOR_BGR2GRAY);
+            cv::cvtColor(undistorted_image, current_image, cv::COLOR_BGR2GRAY);
             
             if (first_frame_) {
                 // Store first frame
@@ -161,7 +180,7 @@ private:
             return;
         }
         
-        if (prev_points.size() < 15) { // Increased minimum matches for better stability
+        if (prev_points.size() < 10) { // Minimum matches for stability
             RCLCPP_DEBUG(this->get_logger(), "Insufficient feature matches: %zu", prev_points.size());
             return;
         }
@@ -176,23 +195,20 @@ private:
         // Extract 2D pose change
         auto [dx, dy, dyaw] = extractPose2D(motion);
         
-        // Filter out unrealistic movements and apply smoothing
-        if (std::abs(dx) > 0.5 || std::abs(dy) > 0.5 || std::abs(dyaw) > 0.2) { // More strict limits
+        // Basic filter for unrealistic movements only
+        if (std::abs(dx) > 1.0 || std::abs(dy) > 1.0 || std::abs(dyaw) > 0.3) {
             RCLCPP_DEBUG(this->get_logger(), "Unrealistic motion detected, skipping: dx=%.3f, dy=%.3f, dyaw=%.3f", dx, dy, dyaw);
             return;
         }
         
-        // Apply temporal smoothing
-        auto [smooth_dx, smooth_dy, smooth_dyaw] = applySmoothing(dx, dy, dyaw);
-        
         // Update current pose
-        updatePose(smooth_dx, smooth_dy, smooth_dyaw);
+        updatePose(dx, dy, dyaw);
         
         // Publish path
         publishPath();
         
-        RCLCPP_INFO(this->get_logger(), "VO Update - Features: %zu, Raw: (%.3f,%.3f,%.1f°) Smooth: (%.3f,%.3f,%.1f°)", 
-                    prev_points.size(), dx, dy, dyaw*57.3, smooth_dx, smooth_dy, smooth_dyaw*57.3);
+        RCLCPP_INFO(this->get_logger(), "VO Update - Features: %zu, Motion: (%.3f, %.3f, %.1f°)", 
+                    prev_points.size(), dx, dy, dyaw * 57.3);
     }
     
     bool detectAndMatchFeatures(const cv::Mat& img1, const cv::Mat& img2, 
@@ -221,38 +237,7 @@ private:
             }
         }
         
-        return points1.size() >= 15; // Ensure minimum matches
-    }
-    
-    std::tuple<double, double, double> applySmoothing(double dx, double dy, double dyaw) {
-        // Add current measurements to history
-        recent_dx_.push_back(dx);
-        recent_dy_.push_back(dy);
-        recent_dyaw_.push_back(dyaw);
-        
-        // Limit window size
-        if (recent_dx_.size() > SMOOTHING_WINDOW) {
-            recent_dx_.erase(recent_dx_.begin());
-            recent_dy_.erase(recent_dy_.begin());
-            recent_dyaw_.erase(recent_dyaw_.begin());
-        }
-        
-        // Calculate smoothed values (median filter for rotation, average for translation)
-        double smooth_dx = 0.0, smooth_dy = 0.0;
-        for (double val : recent_dx_) smooth_dx += val;
-        for (double val : recent_dy_) smooth_dy += val;
-        smooth_dx /= recent_dx_.size();
-        smooth_dy /= recent_dy_.size();
-        
-        // Use median for rotation (more robust against outliers)
-        std::vector<double> yaw_copy = recent_dyaw_;
-        std::sort(yaw_copy.begin(), yaw_copy.end());
-        double smooth_dyaw = yaw_copy[yaw_copy.size() / 2];
-        
-        // Additional damping for rotation (reduce crazy spins)
-        smooth_dyaw *= 0.5; // Reduce rotation by 50%
-        
-        return {smooth_dx, smooth_dy, smooth_dyaw};
+        return points1.size() >= 10; // Ensure minimum matches
     }
     
     cv::Mat estimateMotion(const std::vector<cv::Point2f>& points1, const std::vector<cv::Point2f>& points2) {
@@ -306,19 +291,12 @@ private:
         // Extract rotation matrix
         cv::Mat R = transformation(cv::Rect(0, 0, 3, 3));
         
-        // Multiple methods to extract yaw and use the most conservative
-        double dyaw1 = atan2(R.at<double>(2, 0), R.at<double>(0, 0)); // Original method
-        double dyaw2 = atan2(R.at<double>(1, 0), R.at<double>(1, 1)); // Alternative method
-        
-        // Use the smaller rotation (more conservative)
-        double dyaw = (std::abs(dyaw1) < std::abs(dyaw2)) ? dyaw1 : dyaw2;
-        
-        // Clamp rotation to reasonable limits
-        dyaw = std::max(-0.1, std::min(0.1, dyaw)); // Max ±5.7 degrees per frame
+        // Extract yaw rotation (rotation around Y-axis for ground vehicle)
+        double dyaw = atan2(R.at<double>(2, 0), R.at<double>(0, 0));
         
         // For ground vehicles, we typically use:
         // - X-axis: right/left motion
-        // - Z-axis: forward/backward motion  
+        // - Z-axis: forward/backward motion
         // - Y-axis rotation: yaw
         return {dx, dz, dyaw};
     }

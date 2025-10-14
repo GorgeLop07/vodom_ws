@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-2840151eff5ff2eed8bb.json",
+					"jsonFile" : "directory-.-20c198de2e1f906714a0.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.12"
@@ -20,7 +20,10 @@
 						1,
 						2,
 						3,
-						4
+						4,
+						5,
+						6,
+						7
 					]
 				}
 			],
@@ -39,7 +42,10 @@
 						1,
 						2,
 						3,
-						4
+						4,
+						5,
+						6,
+						7
 					]
 				}
 			],
@@ -47,9 +53,30 @@
 			[
 				{
 					"directoryIndex" : 0,
+					"id" : "fused_localization_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fused_localization_node-76f77061e70d939db8d7.json",
+					"name" : "fused_localization_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gps_path_publisher::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gps_path_publisher-df086e8bac109e771e0c.json",
+					"name" : "gps_path_publisher",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "ground_truth_path_node::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ground_truth_path_node-53a376bb5131b0dbeaf2.json",
+					"jsonFile" : "target-ground_truth_path_node-a2716a60464df2a02b76.json",
 					"name" : "ground_truth_path_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "imu_path_publisher::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-imu_path_publisher-f748cd795e4f0a67e9e0.json",
+					"name" : "imu_path_publisher",
 					"projectIndex" : 0
 				},
 				{
@@ -62,14 +89,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "visual_odo_Uli::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-visual_odo_Uli-2da27139cd3148a0d2ae.json",
+					"jsonFile" : "target-visual_odo_Uli-2e1d0554de680b34fc22.json",
 					"name" : "visual_odo_Uli",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "visual_odo_simple::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-visual_odo_simple-f48558bc729af6d0a5a5.json",
+					"jsonFile" : "target-visual_odo_simple-76e38a9652aaf65e0809.json",
 					"name" : "visual_odo_simple",
 					"projectIndex" : 0
 				},
