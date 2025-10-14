@@ -236,6 +236,19 @@ ground_truth_path_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/build
 .PHONY : ground_truth_path_node/fast
 
+#=============================================================================
+# Target rules for targets named path_recorder
+
+# Build rule for target.
+path_recorder: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path_recorder
+.PHONY : path_recorder
+
+# fast build rule for target.
+path_recorder/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/path_recorder.dir/build.make CMakeFiles/path_recorder.dir/build
+.PHONY : path_recorder/fast
+
 src/ground_truth_path_node.o: src/ground_truth_path_node.cpp.o
 .PHONY : src/ground_truth_path_node.o
 
@@ -259,6 +272,30 @@ src/ground_truth_path_node.s: src/ground_truth_path_node.cpp.s
 src/ground_truth_path_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.s
 .PHONY : src/ground_truth_path_node.cpp.s
+
+src/path_recorder.o: src/path_recorder.cpp.o
+.PHONY : src/path_recorder.o
+
+# target to build an object file
+src/path_recorder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/path_recorder.dir/build.make CMakeFiles/path_recorder.dir/src/path_recorder.cpp.o
+.PHONY : src/path_recorder.cpp.o
+
+src/path_recorder.i: src/path_recorder.cpp.i
+.PHONY : src/path_recorder.i
+
+# target to preprocess a source file
+src/path_recorder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/path_recorder.dir/build.make CMakeFiles/path_recorder.dir/src/path_recorder.cpp.i
+.PHONY : src/path_recorder.cpp.i
+
+src/path_recorder.s: src/path_recorder.cpp.s
+.PHONY : src/path_recorder.s
+
+# target to generate assembly for a file
+src/path_recorder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/path_recorder.dir/build.make CMakeFiles/path_recorder.dir/src/path_recorder.cpp.s
+.PHONY : src/path_recorder.cpp.s
 
 src/visual_odo_Uli.o: src/visual_odo_Uli.cpp.o
 .PHONY : src/visual_odo_Uli.o
@@ -324,11 +361,15 @@ help:
 	@echo "... uninstall"
 	@echo "... vodom_first_uninstall"
 	@echo "... ground_truth_path_node"
+	@echo "... path_recorder"
 	@echo "... visual_odo_Uli"
 	@echo "... visual_odometry_node"
 	@echo "... src/ground_truth_path_node.o"
 	@echo "... src/ground_truth_path_node.i"
 	@echo "... src/ground_truth_path_node.s"
+	@echo "... src/path_recorder.o"
+	@echo "... src/path_recorder.i"
+	@echo "... src/path_recorder.s"
 	@echo "... src/visual_odo_Uli.o"
 	@echo "... src/visual_odo_Uli.i"
 	@echo "... src/visual_odo_Uli.s"

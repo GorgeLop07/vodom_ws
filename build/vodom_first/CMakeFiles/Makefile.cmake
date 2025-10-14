@@ -701,4 +701,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/visual_odometry_node.dir/DependInfo.cmake"
   "CMakeFiles/visual_odo_Uli.dir/DependInfo.cmake"
   "CMakeFiles/ground_truth_path_node.dir/DependInfo.cmake"
+  "CMakeFiles/path_recorder.dir/DependInfo.cmake"
   )
