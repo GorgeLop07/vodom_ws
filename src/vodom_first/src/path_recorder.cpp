@@ -13,8 +13,8 @@ public:
         // Declare parameters for topic names (CONFIGURABLE)
         this->declare_parameter<std::string>("vo_topic", "/vo_path");
         this->declare_parameter<std::string>("gt_topic", "/gt_path");
-        this->declare_parameter<std::string>("vo_output_file", "vo_trajectory.txt");
-        this->declare_parameter<std::string>("gt_output_file", "gt_trajectory.txt");
+        this->declare_parameter<std::string>("vo_output_file", "src/vodom_first/trayectories/vo_trajectory.txt");
+        this->declare_parameter<std::string>("gt_output_file", "src/vodom_first/trayectories/gt_trajectory.txt");
         
         // Get parameters
         std::string vo_topic = this->get_parameter("vo_topic").as_string();
