@@ -1,0 +1,186 @@
+[0.000000] (-) TimerEvent: {}
+[0.000406] (vodom_first) JobQueued: {'identifier': 'vodom_first', 'dependencies': OrderedDict()}
+[0.000523] (vodom_first) JobStarted: {'identifier': 'vodom_first'}
+[0.008103] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'cmake'}
+[0.008649] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'build'}
+[0.009258] (vodom_first) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first', '--', '-j16', '-l16'], 'cwd': '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('PYTHON_BASIC_REPL', '1'), ('USER', 'jorgelop'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/jorgelop/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'x11'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GIT_ASKPASS', '/snap/code/210/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jorgelop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('CHROME_DESKTOP', 'code.desktop'), ('OLDPWD', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws'), ('LESS', '-R'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/210/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('TERM_PROGRAM_VERSION', '1.105.0'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/jorgelop/snap/code/common/.cache/immodules/immodules.cache'), ('GIO_LAUNCHED_DESKTOP_FILE', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('ZSH', '/home/jorgelop/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/210/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1196'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/210/usr/share/code/code'), ('SYSTEMD_EXEC_PID', '1606'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/jorgelop/.vscode/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy'), ('P9K_TTY', 'old'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '5668'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SWARM_Proyect/Swarm_Workspaces/IMAV2025/imav_ws/install:/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jorgelop'), ('JOURNAL_STREAM', '8:22119'), ('_P9K_SSH_TTY', '/dev/pts/8'), ('_', '/usr/bin/colcon'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USER_ZDOTDIR', '/home/jorgelop'), ('ROS_VERSION', '2'), ('USERNAME', 'jorgelop'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('_CE_CONDA', ''), ('WINDOWPATH', '2'), ('PATH', '/home/jorgelop/anaconda3/condabin:/opt/ros/humble/bin:/home/jorgelop/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jorgelop/.vscode/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/scripts/noConfigScripts:/home/jorgelop/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/opt/xtensa-esp-elf/bin/'), ('SESSION_MANAGER', 'local/jorgelop07:@/tmp/.ICE-unix/1579,unix/jorgelop07:/tmp/.ICE-unix/1579'), ('GTK_EXE_PREFIX', '/snap/code/210/usr'), ('INVOCATION_ID', '6d3389ccf3f04b758303650f96cfe4a5'), ('XDG_MENU_PREFIX', 'gnome-'), ('BAMF_DESKTOP_FILE_HINT', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LOCPATH', '/snap/code/210/usr/lib/locale'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/jorgelop/.vscode/extensions/ms-python.debugpy-2025.14.1-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-71f95ca660b574b1.txt'), ('PYTHONSTARTUP', '/home/jorgelop/.config/Code/User/workspaceStorage/186f5417d27ebb97aa4ac79b1b606bb5/ms-python.python/pythonrc.py'), ('VSCODE_INJECTION', '1'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/jorgelop/snap/code/210/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('TERM_PROGRAM', 'vscode'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-4808f4aed6.sock'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/jorgelop/snap/code/210/.local/share/glib-2.0/schemas'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('AMENT_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first:/home/jorgelop/Documents/VantTec_SDV_SWARM/SWARM_Proyect/Swarm_Workspaces/IMAV2025/imav_ws/install/helipad_controller:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/jorgelop/anaconda3/bin/python'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('P9K_SSH', '0'), ('QT_IM_MODULE', 'ibus'), ('GIT_PAGER', 'cat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('VSCODE_NONCE', '4577a572-28a4-42f2-9498-7e759b207a3d'), ('PWD', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/jorgelop/snap/code/210/.local/share:/home/jorgelop/snap/code/210:/snap/code/210/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('ZDOTDIR', '/home/jorgelop'), ('_P9K_TTY', '/dev/pts/8'), ('CONDA_EXE', '/home/jorgelop/anaconda3/bin/conda'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first:/home/jorgelop/Documents/VantTec_SDV_SWARM/SWARM_Proyect/Swarm_Workspaces/IMAV2025/imav_ws/install/helipad_controller:/opt/ros/humble')]), 'shell': False}
+[0.052913] (vodom_first) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target visual_odo_simple\x1b[0m\n'}
+[0.068711] (vodom_first) StdoutLine: {'line': b'[ 40%] Built target path_recorder\n'}
+[0.068916] (vodom_first) StdoutLine: {'line': b'[ 40%] Built target ground_truth_path_node\n'}
+[0.069044] (vodom_first) StdoutLine: {'line': b'[ 60%] Built target odometry_to_path\n'}
+[0.073645] (vodom_first) StdoutLine: {'line': b'[ 80%] Built target visual_odometry_node\n'}
+[0.083950] (vodom_first) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding CXX object CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o\x1b[0m\n'}
+[0.099798] (-) TimerEvent: {}
+[0.200021] (-) TimerEvent: {}
+[0.300307] (-) TimerEvent: {}
+[0.400592] (-) TimerEvent: {}
+[0.500918] (-) TimerEvent: {}
+[0.601220] (-) TimerEvent: {}
+[0.701530] (-) TimerEvent: {}
+[0.801802] (-) TimerEvent: {}
+[0.902025] (-) TimerEvent: {}
+[1.002298] (-) TimerEvent: {}
+[1.102564] (-) TimerEvent: {}
+[1.202840] (-) TimerEvent: {}
+[1.303131] (-) TimerEvent: {}
+[1.403406] (-) TimerEvent: {}
+[1.503704] (-) TimerEvent: {}
+[1.604028] (-) TimerEvent: {}
+[1.704299] (-) TimerEvent: {}
+[1.804564] (-) TimerEvent: {}
+[1.904832] (-) TimerEvent: {}
+[2.005115] (-) TimerEvent: {}
+[2.105388] (-) TimerEvent: {}
+[2.205677] (-) TimerEvent: {}
+[2.306009] (-) TimerEvent: {}
+[2.406313] (-) TimerEvent: {}
+[2.506628] (-) TimerEvent: {}
+[2.606920] (-) TimerEvent: {}
+[2.707223] (-) TimerEvent: {}
+[2.806514] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:267:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected declaration before \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[2.806834] (vodom_first) StderrLine: {'line': b'  267 |         \x1b[01;31m\x1b[K}\x1b[m\x1b[K\n'}
+[2.806913] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[2.807029] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:271:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Kif\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.807108] (vodom_first) StderrLine: {'line': b'  271 |         \x1b[01;31m\x1b[Kif\x1b[m\x1b[K (desc_prev.rows >= 2 && desc_curr.rows >= 2) {\n'}
+[2.807214] (-) TimerEvent: {}
+[2.807309] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[2.807434] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:277:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Kif\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.807516] (vodom_first) StderrLine: {'line': b'  277 |         \x1b[01;31m\x1b[Kif\x1b[m\x1b[K (!matches.empty()) {\n'}
+[2.807600] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[2.807679] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:292:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Kif\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.807760] (vodom_first) StderrLine: {'line': b'  292 |         \x1b[01;31m\x1b[Kif\x1b[m\x1b[K (good_matches.size() >= 8) {\n'}
+[2.807843] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[2.807918] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:353:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected constructor, destructor, or type conversion before \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[2.808021] (vodom_first) StderrLine: {'line': b'  353 |         publish_odometry()\x1b[01;31m\x1b[K;\x1b[m\x1b[K\n'}
+[2.808103] (vodom_first) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[2.809182] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:355:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_frame_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[2.809274] (vodom_first) StderrLine: {'line': b'  355 |         \x1b[01;31m\x1b[Kcurrent_frame_\x1b[m\x1b[K++;\n'}
+[2.809329] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.809382] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:356:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected declaration before \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[2.809436] (vodom_first) StderrLine: {'line': b'  356 |     \x1b[01;31m\x1b[K}\x1b[m\x1b[K\n'}
+[2.809498] (vodom_first) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[2.809560] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid publish_odometry()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.809623] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:359:20:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.809685] (vodom_first) StderrLine: {'line': b'  359 |         auto now = \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_clock()->now();\n'}
+[2.809746] (vodom_first) StderrLine: {'line': b'      |                    \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.814733] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:368:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_x_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.814852] (vodom_first) StderrLine: {'line': b'  368 |         odom_msg.pose.pose.position.x = \x1b[01;31m\x1b[Kcurrent_x_\x1b[m\x1b[K;\n'}
+[2.814924] (vodom_first) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.819468] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:369:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_y_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.819585] (vodom_first) StderrLine: {'line': b'  369 |         odom_msg.pose.pose.position.y = \x1b[01;31m\x1b[Kcurrent_y_\x1b[m\x1b[K;\n'}
+[2.819664] (vodom_first) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.824564] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:374:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_yaw_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.824749] (vodom_first) StderrLine: {'line': b'  374 |         q.setRPY(0, 0, \x1b[01;31m\x1b[Kcurrent_yaw_\x1b[m\x1b[K);\n'}
+[2.824830] (vodom_first) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.832306] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:385:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvo_odom_pub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.832522] (vodom_first) StderrLine: {'line': b'  385 |         \x1b[01;31m\x1b[Kvo_odom_pub_\x1b[m\x1b[K->publish(odom_msg);\n'}
+[2.832594] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.838478] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:391:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvo_path_msg_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.838700] (vodom_first) StderrLine: {'line': b'  391 |         \x1b[01;31m\x1b[Kvo_path_msg_\x1b[m\x1b[K.poses.push_back(pose_stamped);\n'}
+[2.838818] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.843948] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:394:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvo_path_pub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.844146] (vodom_first) StderrLine: {'line': b'  394 |         \x1b[01;31m\x1b[Kvo_path_pub_\x1b[m\x1b[K->publish(vo_path_msg_);\n'}
+[2.844242] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.850185] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid publish_gps()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.850420] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:398:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_frame_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.850515] (vodom_first) StderrLine: {'line': b'  398 |         if (\x1b[01;31m\x1b[Kcurrent_frame_\x1b[m\x1b[K >= gt_poses.size()) {\n'}
+[2.850627] (vodom_first) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.855341] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:398:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kgt_poses\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.855458] (vodom_first) StderrLine: {'line': b'  398 |         if (current_frame_ >= \x1b[01;31m\x1b[Kgt_poses\x1b[m\x1b[K.size()) {\n'}
+[2.855535] (vodom_first) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[2.859813] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:403:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kgt_poses\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.860026] (vodom_first) StderrLine: {'line': b'  403 |         cv::Mat pose = \x1b[01;31m\x1b[Kgt_poses\x1b[m\x1b[K[current_frame_];\n'}
+[2.860134] (vodom_first) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[2.865682] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:403:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_frame_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.865900] (vodom_first) StderrLine: {'line': b'  403 |         cv::Mat pose = gt_poses[\x1b[01;31m\x1b[Kcurrent_frame_\x1b[m\x1b[K];\n'}
+[2.865989] (vodom_first) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.866069] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:409:32:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.866140] (vodom_first) StderrLine: {'line': b'  409 |         gps_msg.header.stamp = \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_clock()->now();\n'}
+[2.866245] (vodom_first) StderrLine: {'line': b'      |                                \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.871172] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:427:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kgps_pub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.871367] (vodom_first) StderrLine: {'line': b'  427 |         \x1b[01;31m\x1b[Kgps_pub_\x1b[m\x1b[K->publish(gps_msg);\n'}
+[2.871446] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[2.871574] (vodom_first) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.871712] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.871818] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.871921] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.872035] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.872155] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.872271] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.872371] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.872487] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.872575] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.872658] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:1\x1b[m\x1b[K:\n'}
+[2.872754] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.872838] (vodom_first) StderrLine: {'line': b'  429 |         RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);\n'}
+[2.872926] (vodom_first) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.873019] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.873104] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.873181] (vodom_first) StderrLine: {'line': b'  429 |         \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);\n'}
+[2.873255] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.873333] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.873410] (vodom_first) StderrLine: {'line': b'  429 |         \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);\n'}
+[2.873492] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.873574] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.873662] (vodom_first) StderrLine: {'line': b'  429 |         \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);\n'}
+[2.873763] (vodom_first) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.873862] (vodom_first) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.873959] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.874049] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.874107] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.874167] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.874231] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.874291] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.874344] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.874397] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.874451] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.874504] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.874555] (vodom_first) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:1\x1b[m\x1b[K:\n'}
+[2.874612] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.874666] (vodom_first) StderrLine: {'line': b'  429 |         RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);\n'}
+[2.874720] (vodom_first) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.874771] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.874825] (vodom_first) StderrLine: {'line': b'  429 |         RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);\n'}
+[2.874879] (vodom_first) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.874930] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:\x1b[m\x1b[K At global scope:\n'}
+[2.875000] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:431:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected declaration before \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[2.875060] (vodom_first) StderrLine: {'line': b'  431 | \x1b[01;31m\x1b[K}\x1b[m\x1b[K;\n'}
+[2.875112] (vodom_first) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[2.875163] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:433:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kredefinition of \xe2\x80\x98\x1b[01m\x1b[Kint main(int, char**)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.875214] (vodom_first) StderrLine: {'line': b'  433 | int \x1b[01;31m\x1b[Kmain\x1b[m\x1b[K(int argc, char** argv)\n'}
+[2.875264] (vodom_first) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.875314] (vodom_first) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:250:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint main(int, char**)\x1b[m\x1b[K\xe2\x80\x99 previously defined here\n'}
+[2.875364] (vodom_first) StderrLine: {'line': b'  250 | int \x1b[01;36m\x1b[Kmain\x1b[m\x1b[K(int argc, char** argv)\n'}
+[2.875412] (vodom_first) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.907341] (-) TimerEvent: {}
+[3.007660] (-) TimerEvent: {}
+[3.107934] (-) TimerEvent: {}
+[3.208232] (-) TimerEvent: {}
+[3.308505] (-) TimerEvent: {}
+[3.408801] (-) TimerEvent: {}
+[3.509104] (-) TimerEvent: {}
+[3.609383] (-) TimerEvent: {}
+[3.709686] (-) TimerEvent: {}
+[3.810039] (-) TimerEvent: {}
+[3.910423] (-) TimerEvent: {}
+[4.010734] (-) TimerEvent: {}
+[4.111070] (-) TimerEvent: {}
+[4.211345] (-) TimerEvent: {}
+[4.311645] (-) TimerEvent: {}
+[4.411944] (-) TimerEvent: {}
+[4.512238] (-) TimerEvent: {}
+[4.612517] (-) TimerEvent: {}
+[4.712800] (-) TimerEvent: {}
+[4.813110] (-) TimerEvent: {}
+[4.913387] (-) TimerEvent: {}
+[5.013688] (-) TimerEvent: {}
+[5.114010] (-) TimerEvent: {}
+[5.214310] (-) TimerEvent: {}
+[5.314609] (-) TimerEvent: {}
+[5.414886] (-) TimerEvent: {}
+[5.486448] (vodom_first) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/visual_odo_simple.dir/build.make:76: CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o] Error 1\n'}
+[5.486772] (vodom_first) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:197: CMakeFiles/visual_odo_simple.dir/all] Error 2\n'}
+[5.487067] (vodom_first) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[5.489694] (vodom_first) CommandEnded: {'returncode': 2}
+[5.503462] (vodom_first) JobEnded: {'identifier': 'vodom_first', 'rc': 2}
+[5.514147] (-) EventReactorShutdown: {}

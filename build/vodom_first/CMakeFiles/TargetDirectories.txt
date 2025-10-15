@@ -1,9 +1,6 @@
 /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles/uninstall.dir
 /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles/vodom_first_uninstall.dir
-/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles/ground_truth_path_node.dir
-/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles/path_recorder.dir
 /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles/visual_odo_simple.dir
-/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles/visual_odometry_node.dir
 /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles/odometry_to_path.dir
 /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles/test.dir
 /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first/CMakeFiles/edit_cache.dir

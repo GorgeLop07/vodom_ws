@@ -10,18 +10,19 @@ public:
     {
         // Subscribe to EKF odometry output
         odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
-            "/vo_ekf_path", 10,
+            "/input_odom", 10,
             std::bind(&OdometryToPath::odomCallback, this, std::placeholders::_1));
         
         // Publish path for visualization
-        path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/ekf_fused_path", 10);
+        path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/output_path", 10);
         
         // Initialize path
         ekf_path_.header.frame_id = "odom";
         
         RCLCPP_INFO(this->get_logger(), "🔄 EKF Odometry to Path Converter");
-        RCLCPP_INFO(this->get_logger(), "📥 Input: /vo_ekf_path (nav_msgs/msg/Odometry)");
-        RCLCPP_INFO(this->get_logger(), "📤 Output: /ekf_fused_path (nav_msgs/msg/Path)");
+        RCLCPP_INFO(this->get_logger(), "📥 Input: /input_odom (nav_msgs/msg/Odometry)");
+        RCLCPP_INFO(this->get_logger(), "📤 Output: /output_path (nav_msgs/msg/Path)");
+        RCLCPP_INFO(this->get_logger(), "🔗 Will be remapped via launch file");
     }
 
 private:

@@ -1,0 +1,42 @@
+[0.011s] Invoking command in '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first -- -j16 -l16
+[0.056s] [35m[1mConsolidate compiler generated dependencies of target visual_odo_simple[0m
+[0.071s] [ 60%] Built target ground_truth_path_node
+[0.071s] [ 60%] Built target path_recorder
+[0.071s] [ 60%] Built target odometry_to_path
+[0.071s] [ 80%] Built target visual_odometry_node
+[0.085s] [ 90%] [32mBuilding CXX object CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o[0m
+[8.474s] [100%] [32m[1mLinking CXX executable visual_odo_simple[0m
+[9.112s] [100%] Built target visual_odo_simple
+[9.128s] Invoked command in '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first -- -j16 -l16
+[9.141s] Invoking command in '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first
+[9.149s] -- Install configuration: ""
+[9.149s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/lib/vodom_first/visual_odometry_node
+[9.149s] -- Installing: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/lib/vodom_first/visual_odo_simple
+[9.158s] -- Set runtime path of "/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/lib/vodom_first/visual_odo_simple" to ""
+[9.158s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/lib/vodom_first/ground_truth_path_node
+[9.159s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/lib/vodom_first/path_recorder
+[9.159s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/lib/vodom_first/odometry_to_path
+[9.159s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/launch
+[9.159s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/launch/rosbag_visual_odometry.launch.py
+[9.159s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/launch/ekf_fusion_launch.py
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/launch/simple_vo_ekf.launch.py
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/config
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/config/calib(1).txt
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/config/vo_2d_visualization.rviz
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/config/ekf_config.yaml
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/ament_index/resource_index/package_run_dependencies/vodom_first
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/ament_index/resource_index/parent_prefix_path/vodom_first
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/environment/ament_prefix_path.sh
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/environment/ament_prefix_path.dsv
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/environment/path.sh
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/environment/path.dsv
+[9.160s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/local_setup.bash
+[9.161s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/local_setup.sh
+[9.161s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/local_setup.zsh
+[9.161s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/local_setup.dsv
+[9.161s] -- Installing: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/package.dsv
+[9.161s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/ament_index/resource_index/packages/vodom_first
+[9.161s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/cmake/vodom_firstConfig.cmake
+[9.161s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/cmake/vodom_firstConfig-version.cmake
+[9.161s] -- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/package.xml
+[9.164s] Invoked command in '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first

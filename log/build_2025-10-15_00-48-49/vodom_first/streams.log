@@ -1,0 +1,47 @@
+[0.013s] Invoking command in '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first -- -j16 -l16
+[0.071s] [ 90%] Built target visual_odometry_node
+[0.071s] [ 90%] [32mBuilding CXX object CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o[0m
+[0.071s] [ 90%] Built target ground_truth_path_node
+[0.072s] [ 90%] Built target path_recorder
+[0.072s] [ 90%] Built target odometry_to_path
+[2.810s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:[m[K In member function ‘[01m[Kbool VisualOdometrySimple::loadCameraCalibration()[m[K’:
+[2.810s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:96:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kfile[m[K’ was not declared in this scope
+[2.810s]    96 |         if (![01;31m[Kfile[m[K.is_open()) {
+[2.810s]       |              [01;31m[K^~~~[m[K
+[2.818s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.818s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.818s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.818s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.818s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.818s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.818s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.818s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.818s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.818s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.818s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.818s]                  from [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:1[m[K:
+[2.818s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:97:85:[m[K [01;31m[Kerror: [m[K‘[01m[Kcalib_file[m[K’ was not declared in this scope
+[2.818s]    97 |             RCLCPP_ERROR(this->get_logger(), "❌ Cannot open calibration file: %s", [01;31m[Kcalib_file[m[K.c_str());
+[2.819s]       |                                                                                     [01;31m[K^~~~~~~~~~[m[K
+[2.824s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:125:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kfile[m[K’ was not declared in this scope
+[2.824s]   125 |         while (std::getline([01;31m[Kfile[m[K, line)) {
+[2.824s]       |                             [01;31m[K^~~~[m[K
+[2.835s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.836s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.836s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.836s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.836s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.836s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.836s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.836s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.836s]                  from [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:1[m[K:
+[2.836s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:166:82:[m[K [01;31m[Kerror: [m[K‘[01m[Kcalib_file[m[K’ was not declared in this scope
+[2.836s]   166 |         RCLCPP_INFO(this->get_logger(), "✅ Camera calibration loaded from: %s", [01;31m[Kcalib_file[m[K.c_str());
+[2.836s]       |                                                                                  [01;31m[K^~~~~~~~~~[m[K
+[5.367s] gmake[2]: *** [CMakeFiles/visual_odo_simple.dir/build.make:76: CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o] Error 1
+[5.367s] gmake[1]: *** [CMakeFiles/Makefile2:197: CMakeFiles/visual_odo_simple.dir/all] Error 2
+[5.368s] gmake: *** [Makefile:146: all] Error 2
+[5.370s] Invoked command in '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first -- -j16 -l16

@@ -1,0 +1,125 @@
+[0.011s] Invoking command in '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first -- -j16 -l16
+[0.052s] [35m[1mConsolidate compiler generated dependencies of target visual_odo_simple[0m
+[0.068s] [ 40%] Built target path_recorder
+[0.068s] [ 40%] Built target ground_truth_path_node
+[0.068s] [ 60%] Built target odometry_to_path
+[0.073s] [ 80%] Built target visual_odometry_node
+[0.083s] [ 90%] [32mBuilding CXX object CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o[0m
+[2.806s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:267:9:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.806s]   267 |         [01;31m[K}[m[K
+[2.806s]       |         [01;31m[K^[m[K
+[2.806s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:271:9:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kif[m[K’
+[2.807s]   271 |         [01;31m[Kif[m[K (desc_prev.rows >= 2 && desc_curr.rows >= 2) {
+[2.807s]       |         [01;31m[K^~[m[K
+[2.807s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:277:9:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kif[m[K’
+[2.807s]   277 |         [01;31m[Kif[m[K (!matches.empty()) {
+[2.807s]       |         [01;31m[K^~[m[K
+[2.807s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:292:9:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kif[m[K’
+[2.807s]   292 |         [01;31m[Kif[m[K (good_matches.size() >= 8) {
+[2.807s]       |         [01;31m[K^~[m[K
+[2.807s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:353:27:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K;[m[K’ token
+[2.807s]   353 |         publish_odometry()[01;31m[K;[m[K
+[2.808s]       |                           [01;31m[K^[m[K
+[2.809s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:355:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_frame_[m[K’ does not name a type
+[2.809s]   355 |         [01;31m[Kcurrent_frame_[m[K++;
+[2.809s]       |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.809s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:356:5:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.809s]   356 |     [01;31m[K}[m[K
+[2.809s]       |     [01;31m[K^[m[K
+[2.809s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:[m[K In function ‘[01m[Kvoid publish_odometry()[m[K’:
+[2.809s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:359:20:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.809s]   359 |         auto now = [01;31m[Kthis[m[K->get_clock()->now();
+[2.809s]       |                    [01;31m[K^~~~[m[K
+[2.814s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:368:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_x_[m[K’ was not declared in this scope
+[2.814s]   368 |         odom_msg.pose.pose.position.x = [01;31m[Kcurrent_x_[m[K;
+[2.814s]       |                                         [01;31m[K^~~~~~~~~~[m[K
+[2.819s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:369:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_y_[m[K’ was not declared in this scope
+[2.819s]   369 |         odom_msg.pose.pose.position.y = [01;31m[Kcurrent_y_[m[K;
+[2.819s]       |                                         [01;31m[K^~~~~~~~~~[m[K
+[2.824s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:374:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw_[m[K’ was not declared in this scope
+[2.824s]   374 |         q.setRPY(0, 0, [01;31m[Kcurrent_yaw_[m[K);
+[2.824s]       |                        [01;31m[K^~~~~~~~~~~~[m[K
+[2.832s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:385:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kvo_odom_pub_[m[K’ was not declared in this scope
+[2.832s]   385 |         [01;31m[Kvo_odom_pub_[m[K->publish(odom_msg);
+[2.832s]       |         [01;31m[K^~~~~~~~~~~~[m[K
+[2.838s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:391:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kvo_path_msg_[m[K’ was not declared in this scope
+[2.838s]   391 |         [01;31m[Kvo_path_msg_[m[K.poses.push_back(pose_stamped);
+[2.838s]       |         [01;31m[K^~~~~~~~~~~~[m[K
+[2.843s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:394:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kvo_path_pub_[m[K’ was not declared in this scope
+[2.844s]   394 |         [01;31m[Kvo_path_pub_[m[K->publish(vo_path_msg_);
+[2.844s]       |         [01;31m[K^~~~~~~~~~~~[m[K
+[2.850s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:[m[K In function ‘[01m[Kvoid publish_gps()[m[K’:
+[2.850s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:398:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_frame_[m[K’ was not declared in this scope
+[2.850s]   398 |         if ([01;31m[Kcurrent_frame_[m[K >= gt_poses.size()) {
+[2.850s]       |             [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.855s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:398:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kgt_poses[m[K’ was not declared in this scope
+[2.855s]   398 |         if (current_frame_ >= [01;31m[Kgt_poses[m[K.size()) {
+[2.855s]       |                               [01;31m[K^~~~~~~~[m[K
+[2.859s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:403:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kgt_poses[m[K’ was not declared in this scope
+[2.859s]   403 |         cv::Mat pose = [01;31m[Kgt_poses[m[K[current_frame_];
+[2.860s]       |                        [01;31m[K^~~~~~~~[m[K
+[2.865s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:403:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_frame_[m[K’ was not declared in this scope
+[2.865s]   403 |         cv::Mat pose = gt_poses[[01;31m[Kcurrent_frame_[m[K];
+[2.865s]       |                                 [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.865s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:409:32:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.866s]   409 |         gps_msg.header.stamp = [01;31m[Kthis[m[K->get_clock()->now();
+[2.866s]       |                                [01;31m[K^~~~[m[K
+[2.871s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:427:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kgps_pub_[m[K’ was not declared in this scope
+[2.871s]   427 |         [01;31m[Kgps_pub_[m[K->publish(gps_msg);
+[2.871s]       |         [01;31m[K^~~~~~~~[m[K
+[2.871s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.871s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.871s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.871s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.871s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.872s]                  from [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:1[m[K:
+[2.872s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.872s]   429 |         RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);
+[2.872s]       |                     [01;31m[K^~~~[m[K
+[2.872s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.873s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.873s]   429 |         [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);
+[2.873s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[2.873s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.873s]   429 |         [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);
+[2.873s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[2.873s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.873s]   429 |         [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);
+[2.873s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[2.873s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.874s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.874s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.874s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.874s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.874s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.874s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.874s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.874s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.874s]                  from [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:1[m[K:
+[2.874s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.874s]   429 |         RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);
+[2.874s]       |                     [01;31m[K^~~~[m[K
+[2.874s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:429:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.874s]   429 |         RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "GPS update: (%.2f, %.2f)", gt_x, gt_y);
+[2.874s]       |                     [01;31m[K^~~~[m[K
+[2.874s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:[m[K At global scope:
+[2.874s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:431:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.874s]   431 | [01;31m[K}[m[K;
+[2.875s]       | [01;31m[K^[m[K
+[2.875s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:433:5:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kint main(int, char**)[m[K’
+[2.875s]   433 | int [01;31m[Kmain[m[K(int argc, char** argv)
+[2.875s]       |     [01;31m[K^~~~[m[K
+[2.875s] [01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:250:5:[m[K [01;36m[Knote: [m[K‘[01m[Kint main(int, char**)[m[K’ previously defined here
+[2.875s]   250 | int [01;36m[Kmain[m[K(int argc, char** argv)
+[2.875s]       |     [01;36m[K^~~~[m[K
+[5.486s] gmake[2]: *** [CMakeFiles/visual_odo_simple.dir/build.make:76: CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o] Error 1
+[5.486s] gmake[1]: *** [CMakeFiles/Makefile2:197: CMakeFiles/visual_odo_simple.dir/all] Error 2
+[5.487s] gmake: *** [Makefile:146: all] Error 2
+[5.489s] Invoked command in '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first -- -j16 -l16

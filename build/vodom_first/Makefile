@@ -198,32 +198,6 @@ vodom_first_uninstall/fast:
 .PHONY : vodom_first_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named ground_truth_path_node
-
-# Build rule for target.
-ground_truth_path_node: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ground_truth_path_node
-.PHONY : ground_truth_path_node
-
-# fast build rule for target.
-ground_truth_path_node/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/build
-.PHONY : ground_truth_path_node/fast
-
-#=============================================================================
-# Target rules for targets named path_recorder
-
-# Build rule for target.
-path_recorder: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path_recorder
-.PHONY : path_recorder
-
-# fast build rule for target.
-path_recorder/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/path_recorder.dir/build.make CMakeFiles/path_recorder.dir/build
-.PHONY : path_recorder/fast
-
-#=============================================================================
 # Target rules for targets named visual_odo_simple
 
 # Build rule for target.
@@ -237,19 +211,6 @@ visual_odo_simple/fast:
 .PHONY : visual_odo_simple/fast
 
 #=============================================================================
-# Target rules for targets named visual_odometry_node
-
-# Build rule for target.
-visual_odometry_node: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 visual_odometry_node
-.PHONY : visual_odometry_node
-
-# fast build rule for target.
-visual_odometry_node/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odometry_node.dir/build.make CMakeFiles/visual_odometry_node.dir/build
-.PHONY : visual_odometry_node/fast
-
-#=============================================================================
 # Target rules for targets named odometry_to_path
 
 # Build rule for target.
@@ -261,30 +222,6 @@ odometry_to_path: cmake_check_build_system
 odometry_to_path/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/odometry_to_path.dir/build.make CMakeFiles/odometry_to_path.dir/build
 .PHONY : odometry_to_path/fast
-
-src/ground_truth_path_node.o: src/ground_truth_path_node.cpp.o
-.PHONY : src/ground_truth_path_node.o
-
-# target to build an object file
-src/ground_truth_path_node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.o
-.PHONY : src/ground_truth_path_node.cpp.o
-
-src/ground_truth_path_node.i: src/ground_truth_path_node.cpp.i
-.PHONY : src/ground_truth_path_node.i
-
-# target to preprocess a source file
-src/ground_truth_path_node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.i
-.PHONY : src/ground_truth_path_node.cpp.i
-
-src/ground_truth_path_node.s: src/ground_truth_path_node.cpp.s
-.PHONY : src/ground_truth_path_node.s
-
-# target to generate assembly for a file
-src/ground_truth_path_node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ground_truth_path_node.dir/build.make CMakeFiles/ground_truth_path_node.dir/src/ground_truth_path_node.cpp.s
-.PHONY : src/ground_truth_path_node.cpp.s
 
 src/odometry_to_path.o: src/odometry_to_path.cpp.o
 .PHONY : src/odometry_to_path.o
@@ -310,30 +247,6 @@ src/odometry_to_path.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/odometry_to_path.dir/build.make CMakeFiles/odometry_to_path.dir/src/odometry_to_path.cpp.s
 .PHONY : src/odometry_to_path.cpp.s
 
-src/path_recorder.o: src/path_recorder.cpp.o
-.PHONY : src/path_recorder.o
-
-# target to build an object file
-src/path_recorder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/path_recorder.dir/build.make CMakeFiles/path_recorder.dir/src/path_recorder.cpp.o
-.PHONY : src/path_recorder.cpp.o
-
-src/path_recorder.i: src/path_recorder.cpp.i
-.PHONY : src/path_recorder.i
-
-# target to preprocess a source file
-src/path_recorder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/path_recorder.dir/build.make CMakeFiles/path_recorder.dir/src/path_recorder.cpp.i
-.PHONY : src/path_recorder.cpp.i
-
-src/path_recorder.s: src/path_recorder.cpp.s
-.PHONY : src/path_recorder.s
-
-# target to generate assembly for a file
-src/path_recorder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/path_recorder.dir/build.make CMakeFiles/path_recorder.dir/src/path_recorder.cpp.s
-.PHONY : src/path_recorder.cpp.s
-
 src/visual_odo_simple.o: src/visual_odo_simple.cpp.o
 .PHONY : src/visual_odo_simple.o
 
@@ -358,30 +271,6 @@ src/visual_odo_simple.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odo_simple.dir/build.make CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.s
 .PHONY : src/visual_odo_simple.cpp.s
 
-src/visual_odometry_node.o: src/visual_odometry_node.cpp.o
-.PHONY : src/visual_odometry_node.o
-
-# target to build an object file
-src/visual_odometry_node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odometry_node.dir/build.make CMakeFiles/visual_odometry_node.dir/src/visual_odometry_node.cpp.o
-.PHONY : src/visual_odometry_node.cpp.o
-
-src/visual_odometry_node.i: src/visual_odometry_node.cpp.i
-.PHONY : src/visual_odometry_node.i
-
-# target to preprocess a source file
-src/visual_odometry_node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odometry_node.dir/build.make CMakeFiles/visual_odometry_node.dir/src/visual_odometry_node.cpp.i
-.PHONY : src/visual_odometry_node.cpp.i
-
-src/visual_odometry_node.s: src/visual_odometry_node.cpp.s
-.PHONY : src/visual_odometry_node.s
-
-# target to generate assembly for a file
-src/visual_odometry_node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visual_odometry_node.dir/build.make CMakeFiles/visual_odometry_node.dir/src/visual_odometry_node.cpp.s
-.PHONY : src/visual_odometry_node.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -397,26 +286,14 @@ help:
 	@echo "... test"
 	@echo "... uninstall"
 	@echo "... vodom_first_uninstall"
-	@echo "... ground_truth_path_node"
 	@echo "... odometry_to_path"
-	@echo "... path_recorder"
 	@echo "... visual_odo_simple"
-	@echo "... visual_odometry_node"
-	@echo "... src/ground_truth_path_node.o"
-	@echo "... src/ground_truth_path_node.i"
-	@echo "... src/ground_truth_path_node.s"
 	@echo "... src/odometry_to_path.o"
 	@echo "... src/odometry_to_path.i"
 	@echo "... src/odometry_to_path.s"
-	@echo "... src/path_recorder.o"
-	@echo "... src/path_recorder.i"
-	@echo "... src/path_recorder.s"
 	@echo "... src/visual_odo_simple.o"
 	@echo "... src/visual_odo_simple.i"
 	@echo "... src/visual_odo_simple.s"
-	@echo "... src/visual_odometry_node.o"
-	@echo "... src/visual_odometry_node.i"
-	@echo "... src/visual_odometry_node.s"
 .PHONY : help
 
 

@@ -723,11 +723,6 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__traits.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__type_support.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
-  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/imu.hpp \
-  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__struct.hpp \
-  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__builder.hpp \
-  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__traits.hpp \
-  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__type_support.hpp \
   /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/compressed_image.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__struct.hpp \
@@ -882,6 +877,15 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
   /opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.hpp \
   /opt/ros/humble/include/tf2_ros/tf2_ros/buffer_interface.hpp \
   /opt/ros/humble/include/tf2_ros/tf2_ros/visibility_control.hpp \
+  /opt/ros/humble/include/tf2_ros/tf2_ros/transform_broadcaster.h \
+  /opt/ros/humble/include/tf2_ros/tf2_ros/transform_broadcaster.hpp \
+  /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp \
+  /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp \
+  /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__builder.hpp \
+  /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__traits.hpp \
+  /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__type_support.hpp \
+  /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+  /opt/ros/humble/include/tf2_ros/tf2_ros/qos.hpp \
   /usr/include/opencv4/opencv2/opencv.hpp \
   /usr/include/opencv4/opencv2/calib3d.hpp \
   /usr/include/opencv4/opencv2/features2d.hpp \
@@ -962,8 +966,18 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
   /usr/include/opencv4/opencv2/stitching/detail/camera.hpp \
   /usr/include/opencv4/opencv2/video.hpp \
   /usr/include/opencv4/opencv2/video/tracking.hpp \
-  /usr/include/opencv4/opencv2/video/background_segm.hpp
+  /usr/include/opencv4/opencv2/video/background_segm.hpp \
+  /usr/include/c++/11/fstream \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc
 
+
+/usr/include/c++/11/bits/fstream.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
+
+/usr/include/c++/11/fstream:
 
 /usr/include/opencv4/opencv2/video/background_segm.hpp:
 
@@ -978,8 +992,6 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
 /usr/include/c++/11/bits/stl_deque.h:
 
 /usr/include/c++/11/deque:
-
-/usr/include/c++/11/queue:
 
 /usr/include/opencv4/opencv2/stitching/detail/util.hpp:
 
@@ -1035,6 +1047,8 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
 
 /usr/include/opencv4/opencv2/dnn/dict.hpp:
 
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+
 /usr/include/opencv4/opencv2/dnn/version.hpp:
 
 /usr/include/opencv4/opencv2/core/async.hpp:
@@ -1048,6 +1062,18 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
 /usr/include/opencv4/opencv2/flann/defines.h:
 
 /usr/include/opencv4/opencv2/features2d.hpp:
+
+/opt/ros/humble/include/tf2_ros/tf2_ros/qos.hpp:
+
+/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
+
+/usr/include/c++/11/queue:
+
+/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__type_support.hpp:
+
+/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__traits.hpp:
+
+/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp:
 
 /opt/ros/humble/include/tf2/tf2/LinearMath/Matrix3x3.hpp:
 
@@ -1108,6 +1134,8 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__type_support.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp:
+
+/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform.hpp:
 
@@ -1199,12 +1227,6 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
 
 /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:
 
-/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__type_support.hpp:
-
-/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__struct.hpp:
-
-/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/imu.hpp:
-
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__type_support.hpp:
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__builder.hpp:
@@ -1290,6 +1312,10 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__type_support.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__traits.hpp:
+
+/opt/ros/humble/include/tf2_ros/tf2_ros/transform_broadcaster.hpp:
+
+/opt/ros/humble/include/tf2_ros/tf2_ros/transform_broadcaster.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__builder.hpp:
 
@@ -1496,8 +1522,6 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
 /opt/ros/humble/include/rclcpp/rclcpp/qos.hpp:
 
 /usr/include/c++/11/bits/hashtable.h:
-
-/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__builder.hpp:
 
 /usr/include/c++/11/bits/stl_multiset.h:
 
@@ -2103,8 +2127,6 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
 
 /usr/include/c++/11/debug/assertions.h:
 
-/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__traits.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
@@ -2632,6 +2654,8 @@ CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o: /home/jorgelop/Doc
 /opt/ros/humble/include/rclcpp/rclcpp/logger.hpp:
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__type_support.hpp:
+
+/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__builder.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/wrench.hpp:
 

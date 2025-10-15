@@ -1,1 +1,1 @@
-rclcpp;std_msgs;nav_msgs;geometry_msgs;sensor_msgs;cv_bridge;tf2;tf2_geometry_msgs;opencv4;ament_lint_auto;ament_lint_common
+rclcpp;std_msgs;nav_msgs;geometry_msgs;sensor_msgs;cv_bridge;tf2;tf2_geometry_msgs;tf2_ros;opencv4;robot_localization;ament_lint_auto;ament_lint_common

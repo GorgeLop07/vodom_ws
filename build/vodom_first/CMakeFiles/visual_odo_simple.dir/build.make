@@ -99,6 +99,7 @@ visual_odo_simple: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_introspec
 visual_odo_simple: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so
 visual_odo_simple: /opt/ros/humble/lib/libnav_msgs__rosidl_generator_py.so
 visual_odo_simple: /opt/ros/humble/lib/libcv_bridge.so
+visual_odo_simple: /opt/ros/humble/lib/libstatic_transform_broadcaster_node.so
 visual_odo_simple: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.5.4d
 visual_odo_simple: /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.5.4d
 visual_odo_simple: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.5.4d
