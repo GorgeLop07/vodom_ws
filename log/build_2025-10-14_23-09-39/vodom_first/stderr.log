@@ -1,0 +1,14 @@
+[01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:[m[K In constructor ‘[01m[KVisualOdometrySimple::VisualOdometrySimple()[m[K’:
+[01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:110:9:[m[K [01;35m[Kwarning: [m[K‘[01m[KVisualOdometrySimple::frame_count_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  110 |     int [01;35m[Kframe_count_[m[K;
+      |         [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:109:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool VisualOdometrySimple::initialized_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  109 |     bool [01;35m[Kinitialized_[m[K;
+      |          [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:20:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   20 |     [01;35m[KVisualOdometrySimple[m[K() : Node("visual_odo_simple"), frame_count_(0), initialized_(false)
+      |     [01;35m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:[m[K In member function ‘[01m[Kvoid VisualOdometrySimple::processVisualOdometry(const cv::Mat&, const Time&)[m[K’:
+[01m[K/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first/src/visual_odo_simple.cpp:239:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kprev_yaw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  239 |         double [01;35m[Kprev_yaw[m[K = current_yaw_;
+      |                [01;35m[K^~~~~~~~[m[K
