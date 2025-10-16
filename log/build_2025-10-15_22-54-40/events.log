@@ -1,0 +1,149 @@
+[0.000000] (-) TimerEvent: {}
+[0.000382] (vodom_first) JobQueued: {'identifier': 'vodom_first', 'dependencies': OrderedDict()}
+[0.000492] (vodom_first) JobStarted: {'identifier': 'vodom_first'}
+[0.009490] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'cmake'}
+[0.010028] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'build'}
+[0.010631] (vodom_first) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first', '--', '-j16', '-l16'], 'cwd': '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('USER', 'jorgelop'), ('WARP_HONOR_PS1', '0'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jorgelop'), ('OLDPWD', '/home/jorgelop'), ('LESS', '-R'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('TERM_PROGRAM_VERSION', 'v0.2025.09.03.08.11.stable_03'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/dev.warp.Warp.desktop'), ('WARP_USE_SSH_WRAPPER', '1'), ('ZSH', '/home/jorgelop/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1280'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('SYSTEMD_EXEC_PID', '1717'), ('P9K_TTY', 'old'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '15457'), ('_CE_M', ''), ('CONDA_CHANGEPS1', 'false'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SWARM_Proyect/Swarm_Workspaces/IMAV2025/imav_ws/install:/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jorgelop'), ('JOURNAL_STREAM', '8:17218'), ('_', '/usr/bin/colcon'), ('_P9K_SSH_TTY', '/dev/pts/5'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('SSH_SOCKET_DIR', '~/.ssh'), ('TERM', 'xterm-256color'), ('USERNAME', 'jorgelop'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('WARP_IS_LOCAL_SHELL_SESSION', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('_CE_CONDA', ''), ('WINDOWPATH', '2'), ('PATH', '/home/jorgelop/anaconda3/condabin:/opt/ros/humble/bin:/home/jorgelop/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/xtensa-esp-elf/bin/'), ('INVOCATION_ID', '4ff78da9160041c5ab49b6f899565506'), ('SESSION_MANAGER', 'local/jorgelop07:@/tmp/.ICE-unix/1690,unix/jorgelop07:/tmp/.ICE-unix/1690'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('TERM_PROGRAM', 'WarpTerminal'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first:/home/jorgelop/Documents/VantTec_SDV_SWARM/SWARM_Proyect/Swarm_Workspaces/IMAV2025/imav_ws/install/helipad_controller:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/jorgelop/anaconda3/bin/python'), ('SHELL', '/usr/bin/zsh'), ('GDMSESSION', 'ubuntu'), ('QT_ACCESSIBILITY', '1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('P9K_SSH', '0'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/jorgelop/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CONDA_EXE', '/home/jorgelop/anaconda3/bin/conda'), ('_P9K_TTY', '/dev/pts/5'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first:/home/jorgelop/Documents/VantTec_SDV_SWARM/SWARM_Proyect/Swarm_Workspaces/IMAV2025/imav_ws/install/helipad_controller:/opt/ros/humble')]), 'shell': False}
+[0.091640] (vodom_first) StdoutLine: {'line': b'[ 66%] Built target odometry_to_path\n'}
+[0.091899] (vodom_first) StdoutLine: {'line': b'[ 66%] Built target path_recorder\n'}
+[0.095219] (vodom_first) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o\x1b[0m\n'}
+[0.099791] (-) TimerEvent: {}
+[0.199984] (-) TimerEvent: {}
+[0.300278] (-) TimerEvent: {}
+[0.400542] (-) TimerEvent: {}
+[0.500818] (-) TimerEvent: {}
+[0.601090] (-) TimerEvent: {}
+[0.701396] (-) TimerEvent: {}
+[0.801700] (-) TimerEvent: {}
+[0.902013] (-) TimerEvent: {}
+[1.002335] (-) TimerEvent: {}
+[1.102639] (-) TimerEvent: {}
+[1.202941] (-) TimerEvent: {}
+[1.303236] (-) TimerEvent: {}
+[1.403530] (-) TimerEvent: {}
+[1.503827] (-) TimerEvent: {}
+[1.604133] (-) TimerEvent: {}
+[1.704413] (-) TimerEvent: {}
+[1.804733] (-) TimerEvent: {}
+[1.905076] (-) TimerEvent: {}
+[2.005341] (-) TimerEvent: {}
+[2.105634] (-) TimerEvent: {}
+[2.205929] (-) TimerEvent: {}
+[2.306228] (-) TimerEvent: {}
+[2.406534] (-) TimerEvent: {}
+[2.506823] (-) TimerEvent: {}
+[2.607141] (-) TimerEvent: {}
+[2.707444] (-) TimerEvent: {}
+[2.807742] (-) TimerEvent: {}
+[2.908050] (-) TimerEvent: {}
+[3.008333] (-) TimerEvent: {}
+[3.108662] (-) TimerEvent: {}
+[3.208956] (-) TimerEvent: {}
+[3.309299] (-) TimerEvent: {}
+[3.409787] (-) TimerEvent: {}
+[3.510101] (-) TimerEvent: {}
+[3.610383] (-) TimerEvent: {}
+[3.710665] (-) TimerEvent: {}
+[3.810956] (-) TimerEvent: {}
+[3.911232] (-) TimerEvent: {}
+[4.011525] (-) TimerEvent: {}
+[4.111831] (-) TimerEvent: {}
+[4.212146] (-) TimerEvent: {}
+[4.312413] (-) TimerEvent: {}
+[4.412704] (-) TimerEvent: {}
+[4.513010] (-) TimerEvent: {}
+[4.613387] (-) TimerEvent: {}
+[4.713677] (-) TimerEvent: {}
+[4.813954] (-) TimerEvent: {}
+[4.914227] (-) TimerEvent: {}
+[5.014577] (-) TimerEvent: {}
+[5.114870] (-) TimerEvent: {}
+[5.215184] (-) TimerEvent: {}
+[5.315491] (-) TimerEvent: {}
+[5.415752] (-) TimerEvent: {}
+[5.516019] (-) TimerEvent: {}
+[5.616307] (-) TimerEvent: {}
+[5.716633] (-) TimerEvent: {}
+[5.816970] (-) TimerEvent: {}
+[5.917307] (-) TimerEvent: {}
+[6.017615] (-) TimerEvent: {}
+[6.117939] (-) TimerEvent: {}
+[6.218213] (-) TimerEvent: {}
+[6.318508] (-) TimerEvent: {}
+[6.418775] (-) TimerEvent: {}
+[6.519052] (-) TimerEvent: {}
+[6.619323] (-) TimerEvent: {}
+[6.719645] (-) TimerEvent: {}
+[6.819939] (-) TimerEvent: {}
+[6.920235] (-) TimerEvent: {}
+[7.020521] (-) TimerEvent: {}
+[7.120820] (-) TimerEvent: {}
+[7.221121] (-) TimerEvent: {}
+[7.321416] (-) TimerEvent: {}
+[7.421690] (-) TimerEvent: {}
+[7.521969] (-) TimerEvent: {}
+[7.622285] (-) TimerEvent: {}
+[7.722571] (-) TimerEvent: {}
+[7.822880] (-) TimerEvent: {}
+[7.923164] (-) TimerEvent: {}
+[8.023502] (-) TimerEvent: {}
+[8.123797] (-) TimerEvent: {}
+[8.224105] (-) TimerEvent: {}
+[8.324459] (-) TimerEvent: {}
+[8.424787] (-) TimerEvent: {}
+[8.525102] (-) TimerEvent: {}
+[8.625423] (-) TimerEvent: {}
+[8.725736] (-) TimerEvent: {}
+[8.826080] (-) TimerEvent: {}
+[8.926425] (-) TimerEvent: {}
+[9.026746] (-) TimerEvent: {}
+[9.127071] (-) TimerEvent: {}
+[9.227422] (-) TimerEvent: {}
+[9.327726] (-) TimerEvent: {}
+[9.428031] (-) TimerEvent: {}
+[9.528351] (-) TimerEvent: {}
+[9.628704] (-) TimerEvent: {}
+[9.729041] (-) TimerEvent: {}
+[9.774279] (vodom_first) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable visual_odo_simple\x1b[0m\n'}
+[9.829137] (-) TimerEvent: {}
+[9.929433] (-) TimerEvent: {}
+[10.029718] (-) TimerEvent: {}
+[10.130021] (-) TimerEvent: {}
+[10.230328] (-) TimerEvent: {}
+[10.330593] (-) TimerEvent: {}
+[10.430857] (-) TimerEvent: {}
+[10.531141] (-) TimerEvent: {}
+[10.601629] (vodom_first) StdoutLine: {'line': b'[100%] Built target visual_odo_simple\n'}
+[10.612380] (vodom_first) CommandEnded: {'returncode': 0}
+[10.612966] (vodom_first) JobProgress: {'identifier': 'vodom_first', 'progress': 'install'}
+[10.620976] (vodom_first) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first'], 'cwd': '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('USER', 'jorgelop'), ('WARP_HONOR_PS1', '0'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jorgelop'), ('OLDPWD', '/home/jorgelop'), ('LESS', '-R'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('TERM_PROGRAM_VERSION', 'v0.2025.09.03.08.11.stable_03'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/dev.warp.Warp.desktop'), ('WARP_USE_SSH_WRAPPER', '1'), ('ZSH', '/home/jorgelop/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1280'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('SYSTEMD_EXEC_PID', '1717'), ('P9K_TTY', 'old'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '15457'), ('_CE_M', ''), ('CONDA_CHANGEPS1', 'false'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SWARM_Proyect/Swarm_Workspaces/IMAV2025/imav_ws/install:/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jorgelop'), ('JOURNAL_STREAM', '8:17218'), ('_', '/usr/bin/colcon'), ('_P9K_SSH_TTY', '/dev/pts/5'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('SSH_SOCKET_DIR', '~/.ssh'), ('TERM', 'xterm-256color'), ('USERNAME', 'jorgelop'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('WARP_IS_LOCAL_SHELL_SESSION', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('_CE_CONDA', ''), ('WINDOWPATH', '2'), ('PATH', '/home/jorgelop/anaconda3/condabin:/opt/ros/humble/bin:/home/jorgelop/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/xtensa-esp-elf/bin/'), ('INVOCATION_ID', '4ff78da9160041c5ab49b6f899565506'), ('SESSION_MANAGER', 'local/jorgelop07:@/tmp/.ICE-unix/1690,unix/jorgelop07:/tmp/.ICE-unix/1690'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('TERM_PROGRAM', 'WarpTerminal'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first:/home/jorgelop/Documents/VantTec_SDV_SWARM/SWARM_Proyect/Swarm_Workspaces/IMAV2025/imav_ws/install/helipad_controller:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/jorgelop/anaconda3/bin/python'), ('SHELL', '/usr/bin/zsh'), ('GDMSESSION', 'ubuntu'), ('QT_ACCESSIBILITY', '1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('P9K_SSH', '0'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/build/vodom_first'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/jorgelop/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CONDA_EXE', '/home/jorgelop/anaconda3/bin/conda'), ('_P9K_TTY', '/dev/pts/5'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first:/home/jorgelop/Documents/VantTec_SDV_SWARM/SWARM_Proyect/Swarm_Workspaces/IMAV2025/imav_ws/install/helipad_controller:/opt/ros/humble')]), 'shell': False}
+[10.629477] (vodom_first) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.630155] (vodom_first) StdoutLine: {'line': b'-- Installing: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/lib/vodom_first/visual_odo_simple\n'}
+[10.631200] (-) TimerEvent: {}
+[10.641256] (vodom_first) StdoutLine: {'line': b'-- Set runtime path of "/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/lib/vodom_first/visual_odo_simple" to ""\n'}
+[10.641499] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/lib/vodom_first/odometry_to_path\n'}
+[10.642024] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/lib/vodom_first/path_recorder\n'}
+[10.642225] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/launch\n'}
+[10.642366] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/launch/simple_vo_ekf.launch.py\n'}
+[10.642494] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/config\n'}
+[10.642620] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/config/calib(1).txt\n'}
+[10.642737] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/config/vo_2d_visualization.rviz\n'}
+[10.642879] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/config/ekf_config.yaml\n'}
+[10.642991] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/ament_index/resource_index/package_run_dependencies/vodom_first\n'}
+[10.643076] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/ament_index/resource_index/parent_prefix_path/vodom_first\n'}
+[10.643151] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/environment/ament_prefix_path.sh\n'}
+[10.643226] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/environment/ament_prefix_path.dsv\n'}
+[10.643307] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/environment/path.sh\n'}
+[10.643404] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/environment/path.dsv\n'}
+[10.643503] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/local_setup.bash\n'}
+[10.643588] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/local_setup.sh\n'}
+[10.643669] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/local_setup.zsh\n'}
+[10.643748] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/local_setup.dsv\n'}
+[10.643826] (vodom_first) StdoutLine: {'line': b'-- Installing: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/package.dsv\n'}
+[10.643904] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/ament_index/resource_index/packages/vodom_first\n'}
+[10.643985] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/cmake/vodom_firstConfig.cmake\n'}
+[10.644070] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/cmake/vodom_firstConfig-version.cmake\n'}
+[10.644160] (vodom_first) StdoutLine: {'line': b'-- Up-to-date: /home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/install/vodom_first/share/vodom_first/package.xml\n'}
+[10.645584] (vodom_first) CommandEnded: {'returncode': 0}
+[10.665597] (vodom_first) JobEnded: {'identifier': 'vodom_first', 'rc': 0}
+[10.666258] (-) EventReactorShutdown: {}
