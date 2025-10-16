@@ -1,6 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target visual_odo_simple[0m
-[ 80%] Built target ground_truth_path_node
-[ 80%] Built target odometry_to_path
-[ 80%] Built target path_recorder
-[ 80%] Built target visual_odometry_node
-[ 90%] [32mBuilding CXX object CMakeFiles/visual_odo_simple.dir/src/visual_odo_simple.cpp.o[0m
