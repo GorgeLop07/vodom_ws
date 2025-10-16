@@ -190,7 +190,7 @@ private:
                     double dz = scale * t.at<double>(2);
                     
                     // Extract yaw from rotation matrix (EXACT KITTI method)
-                    double dyaw = atan2(R.at<double>(2, 0), R.at<double>(0, 0));
+                    double dyaw = -atan2(R.at<double>(2, 0), R.at<double>(0, 0));
                     
                     // Filter out excessive rotations (EXACT KITTI approach)
                     if (abs(dyaw) > 0.05) { // Limit to ~3 degrees per frame
@@ -199,8 +199,10 @@ private:
                     }
                     
                     // Transform relative motion to world coordinates (EXACT KITTI)
-                    current_x_ += dx * cos(current_yaw_) - dz * sin(current_yaw_);
-                    current_y_ += dx * sin(current_yaw_) + dz * cos(current_yaw_);
+                    // current_x_ += dx * cos(current_yaw_) - dz * sin(current_yaw_); //Esto puede no ser correcto xd
+                    // current_y_ += dx * sin(current_yaw_) + dz * cos(current_yaw_);
+                    current_x_ += -dz * cos(current_yaw_) + dx * sin(current_yaw_);  // Forward = dz
+                    current_y_ += -dz * sin(current_yaw_) - dx * cos(current_yaw_);  // Lateral = dx
                     current_yaw_ += dyaw;
                     
                     RCLCPP_INFO(this->get_logger(), "🚗 Frame %zu: matches=%zu, inliers=%d, scale=%.3f, dx=%.3f, dz=%.3f, dyaw=%.3f°", 
