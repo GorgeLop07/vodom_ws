@@ -234,13 +234,13 @@ private:
         q.setRPY(0, 0, current_yaw_);
         odom_msg.pose.pose.orientation = tf2::toMsg(q);
         
-        // Set covariance (EXACT KITTI values)
+        // Set covariance - LOW values for high confidence (smooth EKF)
         for (int i = 0; i < 36; i++) {
             odom_msg.pose.covariance[i] = 0.0;
         }
-        odom_msg.pose.covariance[0] = 0.5;   // x //Valor del commit 0.1
-        odom_msg.pose.covariance[7] = 0.5;   // y //Valor del Commit 0.1
-        odom_msg.pose.covariance[35] = 0.2;  // yaw //Valor del commit 0.1
+        odom_msg.pose.covariance[0] = 0.05;   // x - HIGH CONFIDENCE (reduced from 0.5)
+        odom_msg.pose.covariance[7] = 0.05;   // y - HIGH CONFIDENCE (reduced from 0.5)
+        odom_msg.pose.covariance[35] = 0.02;  // yaw - VERY HIGH CONFIDENCE (reduced from 0.2)
         
         vo_odom_pub_->publish(odom_msg);
         

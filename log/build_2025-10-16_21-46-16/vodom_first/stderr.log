@@ -1,0 +1,17 @@
+[31mCMake Error at CMakeLists.txt:26 (add_executable):
+  add_executable cannot create target "odometry_to_path" because another
+  target with the same name already exists.  The existing target is an
+  executable created in source directory
+  "/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first".
+  See documentation for policy CMP0002 for more details.
+
+[0m
+[31mCMake Error at CMakeLists.txt:27 (add_executable):
+  add_executable cannot create target "path_recorder" because another target
+  with the same name already exists.  The existing target is an executable
+  created in source directory
+  "/home/jorgelop/Documents/VantTec_SDV_SWARM/SDV_Proyect/SDV_Software_Workspaces/vo_ws/src/vodom_first".
+  See documentation for policy CMP0002 for more details.
+
+[0m
+gmake: *** [Makefile:390: cmake_check_build_system] Error 1

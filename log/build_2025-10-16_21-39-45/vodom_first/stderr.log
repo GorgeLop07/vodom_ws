@@ -1,0 +1,80 @@
+[31mCMake Error at CMakeLists.txt:23 (add_executable):
+  Cannot find source file:
+
+    src/listener_node.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+[0m
+[31mCMake Error at CMakeLists.txt:24 (add_executable):
+  Cannot find source file:
+
+    src/vodom_first_node.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+[0m
+[31mCMake Error at CMakeLists.txt:25 (add_executable):
+  Cannot find source file:
+
+    src/visual_odo_Uli.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+[0m
+[31mCMake Error at CMakeLists.txt:26 (add_executable):
+  Cannot find source file:
+
+    src/visual_odometry_node.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+[0m
+[31mCMake Error at CMakeLists.txt:27 (add_executable):
+  Cannot find source file:
+
+    src/ground_truth_path_node.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+[0m
+[31mCMake Error at CMakeLists.txt:28 (add_executable):
+  Cannot find source file:
+
+    src/minimal_path_publisher.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+[0m
+[31mCMake Error at CMakeLists.txt:23 (add_executable):
+  No SOURCES given to target: listener_node
+
+[0m
+[31mCMake Error at CMakeLists.txt:24 (add_executable):
+  No SOURCES given to target: vodom_first_node
+
+[0m
+[31mCMake Error at CMakeLists.txt:25 (add_executable):
+  No SOURCES given to target: visual_odo_Uli
+
+[0m
+[31mCMake Error at CMakeLists.txt:26 (add_executable):
+  No SOURCES given to target: visual_odometry_node
+
+[0m
+[31mCMake Error at CMakeLists.txt:27 (add_executable):
+  No SOURCES given to target: ground_truth_path_node
+
+[0m
+[31mCMake Error at CMakeLists.txt:28 (add_executable):
+  No SOURCES given to target: minimal_path_publisher
+
+[0m
+[0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+gmake: *** [Makefile:349: cmake_check_build_system] Error 1

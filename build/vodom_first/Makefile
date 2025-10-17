@@ -211,6 +211,19 @@ visual_odo_simple/fast:
 .PHONY : visual_odo_simple/fast
 
 #=============================================================================
+# Target rules for targets named gt_pose_publisher
+
+# Build rule for target.
+gt_pose_publisher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gt_pose_publisher
+.PHONY : gt_pose_publisher
+
+# fast build rule for target.
+gt_pose_publisher/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_pose_publisher.dir/build.make CMakeFiles/gt_pose_publisher.dir/build
+.PHONY : gt_pose_publisher/fast
+
+#=============================================================================
 # Target rules for targets named odometry_to_path
 
 # Build rule for target.
@@ -235,6 +248,30 @@ path_recorder: cmake_check_build_system
 path_recorder/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/path_recorder.dir/build.make CMakeFiles/path_recorder.dir/build
 .PHONY : path_recorder/fast
+
+src/gt_pose_publisher.o: src/gt_pose_publisher.cpp.o
+.PHONY : src/gt_pose_publisher.o
+
+# target to build an object file
+src/gt_pose_publisher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_pose_publisher.dir/build.make CMakeFiles/gt_pose_publisher.dir/src/gt_pose_publisher.cpp.o
+.PHONY : src/gt_pose_publisher.cpp.o
+
+src/gt_pose_publisher.i: src/gt_pose_publisher.cpp.i
+.PHONY : src/gt_pose_publisher.i
+
+# target to preprocess a source file
+src/gt_pose_publisher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_pose_publisher.dir/build.make CMakeFiles/gt_pose_publisher.dir/src/gt_pose_publisher.cpp.i
+.PHONY : src/gt_pose_publisher.cpp.i
+
+src/gt_pose_publisher.s: src/gt_pose_publisher.cpp.s
+.PHONY : src/gt_pose_publisher.s
+
+# target to generate assembly for a file
+src/gt_pose_publisher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gt_pose_publisher.dir/build.make CMakeFiles/gt_pose_publisher.dir/src/gt_pose_publisher.cpp.s
+.PHONY : src/gt_pose_publisher.cpp.s
 
 src/odometry_to_path.o: src/odometry_to_path.cpp.o
 .PHONY : src/odometry_to_path.o
@@ -323,9 +360,13 @@ help:
 	@echo "... test"
 	@echo "... uninstall"
 	@echo "... vodom_first_uninstall"
+	@echo "... gt_pose_publisher"
 	@echo "... odometry_to_path"
 	@echo "... path_recorder"
 	@echo "... visual_odo_simple"
+	@echo "... src/gt_pose_publisher.o"
+	@echo "... src/gt_pose_publisher.i"
+	@echo "... src/gt_pose_publisher.s"
 	@echo "... src/odometry_to_path.o"
 	@echo "... src/odometry_to_path.i"
 	@echo "... src/odometry_to_path.s"

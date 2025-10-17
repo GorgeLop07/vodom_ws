@@ -918,6 +918,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
   "CMakeFiles/vodom_first_uninstall.dir/DependInfo.cmake"
   "CMakeFiles/visual_odo_simple.dir/DependInfo.cmake"
+  "CMakeFiles/gt_pose_publisher.dir/DependInfo.cmake"
   "CMakeFiles/odometry_to_path.dir/DependInfo.cmake"
   "CMakeFiles/path_recorder.dir/DependInfo.cmake"
   )

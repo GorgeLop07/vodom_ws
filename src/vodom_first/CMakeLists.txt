@@ -20,6 +20,7 @@ find_package(OpenCV REQUIRED)
 
 # Create only the executables we need
 add_executable(visual_odo_simple src/visual_odo_simple.cpp)
+add_executable(gt_pose_publisher src/gt_pose_publisher.cpp)
 add_executable(odometry_to_path src/odometry_to_path.cpp)
 add_executable(path_recorder src/path_recorder.cpp)
 
@@ -28,18 +29,23 @@ ament_target_dependencies(visual_odo_simple
   rclcpp std_msgs nav_msgs geometry_msgs sensor_msgs 
   cv_bridge tf2 tf2_geometry_msgs tf2_ros)
 
-# Dependencies for path converter
+# Link OpenCV to visual odometry
+target_link_libraries(visual_odo_simple ${OpenCV_LIBS})
+
+# Dependencies for GT publisher
+ament_target_dependencies(gt_pose_publisher
+  rclcpp geometry_msgs nav_msgs tf2 tf2_geometry_msgs)
+
+# Dependencies for utility nodes
 ament_target_dependencies(odometry_to_path 
   rclcpp std_msgs nav_msgs geometry_msgs)
 
 ament_target_dependencies(path_recorder
   rclcpp std_msgs nav_msgs geometry_msgs)
 
-# Link OpenCV to visual odometry
-target_link_libraries(visual_odo_simple ${OpenCV_LIBS})
-
 install(TARGETS 
   visual_odo_simple
+  gt_pose_publisher
   odometry_to_path
   path_recorder
   DESTINATION lib/${PROJECT_NAME}

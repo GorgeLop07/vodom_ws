@@ -1,4 +1,4 @@
-# robot_localization EKF configuration for VO + IMU fusion
+# robot_localization EKF configuration for VO + IMU + GT fusion
 ekf_filter_node:
   ros__parameters:
     frequency: 30.0
@@ -11,78 +11,100 @@ ekf_filter_node:
     base_link_frame: base_link
     world_frame: odom
     
-    # Config 1: Visual Odometry dominante
+    # Input 1: Visual Odometry - Shape and relative motion
     odom0: /odometry/visual
-    odom0_config: [true,  true,  false,    # x, y position from VO
-                  false, false, true,     # yaw from VO (IMPORTANT!)
+    odom0_config: [true,  true,  false,    # x, y position from VO (shape)
+                  false, false, true,     # yaw from VO (important for trajectory shape)
                   true,  true,  false,    # x, y velocities from VO
                   false, false, false,    # no angular velocities from VO
                   false, false, false]    # no acceleration from VO
-
-
-    # Config 2: Visual Odometry 
-    # MEJOR (si usas OPCIÓN 1):
-    # odom0: /odometry/visual
-    # odom0_config: [true,  true,  false,    # x, y position 
-    #               false, false, false,    #  NO yaw from VO (IMU se encarga)
-    #               true,  true,  false,    # x, y velocities 
-    #               false, false, false,    # no angular velocities 
-    #               false, false, false]    # no acceleration 
-
-                  
-    # VO provides trajectory shape and orientation
     odom0_differential: false
     odom0_relative: false
     
-
-    # Config 1: Se le da importancia a la aceleracion de la imu para mejorar la estabilidad
-    # imu0: /vectornav/imu
-    # imu0_config: [false, false, false, 
-    #               false, false, false, 
-    #               false, false, false, 
-    #               false, false, true, 
-    #               true, true, false]
-
-    # Configuracion 2 de la IMu
+    # Input 2: IMU - Angular stability
     imu0: /vectornav/imu
     imu0_config: [false, false, false,     # no position from IMU
-                  false, false, false,     # no orientation from IMU (let VO handle it)
-                  false, false, false,     # no linear velocity from IMU  
-                  false, false, true,      # only yaw rate from IMU
-                  false,  false,  false]     # angular velocities x,y from IMU (for stability)
-
-
-    # #Config 3: Configuracion recomendada por robot_localization para VO + IMU
-    # imu0: /vectornav/imu
-    # imu0_config: [false, false, false,     # no position
-    #               false, false, true,      # YAW from IMU (excelente para giros)
-    #               false, false, false,     # no linear velocity  
-    #               false, false, true,      # yaw rate from IMU
-    #               true,  true,  false]     # angular vel x,y for stability
-
-    
-
-    # Reduce IMU weight - let VO lead
+                  false, false, false,     # no absolute orientation (drift)
+                  false, false, false,     # no linear velocity from IMU
+                  false, false, true,      # yaw rate from IMU (excellent stability)
+                  false, false, false]     # no angular vel x,y (simplified)
     imu0_differential: true
     imu0_relative: true
-    imu0_remove_gravitational_acceleration: true
+    
+    # Input 3: Ground Truth (LIO-SAM) - Scale and absolute position reference
+    pose0: /gt_pose
+    pose0_config: [true,  true,  false,    # x, y position from GT (SCALE REFERENCE!)
+                   false, false, false,    # no orientation from GT (VO is better for relative)
+                   false, false, false,    # no velocities from GT
+                   false, false, false,    # no angular velocities from GT
+                   false, false, false]    # no acceleration from GT
+    pose0_differential: false
+    pose0_relative: false
+    
+    # Process noise covariance (15x15 state: x,y,z,roll,pitch,yaw,vx,vy,vz,vroll,vpitch,vyaw,ax,ay,az)
+    process_noise_covariance: [0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # x
+                              0.0, 0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # y
+                              0.0, 0.0, 0.06, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # z
+                              0.0, 0.0, 0.0, 0.03, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # roll
+                              0.0, 0.0, 0.0, 0.0, 0.03, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # pitch
+                              0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # yaw
+                              0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # vx
+                              0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # vy
+                              0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.04, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # vz
+                              0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0,  # vroll
+                              0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0,  # vpitch
+                              0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.02, 0.0, 0.0, 0.0,  # vyaw
+                              0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0,  # ax
+                              0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0,  # ay
+                              0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.015] # az
+    # # Config 1: Se le da importancia a la aceleracion de la imu para mejorar la estabilidad
+    # # imu0: /vectornav/imu
+    # # imu0_config: [false, false, false, 
+    # #               false, false, false, 
+    # #               false, false, false, 
+    # #               false, false, true, 
+    # #               true, true, false]
+
+    # # Configuracion 2 de la IMu
+    # imu0: /vectornav/imu
+    # imu0_config: [false, false, false,     # no position from IMU
+    #               false, false, false,     # no orientation from IMU (let VO handle it)
+    #               false, false, false,     # no linear velocity from IMU  
+    #               false, false, true,      # only yaw rate from IMU
+    #               false,  false,  false]     # angular velocities x,y from IMU (for stability)
+
+
+    # # #Config 3: Configuracion recomendada por robot_localization para VO + IMU
+    # # imu0: /vectornav/imu
+    # # imu0_config: [false, false, false,     # no position
+    # #               false, false, true,      # YAW from IMU (excelente para giros)
+    # #               false, false, false,     # no linear velocity  
+    # #               false, false, true,      # yaw rate from IMU
+    # #               true,  true,  false]     # angular vel x,y for stability
+
+    
+
+    # # Reduce IMU weight - let VO lead
+    # imu0_differential: true
+    # imu0_relative: true
+    # imu0_remove_gravitational_acceleration: true
     
     # Process noise covariance (15x15) - Reduce noise for better stability
-    process_noise_covariance: [0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.06, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.03, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.03, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.04, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.05, 0.0, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03, 0.0, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03, 0.0,
-                               0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03]
+    # process_noise_covariance: [0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.06, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.03, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.03, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.04, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.05, 0.0, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03, 0.0, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03, 0.0,
+    #                            0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03]
     
     # Initial estimate covariance (15x15)
     initial_estimate_covariance: [1.0e-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
