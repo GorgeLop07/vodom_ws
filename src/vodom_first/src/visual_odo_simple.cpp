@@ -183,7 +183,7 @@ private:
                 
                 if (inliers > 10) {
                     // Use fixed scale instead of ground truth (simple but stable)
-                    double scale = 0.1; // Conservative scale for real-time
+                    double scale = 0.4; // Conservative scale for real-time
                     
                     // Apply scale and transform to world coordinates (EXACT KITTI)
                     double dx = scale * t.at<double>(0);
@@ -192,12 +192,14 @@ private:
                     // Extract yaw from rotation matrix (EXACT KITTI method)
                     double dyaw = -atan2(R.at<double>(2, 0), R.at<double>(0, 0));
                     
+                    // Quitar el filtro de rotación excesiva
                     // Filter out excessive rotations (EXACT KITTI approach)
-                    if (abs(dyaw) > 0.05) { // Limit to ~3 degrees per frame
-                        dyaw = dyaw > 0 ? 0.05 : -0.05; // Clamp instead of zero
-                        RCLCPP_WARN(this->get_logger(), "Frame %zu: Clamped excessive rotation", current_frame_);
-                    }
-                    
+                    // if (abs(dyaw) > 0.05) {             // Limit to ~3 degrees per frame
+                    //     dyaw = dyaw > 0 ? 0.05 : -0.05; // Clamp instead of zero
+                    //     RCLCPP_WARN(this->get_logger(), "Frame %zu: Clamped excessive rotation", current_frame_);
+                    // }
+
+
                     // Transform relative motion to world coordinates (EXACT KITTI)
                     // current_x_ += dx * cos(current_yaw_) - dz * sin(current_yaw_); //Esto puede no ser correcto xd
                     // current_y_ += dx * sin(current_yaw_) + dz * cos(current_yaw_);
@@ -236,9 +238,9 @@ private:
         for (int i = 0; i < 36; i++) {
             odom_msg.pose.covariance[i] = 0.0;
         }
-        odom_msg.pose.covariance[0] = 0.1;   // x
-        odom_msg.pose.covariance[7] = 0.1;   // y
-        odom_msg.pose.covariance[35] = 0.1;  // yaw
+        odom_msg.pose.covariance[0] = 0.5;   // x //Valor del commit 0.1
+        odom_msg.pose.covariance[7] = 0.5;   // y //Valor del Commit 0.1
+        odom_msg.pose.covariance[35] = 0.2;  // yaw //Valor del commit 0.1
         
         vo_odom_pub_->publish(odom_msg);
         

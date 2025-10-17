@@ -11,25 +11,57 @@ ekf_filter_node:
     base_link_frame: base_link
     world_frame: odom
     
-    # Input sources
+    # Config 1: Visual Odometry dominante
     odom0: /odometry/visual
     odom0_config: [true,  true,  false,    # x, y position from VO
-                   false, false, true,     # yaw from VO (IMPORTANT!)
-                   true,  true,  false,    # x, y velocities from VO
-                   false, false, false,    # no angular velocities from VO
-                   false, false, false]    # no acceleration from VO
-    
+                  false, false, true,     # yaw from VO (IMPORTANT!)
+                  true,  true,  false,    # x, y velocities from VO
+                  false, false, false,    # no angular velocities from VO
+                  false, false, false]    # no acceleration from VO
+
+
+    # Config 2: Visual Odometry 
+    # MEJOR (si usas OPCIÓN 1):
+    # odom0: /odometry/visual
+    # odom0_config: [true,  true,  false,    # x, y position 
+    #               false, false, false,    #  NO yaw from VO (IMU se encarga)
+    #               true,  true,  false,    # x, y velocities 
+    #               false, false, false,    # no angular velocities 
+    #               false, false, false]    # no acceleration 
+
+                  
     # VO provides trajectory shape and orientation
     odom0_differential: false
     odom0_relative: false
     
+
+    # Config 1: Se le da importancia a la aceleracion de la imu para mejorar la estabilidad
+    # imu0: /vectornav/imu
+    # imu0_config: [false, false, false, 
+    #               false, false, false, 
+    #               false, false, false, 
+    #               false, false, true, 
+    #               true, true, false]
+
+    # Configuracion 2 de la IMu
     imu0: /vectornav/imu
     imu0_config: [false, false, false,     # no position from IMU
                   false, false, false,     # no orientation from IMU (let VO handle it)
                   false, false, false,     # no linear velocity from IMU  
                   false, false, true,      # only yaw rate from IMU
-                  true,  true,  false]     # angular velocities x,y from IMU (for stability)
+                  false,  false,  false]     # angular velocities x,y from IMU (for stability)
+
+
+    # #Config 3: Configuracion recomendada por robot_localization para VO + IMU
+    # imu0: /vectornav/imu
+    # imu0_config: [false, false, false,     # no position
+    #               false, false, true,      # YAW from IMU (excelente para giros)
+    #               false, false, false,     # no linear velocity  
+    #               false, false, true,      # yaw rate from IMU
+    #               true,  true,  false]     # angular vel x,y for stability
+
     
+
     # Reduce IMU weight - let VO lead
     imu0_differential: true
     imu0_relative: true
