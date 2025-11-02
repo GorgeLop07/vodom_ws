@@ -337,9 +337,9 @@ private:
         for (int i = 0; i < 36; i++) {
             odom_msg.pose.covariance[i] = 0.0;
         }
-        odom_msg.pose.covariance[0] = 0.1;   // x
-        odom_msg.pose.covariance[7] = 0.1;   // y
-        odom_msg.pose.covariance[35] = 0.1;  // yaw
+        odom_msg.pose.covariance[0] = 10.0;   // x - Incertidumbre muy alta para dar máximo peso al GPS
+        odom_msg.pose.covariance[7] = 10.0;   // y - Incertidumbre muy alta para dar máximo peso al GPS
+        odom_msg.pose.covariance[35] = 5.0;  // yaw - Incertidumbre muy alta para dar máximo peso al GPS
         
         vo_odom_pub_->publish(odom_msg);
         
