@@ -190,12 +190,12 @@ private:
         pose_msg.pose.pose.orientation.z = current_pose.qz;
         pose_msg.pose.pose.orientation.w = current_pose.qw;
         
-        // Set covariance (moderate confidence - provides scale but doesn't dominate)
+        // Set covariance - ALTA confianza en GT (domina sobre VO)
         for (int i = 0; i < 36; i++) {
             pose_msg.pose.covariance[i] = 0.0;
         }
-        pose_msg.pose.covariance[0] = 1.0;   // x variance (moderate confidence)
-        pose_msg.pose.covariance[7] = 1.0;   // y variance  
+        pose_msg.pose.covariance[0] = 0.5;   // x variance - ALTA confianza (GT domina posición)
+        pose_msg.pose.covariance[7] = 0.5;   // y variance - ALTA confianza (GT domina posición)
         pose_msg.pose.covariance[14] = 1.0;  // z variance
         pose_msg.pose.covariance[21] = 0.1;  // roll variance (high confidence)
         pose_msg.pose.covariance[28] = 0.1;  // pitch variance

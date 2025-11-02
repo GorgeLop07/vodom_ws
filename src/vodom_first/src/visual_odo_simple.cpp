@@ -234,13 +234,13 @@ private:
         q.setRPY(0, 0, current_yaw_);
         odom_msg.pose.pose.orientation = tf2::toMsg(q);
         
-        // Set covariance - LOW values for high confidence (smooth EKF)
+        // Set covariance - BALANCED for smooth EKF (no zigzag)
         for (int i = 0; i < 36; i++) {
             odom_msg.pose.covariance[i] = 0.0;
         }
-        odom_msg.pose.covariance[0] = 0.05;   // x - HIGH CONFIDENCE (reduced from 0.5)
-        odom_msg.pose.covariance[7] = 0.05;   // y - HIGH CONFIDENCE (reduced from 0.5)
-        odom_msg.pose.covariance[35] = 0.02;  // yaw - VERY HIGH CONFIDENCE (reduced from 0.2)
+        odom_msg.pose.covariance[0] = 2.0;   // x - Moderada confianza (permite que GT corrija)
+        odom_msg.pose.covariance[7] = 2.0;   // y - Moderada confianza (permite que GT corrija)
+        odom_msg.pose.covariance[35] = 0.8;  // yaw - Alta confianza (VO bueno en orientación)
         
         vo_odom_pub_->publish(odom_msg);
         

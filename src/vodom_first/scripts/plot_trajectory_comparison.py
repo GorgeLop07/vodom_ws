@@ -121,22 +121,79 @@ def align_trajectories_smart(traj1, traj2):
 def compute_simple_metrics(traj1, traj2):
     """
     Calcula métricas simples entre dos trayectorias alineadas
+    Incluye: ATE RMSE, RPE Translation RMSE, RPE Rotation RMSE
     """
     pos1 = traj1[:, 1:4]
     pos2 = traj2[:, 1:4]
     
+    # ========== ATE (Absolute Trajectory Error) ==========
     # Diferencias punto a punto
     diff = pos1 - pos2
     distances = np.linalg.norm(diff, axis=1)
     
-    # Estadísticas básicas
+    # ATE RMSE (Root Mean Square Error)
+    ate_rmse = np.sqrt(np.mean(distances**2))
+    
+    # ========== RPE (Relative Pose Error) ==========
+    # Calcular cambios relativos entre poses consecutivas
+    rpe_trans_errors = []
+    rpe_rot_errors = []
+    
+    for i in range(len(pos1) - 1):
+        # Translation RPE: diferencia en movimiento relativo
+        delta_pos1 = pos1[i+1] - pos1[i]
+        delta_pos2 = pos2[i+1] - pos2[i]
+        trans_error = np.linalg.norm(delta_pos1 - delta_pos2)
+        rpe_trans_errors.append(trans_error)
+        
+        # Rotation RPE: diferencia en rotación relativa
+        if traj1.shape[1] >= 8 and traj2.shape[1] >= 8:
+            # Extraer quaternions
+            q1_i = traj1[i, 4:8]
+            q1_next = traj1[i+1, 4:8]
+            q2_i = traj2[i, 4:8]
+            q2_next = traj2[i+1, 4:8]
+            
+            # Calcular rotación relativa para ambas trayectorias
+            try:
+                r1_i = Rotation.from_quat(q1_i)
+                r1_next = Rotation.from_quat(q1_next)
+                r2_i = Rotation.from_quat(q2_i)
+                r2_next = Rotation.from_quat(q2_next)
+                
+                # Rotación relativa
+                delta_rot1 = r1_i.inv() * r1_next
+                delta_rot2 = r2_i.inv() * r2_next
+                
+                # Diferencia de rotación en grados
+                rot_diff = delta_rot1.inv() * delta_rot2
+                rot_error = np.linalg.norm(rot_diff.as_rotvec()) * 180.0 / np.pi
+                rpe_rot_errors.append(rot_error)
+            except:
+                rpe_rot_errors.append(0.0)
+    
+    # RPE RMSE
+    rpe_trans_rmse = np.sqrt(np.mean(np.array(rpe_trans_errors)**2)) if rpe_trans_errors else 0.0
+    rpe_rot_rmse = np.sqrt(np.mean(np.array(rpe_rot_errors)**2)) if rpe_rot_errors else 0.0
+    
+    # Estadísticas completas
     metrics = {
+        # ATE metrics
+        'ate_rmse': ate_rmse,
         'mean_error': np.mean(distances),
         'max_error': np.max(distances), 
         'std_error': np.std(distances),
+        'errors': distances,
+        
+        # RPE metrics
+        'rpe_translation_rmse': rpe_trans_rmse,
+        'rpe_rotation_rmse': rpe_rot_rmse,
+        'rpe_trans_errors': np.array(rpe_trans_errors),
+        'rpe_rot_errors': np.array(rpe_rot_errors),
+        
+        # Trajectory lengths
         'total_length_1': np.sum(np.linalg.norm(np.diff(pos1, axis=0), axis=1)),
         'total_length_2': np.sum(np.linalg.norm(np.diff(pos2, axis=0), axis=1)),
-        'errors': distances
     }
     
     return metrics
@@ -178,10 +235,22 @@ def plot_simple_trajectories(traj1, traj2, metrics, labels=['Trayectoria 1', 'Tr
     ax2.legend()
     ax2.grid(True, alpha=0.3)
     
-    # Añadir tabla de métricas
+    # Añadir tabla de métricas con formato solicitado
     metrics_text = f"""
-MÉTRICAS DE COMPARACIÓN
-━━━━━━━━━━━━━━━━━━━━━━━━━
+╔═══════════════════════════════════════╗
+║      MÉTRICAS DE EVALUACIÓN           ║
+╚═══════════════════════════════════════╝
+
+📊 ATE (Absolute Trajectory Error)
+   RMSE:              {metrics['ate_rmse']:.4f} m
+
+📏 RPE (Relative Pose Error)
+   Translation RMSE:  {metrics['rpe_translation_rmse']:.4f} m
+   Rotation RMSE:     {metrics['rpe_rotation_rmse']:.4f} deg
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Estadísticas Adicionales
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Error promedio:    {metrics['mean_error']:.4f} m
 Error máximo:      {metrics['max_error']:.4f} m
 Desv. estándar:    {metrics['std_error']:.4f} m
@@ -332,12 +401,25 @@ def main():
         print("❌ Error: No hay suficientes poses alineadas")
         return
     
-    # Calcular métricas simplificadas
-    print("\n📊 Calculando métricas básicas...")
+    # Calcular métricas completas
+    print("\n📊 Calculando métricas de evaluación...")
     metrics = compute_simple_metrics(traj_vo_aligned, traj_gt_aligned)
-    print(f"   Error promedio: {metrics['mean_error']:.4f} m")
-    print(f"   Error máximo: {metrics['max_error']:.4f} m")
-    print(f"   Desviación estándar: {metrics['std_error']:.4f} m")
+    
+    print("\n" + "="*50)
+    print("📊 RESULTADOS DE EVALUACIÓN")
+    print("="*50)
+    print(f"\n✅ ATE (Absolute Trajectory Error)")
+    print(f"   RMSE: {metrics['ate_rmse']:.4f} m")
+    
+    print(f"\n✅ RPE (Relative Pose Error)")
+    print(f"   Translation RMSE: {metrics['rpe_translation_rmse']:.4f} m")
+    print(f"   Rotation RMSE:    {metrics['rpe_rotation_rmse']:.4f} deg")
+    
+    print(f"\n📈 Estadísticas adicionales:")
+    print(f"   Error promedio:   {metrics['mean_error']:.4f} m")
+    print(f"   Error máximo:     {metrics['max_error']:.4f} m")
+    print(f"   Desv. estándar:   {metrics['std_error']:.4f} m")
+    print("="*50)
     
     # Generar gráficas simplificadas
     print("\n📈 Generando gráficas de comparación...")
